@@ -79,7 +79,7 @@ CURL_FEATURE_ORDER = [
 
 CLASS_LABELS = {
     "squat": ["good", "knee_valgus", "insufficient_depth", "back_rounding"],
-    "curl": ["good", "swing", "partial_rom", "elbow_flare"],
+    "curl": ["good", "swing"],
 }
 
 ERROR_TO_CLASS = {
@@ -92,8 +92,6 @@ ERROR_TO_CLASS = {
     "curl": {
         "none": 0,
         "swing": 1,
-        "partial_rom": 2,
-        "elbow_flare": 3,
     },
 }
 
@@ -195,6 +193,9 @@ def _make_curl_clip(t: int, error_type: str) -> np.ndarray:
 
 
 def generate_synthetic_data(root: Path = DATA_DIR) -> None:
+    if (root / "manifest.csv").exists():
+        print("Real data found in", root, "— skipping synthetic generation.")
+        return
     if root.exists():
         shutil.rmtree(root)
     (root / "squat").mkdir(parents=True, exist_ok=True)

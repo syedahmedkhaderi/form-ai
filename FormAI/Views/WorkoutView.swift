@@ -41,7 +41,7 @@ struct WorkoutView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbar(.hidden, for: .navigationBar)
+        .navigationBarHidden(true)
         .task { await vm.start() }
         .onDisappear { vm.stop() }
     }

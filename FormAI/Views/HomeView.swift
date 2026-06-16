@@ -14,7 +14,7 @@ struct HomeView: View {
     @State private var goldenMessage: String = ""
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
                     header
@@ -43,6 +43,7 @@ struct HomeView: View {
             .navigationTitle("FormAI")
             .background(Color(.systemGroupedBackground))
         }
+        .navigationViewStyle(.stack)
     }
 
     private var header: some View {

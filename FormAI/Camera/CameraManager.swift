@@ -108,9 +108,15 @@ final class CameraManager: NSObject {
         // NON-mirrored on the front camera so left/right (and valgus) stay
         // physically correct for the model and the overlay aligns.
         if let connection = videoOutput.connection(with: .video) {
-            let angle: CGFloat = 90
-            if connection.isVideoRotationAngleSupported(angle) {
-                connection.videoRotationAngle = angle
+            if #available(iOS 17.0, *) {
+                let angle: CGFloat = 90
+                if connection.isVideoRotationAngleSupported(angle) {
+                    connection.videoRotationAngle = angle
+                }
+            } else {
+                if connection.isVideoOrientationSupported {
+                    connection.videoOrientation = .portrait
+                }
             }
             if connection.isVideoMirroringSupported {
                 connection.automaticallyAdjustsVideoMirroring = false
