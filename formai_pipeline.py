@@ -24,6 +24,7 @@ print("cuda available:", torch.cuda.is_available(), "| gpus:", torch.cuda.device
 SEED = 42
 W = 32
 DATA_DIR = Path("formai_data")
+MODELS_DIR = Path("models")
 
 MANIFEST_COLUMNS = [
     "clip_id",
@@ -471,6 +472,7 @@ def train_model(exercise: str, x: torch.Tensor, y: torch.Tensor, subjects: np.nd
 # Core ML export and model cards
 def export_coreml(model: FormScorer, exercise: str, f: int) -> None:
     package_name = "SquatFormScorer.mlpackage" if exercise == "squat" else "CurlFormScorer.mlpackage"
+    out_path = MODELS_DIR / package_name
     example = torch.rand(1, W, f, dtype=torch.float32)
     traced = torch.jit.trace(model, example)
     mlmodel = ct.convert(
@@ -480,7 +482,7 @@ def export_coreml(model: FormScorer, exercise: str, f: int) -> None:
         convert_to="mlprogram",
         minimum_deployment_target=ct.target.iOS17,
     )
-    mlmodel.save(package_name)
+    mlmodel.save(str(out_path))
 
 
 def write_model_card(exercise: str, f: int) -> None:
@@ -494,7 +496,8 @@ def write_model_card(exercise: str, f: int) -> None:
         "version": "v1",
         "built": date.today().isoformat(),
     }
-    out = "SquatFormScorer_model_card.json" if exercise == "squat" else "CurlFormScorer_model_card.json"
+    fname = "SquatFormScorer_model_card.json" if exercise == "squat" else "CurlFormScorer_model_card.json"
+    out = MODELS_DIR / fname
     with open(out, "w", encoding="utf-8") as fp:
         json.dump(card, fp, indent=2)
         fp.write("\n")
@@ -508,12 +511,13 @@ def write_golden_test(root: Path = DATA_DIR) -> None:
     for _, row in squat_rows.iterrows():
         raw = np.load(root / row["file"]).astype(np.float32)
         reps.append(preprocess_rep(raw, "squat"))
-    np.save("golden_test.npy", np.stack(reps).astype(np.float32))
+    np.save(str(MODELS_DIR / "golden_test.npy"), np.stack(reps).astype(np.float32))
 
 
 # Main pipeline
 def main() -> None:
     set_all_seeds(SEED)
+    MODELS_DIR.mkdir(exist_ok=True)
     generate_synthetic_data(DATA_DIR)
 
     squat_probe = preprocess_rep(np.load(DATA_DIR / "squat/clip_0001.npy"), "squat")
