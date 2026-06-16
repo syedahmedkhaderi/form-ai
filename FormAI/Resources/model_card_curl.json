@@ -3,12 +3,25 @@
   "W": 32,
   "F": 11,
   "feature_order": [
-    "12x", "12y", "14x", "14y", "16x", "16y", "11x", "11y",
-    "right_elbow_angle", "shoulder_tilt", "elbow_flare"
+    "12x",
+    "12y",
+    "14x",
+    "14y",
+    "16x",
+    "16y",
+    "11x",
+    "11y",
+    "right_elbow_angle",
+    "shoulder_tilt",
+    "elbow_flare"
   ],
-  "class_labels": ["good", "swing", "partial_rom", "elbow_flare"],
-  "normalization": "hip-center origin, torso-length scale (contracts sec 7); right arm canonical",
-  "version": "placeholder",
-  "built": "2026-06-16",
-  "note": "PLACEHOLDER. Replace with the model_card.json that ships alongside Syed's real CurlFormScorer.mlpackage. class_labels MUST match the model's output order; if v1 ships binary, use [\"good\", \"bad\"]."
+  "class_labels": [
+    "good",
+    "swing",
+    "partial_rom",
+    "elbow_flare"
+  ],
+  "normalization": "hip-center origin, torso-length scale (see contracts sec 7)",
+  "version": "v1",
+  "built": "2026-06-16"
 }

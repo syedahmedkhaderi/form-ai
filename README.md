@@ -142,7 +142,10 @@ For the Posture TensorFlow squat model (optional, needed by `exercise_correction
 pip install -r requirements-posture-optional.txt
 ```
 
-Verified stack: `torch==2.4.0+cu121`, `coremltools==8.1`, `numpy==1.26.4`, `pandas==2.2.2`, `scikit-learn==1.5.2`, `tensorflow-cpu==2.15.1`.
+`requirements-posture-optional.txt` installs `tensorflow-cpu==2.15.1` on
+non-macOS platforms and `tensorflow==2.15.1` on macOS.
+
+Verified stack: `torch==2.4.0`, `coremltools==8.1`, `numpy==1.26.4`, `pandas==2.2.2`, `scikit-learn==1.5.2`, `tensorflow==2.15.1` on macOS.
 
 ## Usage
 
@@ -197,4 +200,3 @@ The latest full verification passed:
 - The existing Core ML packages remain in the repository.
 - For direct on-device iOS use of the third-party models, add a backend call,
   Swift port, or conversion layer while preserving the same label/logit contract.
-

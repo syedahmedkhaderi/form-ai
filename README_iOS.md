@@ -6,54 +6,45 @@ spoken cue + on-screen form score. Exercises in scope: **bodyweight squat** and
 **single-arm dumbbell curl** (contract).
 
 This is the **app** half of the project (Islam's part). The ML models
-(`SquatFormScorer`, `CurlFormScorer`) come from Syed and are **not in the repo
-yet** — the whole inference path is built and wired, so dropping the models in
-is the only remaining step.
+(`SquatFormScorer`, `CurlFormScorer`) are bundled under `FormAI/Resources`, and
+the inference path loads them dynamically at runtime.
 
-## How it runs today (no model, no pod)
+## How it runs today
 
-The project compiles and launches as-is:
+The project is set up with CocoaPods and bundled model assets:
 
-- **No pose engine yet** → the camera preview and full UI work; a banner says
-  the pose engine isn't linked, and no skeleton/reps are produced.
-- **No model yet** → scoring automatically uses the **rule-based fallback**
-  (joint-angle thresholds), so reps still get a score and a spoken cue.
+- **Pose engine** → `MediaPipeTasksVision` is declared in the Podfile and
+  installed with `pod install`. `pose_landmarker_full.task` is bundled.
+- **Models** → `SquatFormScorer.mlpackage` and `CurlFormScorer.mlpackage` are
+  present under `FormAI/Resources`, with matching model cards.
+- **Fallback** → if a model fails to load, scoring still falls back to
+  joint-angle rules.
 
-Everything is behind protocols/dynamic loading so adding the pod and the models
-changes no other code.
+Open `FormAI.xcworkspace`, not `FormAI.xcodeproj`, after installing pods.
 
-## Setup to make it fully functional
+## Setup to run the app
 
-### 1. Pose engine (MediaPipe)
+### 1. Install iOS tooling
+
+Install full Xcode from the Mac App Store or Apple Developer Downloads. Command
+Line Tools alone are not enough for `xcodebuild` or simulator/device builds.
+
+After installing Xcode:
 
 ```bash
-cd /Users/islambekdaiyn/Desktop/Projects/FormAI
-pod install
-open FormAI.xcworkspace      # always the workspace from now on
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license accept
 ```
 
-Then download **`pose_landmarker_full.task`** from the MediaPipe Pose Landmarker
-model card and drag it into the `FormAI` group in Xcode (check "Copy items if
-needed", target = FormAI). `MediaPipePoseProvider` loads it by that exact name.
+### 2. Install pods
 
-> Same detector both sides is the whole reason this integrates — Mahmoud
-> extracts training landmarks with MediaPipe Pose Landmarker too. Do **not**
-> swap in Apple Vision.
+```bash
+cd /Users/syed/Downloads/form-ai-1
+pod install
+open FormAI.xcworkspace
+```
 
-### 2. The models (the only thing you'll hand me to upload)
-
-When Syed delivers them, for **each** exercise:
-
-1. Drag `SquatFormScorer.mlpackage` / `CurlFormScorer.mlpackage` into the
-   `FormAI` group (target = FormAI). Xcode compiles them to `.mlmodelc`;
-   `FormScorer` loads them at runtime by name — **no code change**.
-2. Replace `FormAI/Resources/model_card_squat.json` /
-   `model_card_curl.json` with the real `model_card.json` Syed ships. The
-   `class_labels` array must match the model's output order exactly.
-
-That's it — flip the **AI model** toggle on in the workout screen.
-
-### 3. Verify the preprocessing port (the golden gate)
+### 3. Verify the preprocessing port
 
 The preprocessing recipe (contract §7) is ported to Swift in
 `FormAI/Vision/FormPreprocessor.swift`. It must match Syed's Python
