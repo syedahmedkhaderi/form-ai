@@ -1,0 +1,26 @@
+PODS:
+  - MediaPipeTasksCommon (0.10.35)
+  - MediaPipeTasksVision (0.10.35):
+    - MediaPipeTasksCommon (= 0.10.35)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+
+DEPENDENCIES:
+  - MediaPipeTasksVision
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - MediaPipeTasksCommon
+    - MediaPipeTasksVision
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  MediaPipeTasksCommon: ae27d88c4d185db114a1a768c504f8270dda79b5
+  MediaPipeTasksVision: 1d6c3efa89830a131dbd0dc4fb80dea283fac521
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+
+PODFILE CHECKSUM: 4093dc0675fbfeec05606974f76aae54c73d773b
+
+COCOAPODS: 1.16.2
