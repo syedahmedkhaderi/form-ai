@@ -1,0 +1,5 @@
+torch==2.4.0
+numpy==1.26.4
+coremltools==8.1
+scikit-learn==1.5.2
+pandas==2.2.2

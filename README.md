@@ -96,15 +96,30 @@ arms, and hips.
 
 ```text
 .
-├── exercise_correction_adapter.py          # Unified runtime adapter
-├── exercise_correction_adapter_card.json   # Runtime metadata
+├── models/                                 # Islam's iOS deliverables (drop into Xcode)
+│   ├── SquatFormScorer.mlpackage           # Core ML model, input keypoint_window (1,32,21)
+│   ├── CurlFormScorer.mlpackage            # Core ML model, input keypoint_window (1,32,11)
+│   ├── SquatFormScorer_model_card.json     # feature_order, class_labels, W, F
+│   ├── CurlFormScorer_model_card.json
+│   └── golden_test.npy                     # 3 preprocessed squat reps for Swift validation
+├── formai_pipeline.py                      # Train + export pipeline (outputs to models/)
+├── exercise_correction_adapter.py          # Fallback adapter using third-party models
+├── exercise_correction_adapter_card.json   # Adapter runtime metadata
 ├── test_exercise_correction_adapter.py     # Adapter smoke tests
-├── formai_pipeline.py                      # Original Core ML export pipeline
-├── SquatFormScorer.mlpackage               # Existing Core ML package
-├── CurlFormScorer.mlpackage                # Existing Core ML package
+├── requirements.txt                        # Pinned training deps (torch 2.4.0, coremltools 8.1)
+├── requirements-posture-optional.txt       # TensorFlow for the Posture squat model
+├── formai_data/                            # Synthetic training data
+│   ├── squat/                              # 160 clips as [T,33,4] float32 .npy
+│   ├── curl/                               # 160 clips as [T,33,4] float32 .npy
+│   └── manifest.csv
 ├── third_party/
-│   ├── Posture/                            # Pruned squat runtime assets
-│   └── Exercise-Correction/                # Pruned curl runtime assets
+│   ├── Posture/                            # Pruned squat TF runtime assets
+│   └── Exercise-Correction/               # Pruned curl sklearn runtime assets
+├── context/                                # Team requirement documents
+│   ├── 00_INTEGRATION_CONTRACTS.txt
+│   ├── ISLAM_APP_REQUIREMENTS.txt
+│   ├── MAHMOUD_CV_REQUIREMENTS.txt
+│   └── SYED_MODEL_REQUIREMENTS.txt
 └── EXERCISE_CORRECTION_INTEGRATION.md      # Additional integration notes
 ```
 
@@ -114,26 +129,20 @@ training datasets were intentionally removed.
 
 ## Setup
 
-Use the existing virtual environment:
-
 ```bash
+python3.11 -m venv formai_env
 . formai_env/bin/activate
+pip install --no-cache-dir torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+pip install --no-cache-dir -r requirements.txt
 ```
 
-The active environment has been verified with:
-
-- `tensorflow-cpu==2.15.1`
-- `torch==2.4.0+cu121`
-- `coremltools==8.1`
-- `numpy==1.26.4`
-- `pandas==2.2.2`
-- `scikit-learn==1.5.2`
-
-If TensorFlow needs to be installed in a fresh environment:
+For the Posture TensorFlow squat model (optional, needed by `exercise_correction_adapter.py`):
 
 ```bash
 pip install -r requirements-posture-optional.txt
 ```
+
+Verified stack: `torch==2.4.0+cu121`, `coremltools==8.1`, `numpy==1.26.4`, `pandas==2.2.2`, `scikit-learn==1.5.2`, `tensorflow-cpu==2.15.1`.
 
 ## Usage
 

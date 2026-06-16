@@ -1,4 +1,8 @@
 formai_env/
+mp_env/
 __pycache__/
 *.pyc
 .DS_Store
+*.egg-info/
+dist/
+build/
