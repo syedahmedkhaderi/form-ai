@@ -1,0 +1,4 @@
+Repository: https://github.com/NgoQuocBao1010/Exercise-Correction
+Commit: 202a0a802d8d2e3ea42f00e6a8c47da9cafc09d7
+Vendored for FormAI Exercise-Correction adapter integration.
+

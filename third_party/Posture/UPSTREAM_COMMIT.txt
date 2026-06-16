@@ -1,0 +1,4 @@
+Repository: https://github.com/twixupmysleeve/Posture
+Commit: 9ba505c62d987428a184307084c45c6fcc3f789b
+Vendored for FormAI squat posture adapter integration.
+

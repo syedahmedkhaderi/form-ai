@@ -1,0 +1,45 @@
+{
+  "source_repo": "https://github.com/NgoQuocBao1010/Exercise-Correction",
+  "source_path": "third_party/Exercise-Correction",
+  "interface": "raw MediaPipe Pose landmarks [T,33,4] -> FormAIPrediction logits/label",
+  "class_labels": {
+    "squat": [
+      "good",
+      "knee_valgus",
+      "insufficient_depth",
+      "back_rounding"
+    ],
+    "curl": [
+      "good",
+      "swing",
+      "partial_rom",
+      "elbow_flare"
+    ]
+  },
+  "posture_model": {
+    "source_repo": "https://github.com/twixupmysleeve/Posture",
+    "source_path": "third_party/Posture",
+    "output_labels": [
+      "correct",
+      "knee",
+      "hip",
+      "rounded_back",
+      "depth"
+    ],
+    "formai_mapping": {
+      "correct": "good",
+      "knee": "knee_valgus",
+      "hip": "back_rounding",
+      "rounded_back": "back_rounding",
+      "depth": "insufficient_depth"
+    },
+    "available": true,
+    "load_error": null
+  },
+  "model_status": {
+    "squat_model_available": false,
+    "squat_model_error": "missing model file: /home/syed/form-ai/third_party/Exercise-Correction/web/server/static/model/squat_model.pkl",
+    "curl_model_available": true,
+    "curl_model_error": null
+  }
+}
