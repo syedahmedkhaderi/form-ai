@@ -1,0 +1,123 @@
+FORMAI - MAHMOUD (COMPUTER VISION) REQUIREMENTS AND SYSTEM DESIGN
+Owner: Mahmoud. Read 00_INTEGRATION_CONTRACTS.txt first; this doc only adds detail to your part.
+
+Your one job: turn workout videos into clean keypoint tensors plus labels that Syed can train on. You produce the training data. You do not train the model and you do not touch the app.
+
+
+1. WHAT YOU DELIVER
+
+  A) For Syed: a folder formai_data/ containing per-rep .npy tensors and manifest.csv, exactly as specified in contracts section 5.
+  B) For Islam (just a confirmation, no code): you both use MediaPipe Pose Landmarker, so the 33-landmark schema on the phone matches your offline output. Confirm Islam pins the same landmarker.
+  C) Early: 5 to 10 real sample clips on Day 0 so Syed can validate tensor shapes before you bulk-record.
+
+
+2. PIPELINE OVERVIEW
+
+  video file -> MediaPipe Pose (per frame) -> [T,33,4] array -> save .npy + manifest row
+
+You run MediaPipe in its VIDEO mode (running_mode=VIDEO) so it uses temporal smoothing across frames. One clip in, one tensor out, one label you assign.
+
+
+3. ENVIRONMENT (pinned, isolated)
+
+Use a dedicated venv. These versions are known to install together cleanly:
+
+  python 3.11
+  mediapipe 0.10.14
+  opencv-python 4.10.0.84
+  numpy 1.26.4
+  pandas 2.2.2
+
+Install:
+  python3.11 -m venv mp_env
+  . mp_env/bin/activate
+  pip install --no-cache-dir mediapipe==0.10.14 opencv-python==4.10.0.84 numpy==1.26.4 pandas==2.2.2
+
+Download the pose landmarker model file once:
+  pose_landmarker_full.task   (from the MediaPipe model card page; "full" gives the best accuracy/speed trade for this).
+
+Note: keep numpy at 1.26.4 across the team. Syed's export toolchain also pins numpy 1.26.4, so staying aligned avoids cross-machine surprises if you ever share a tensor loader.
+
+
+4. EXTRACTION SCRIPT (reference behavior)
+
+This is the contract behavior, not final code. Keep it this simple.
+
+  import cv2, numpy as np, mediapipe as mp
+  from mediapipe.tasks import python as mp_python
+  from mediapipe.tasks.python import vision
+
+  def extract_clip(video_path, task_path="pose_landmarker_full.task"):
+      base = mp_python.BaseOptions(model_asset_path=task_path)
+      opts = vision.PoseLandmarkerOptions(base_options=base,
+                                          running_mode=vision.RunningMode.VIDEO,
+                                          num_poses=1)
+      landmarker = vision.PoseLandmarker.create_from_options(opts)
+      cap = cv2.VideoCapture(video_path)
+      fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+      frames = []
+      idx = 0
+      while True:
+          ok, frame = cap.read()
+          if not ok:
+              break
+          rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+          mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+          ts_ms = int(idx * 1000.0 / fps)
+          res = landmarker.detect_for_video(mp_img, ts_ms)
+          if res.pose_landmarks:
+              lms = res.pose_landmarks[0]
+              row = np.array([[p.x, p.y, p.z, p.visibility] for p in lms], dtype=np.float32)
+          else:
+              row = np.full((33, 4), np.nan, dtype=np.float32)   # no detection this frame
+          frames.append(row)
+          idx += 1
+      cap.release()
+      return np.stack(frames, axis=0), fps   # [T,33,4], fps
+
+Rules:
+  - Always 33 rows per frame, even when detection fails (fill NaN). Syed drops NaN frames in preprocessing.
+  - Save with np.save(path, arr). float32. Never change axis meaning: [frame, landmark, (x,y,z,visibility)].
+  - One video clip = one rep = one tensor = one manifest row.
+
+
+5. DATA COLLECTION PLAN (this is where the project is won or lost)
+
+The model is only as good as your clips. Aim for breadth over polish.
+
+  Target counts (minimum viable, per exercise):
+    good form    : 60 to 100 clips
+    each bad type: 30 to 50 clips
+  Squat bad types: knee_valgus, insufficient_depth, back_rounding
+  Curl bad types : swing, partial_rom, elbow_flare
+
+  Variety that matters (vary deliberately, label honestly):
+    - at least 6 to 8 different people (subject_id), so the split in section 7 can hold people out
+    - both sexes, range of body sizes and heights
+    - different clothing, lighting, backgrounds
+    - the camera setup from contracts section 4 (front 3/4 for squat, front for curl)
+
+  Labeling: you record a clip and you KNOW what it is because you direct it. Tell the person "do 5 squats with your knees caving in" and label those knee_valgus. Intentional bad form is the fastest way to get balanced classes. This is legitimate and standard for form-correction datasets.
+
+  Fill manifest.csv as you go, never in a batch at the end. Both label and error_type for every clip.
+
+
+6. HOW YOUR OUTPUT CONNECTS
+
+  To Syed: he loads your .npy files and manifest.csv, applies the preprocessing in contracts section 7, and trains. He needs your tensors to be RAW (no normalization) and shaped exactly [T,33,4]. That is the entire interface. If your shapes are right, his loader just works.
+
+  To Islam: indirectly. Islam runs the same MediaPipe landmarker on the phone, so the live 33 landmarks match your offline ones. You owe him nothing but a confirmation that he pinned MediaPipeTasksVision and is using the same 33-landmark output.
+
+
+7. TRAIN/VAL SPLIT HYGIENE (tell Syed, but it starts with you)
+
+Because you record multiple clips per person, the same person must never appear in both train and validation. That is why subject_id exists. If you skip it, the model looks great in testing and collapses in the demo on a new body. Keep subject_id accurate per clip.
+
+
+8. ACCEPTANCE CHECK (you are done when)
+
+  - formai_data/ has the directory layout from contracts section 5.
+  - Every .npy loads as float32 with shape [T,33,4], T>0.
+  - manifest.csv has one row per .npy, all columns filled, label and error_type valid.
+  - At least the minimum clip counts in section 5, across 6+ subjects.
+  - Syed has confirmed his loader reads your files without reshaping.

@@ -1,0 +1,37 @@
+{
+  "exercise": "squat",
+  "W": 32,
+  "F": 21,
+  "feature_order": [
+    "11x",
+    "11y",
+    "12x",
+    "12y",
+    "23x",
+    "23y",
+    "24x",
+    "24y",
+    "25x",
+    "25y",
+    "26x",
+    "26y",
+    "27x",
+    "27y",
+    "28x",
+    "28y",
+    "left_knee_angle",
+    "right_knee_angle",
+    "torso_lean",
+    "left_valgus",
+    "right_valgus"
+  ],
+  "class_labels": [
+    "good",
+    "knee_valgus",
+    "insufficient_depth",
+    "back_rounding"
+  ],
+  "normalization": "hip-center origin, torso-length scale (see contracts sec 7)",
+  "version": "v1",
+  "built": "2026-06-16"
+}
