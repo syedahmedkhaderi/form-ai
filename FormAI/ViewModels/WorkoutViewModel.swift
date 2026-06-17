@@ -8,32 +8,9 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 import AVFoundation
-
-private final class FrameDispatchGate {
-    private let lock = NSLock()
-    private var isScheduled = false
-    private var lastAcceptedTimestampMs = Int.min
-
-    func trySchedule(timestampMs: Int, minIntervalMs: Int) -> Bool {
-        lock.lock()
-        defer { lock.unlock() }
-        if isScheduled { return false }
-        if lastAcceptedTimestampMs != Int.min, timestampMs - lastAcceptedTimestampMs < minIntervalMs {
-            return false
-        }
-        isScheduled = true
-        lastAcceptedTimestampMs = timestampMs
-        return true
-    }
-
-    func finish() {
-        lock.lock()
-        isScheduled = false
-        lock.unlock()
-    }
-}
 
 @MainActor
 final class WorkoutViewModel: ObservableObject {
@@ -44,13 +21,19 @@ final class WorkoutViewModel: ObservableObject {
     // Live state
     @Published var repCount = 0
     @Published var formScore: Int = 0
+    @Published var lastLabel: String = ""
+    @Published var lastCue: String = "Get in frame to begin"
+    @Published var phase: RepPhase = .idle
+    @Published var currentAngle: Float = .nan
     @Published var liveState: LiveCoachingState = .outOfFrame
     @Published var liveMessage: String = "Get in frame to begin"
     @Published var liveSeverity: LiveCoachingSeverity = .neutral
-    @Published private(set) var hasPoseInFrame = false
+    @Published private(set) var currentFrame: PoseFrame?
+    @Published private(set) var imageSize: CGSize = .zero
 
     // Status
     @Published private(set) var usingFrontCamera = false
+    @Published var useModel = true
     @Published var voiceEnabled = true { didSet { voiceCoach.isEnabled = voiceEnabled } }
     @Published private(set) var isRunning = false
     @Published private(set) var cameraDenied = false
@@ -58,27 +41,30 @@ final class WorkoutViewModel: ObservableObject {
     @Published private(set) var poseAvailable = false
     @Published private(set) var modelStatus: String = ""
     @Published private(set) var modelLoaded = false
+    @Published var goldenTestMessage: String = ""
 
     private let cameraManager = CameraManager()
     private let poseProvider: PoseProvider
     private let voiceCoach = VoiceCoach()
     private var repCounter: RepCounter
     private var scorer: FormScorer
-    nonisolated(unsafe) private let frameDispatchGate = FrameDispatchGate()
+    private let historyStore = WorkoutHistoryStore.shared
     private var recentFrames: [PoseFrame] = []
     private var stableFrameCount = 0
     private var liveFrameCounter = 0
+    private var overlayFrameCounter = 0
     private var lastLiveCandidateLabel = ""
     private var liveCandidateStableCount = 0
     private var lastLiveWarningLabel = ""
     private var lastLiveVoiceAt: Date = .distantPast
+    private var sessionScores: [Int] = []
+    private var hasPersistedWorkout = false
 
     private let liveWindowSize = 18
     private let liveStride = 4
+    private let overlayStride = 2
     private let stableFramesRequired = 6
     private let liveSpeechCooldown: TimeInterval = 2.5
-    private let ingestIntervalMs = 50
-    private let landmarkVisibilityThreshold: Float = 0.45
 
     var session: AVCaptureSession { cameraManager.session }
 
@@ -118,17 +104,23 @@ final class WorkoutViewModel: ObservableObject {
         repCounter.reset()
         repCount = 0
         formScore = 0
-        hasPoseInFrame = false
+        lastLabel = ""
+        lastCue = "Get in frame to begin"
+        phase = .idle
+        currentFrame = nil
         liveState = .outOfFrame
         liveMessage = "Get in frame to begin"
         liveSeverity = .neutral
         recentFrames.removeAll(keepingCapacity: true)
         stableFrameCount = 0
         liveFrameCounter = 0
+        overlayFrameCounter = 0
         lastLiveCandidateLabel = ""
         liveCandidateStableCount = 0
         lastLiveWarningLabel = ""
         lastLiveVoiceAt = .distantPast
+        sessionScores.removeAll(keepingCapacity: true)
+        hasPersistedWorkout = false
     }
 
     // MARK: - Lifecycle
@@ -143,10 +135,11 @@ final class WorkoutViewModel: ObservableObject {
     }
 
     func stop() {
+        persistWorkoutSummaryIfNeeded()
         cameraManager.stop()
         voiceCoach.stop()
         isRunning = false
-        hasPoseInFrame = false
+        currentFrame = nil
     }
 
     /// Flip between front and back camera.
@@ -155,12 +148,19 @@ final class WorkoutViewModel: ObservableObject {
         usingFrontCamera.toggle()
     }
 
+    // MARK: - Golden test
+
+    func runGoldenTest() {
+        let result = PreprocessGoldenTest.run(for: exercise)
+        goldenTestMessage = result.message
+    }
+
     // MARK: - Scoring a completed rep
 
     private func handleCompletedRep(_ frames: [PoseFrame]) {
         var result: ScoreResult?
 
-        if scorer.isLoaded,
+        if useModel, scorer.isLoaded,
            let window = FormPreprocessor.preprocess(frames: frames, exercise: exercise, arm: arm) {
             result = scorer.score(window: window)
         }
@@ -170,11 +170,30 @@ final class WorkoutViewModel: ObservableObject {
 
         guard let r = result else { return }
         formScore = r.score
+        lastLabel = r.label
+        sessionScores.append(r.score)
         let cue = Cue.text(for: r.label, exercise: exercise)
-        setLiveState(.repComplete, message: "Last rep scored \(r.score). \(cue)", severity: Cue.isGood(r.label) ? .success : .caution)
+        lastCue = cue
+        liveState = .repComplete
+        liveMessage = "Last rep scored \(r.score). \(cue)"
+        liveSeverity = Cue.isGood(r.label) ? .success : .caution
         lastLiveCandidateLabel = ""
         liveCandidateStableCount = 0
         voiceCoach.speak(cue, interrupt: true)
+    }
+
+    private func persistWorkoutSummaryIfNeeded() {
+        guard !hasPersistedWorkout, repCount > 0 else { return }
+        let averageScore = sessionScores.isEmpty ? formScore : Int((Float(sessionScores.reduce(0, +)) / Float(sessionScores.count)).rounded())
+        historyStore.record(
+            WorkoutSummary(
+                exercise: exercise,
+                reps: repCount,
+                averageScore: averageScore,
+                finalScore: formScore
+            )
+        )
+        hasPersistedWorkout = true
     }
 
     private func setLiveState(_ state: LiveCoachingState, message: String, severity: LiveCoachingSeverity) {
@@ -184,33 +203,15 @@ final class WorkoutViewModel: ObservableObject {
         liveSeverity = severity
     }
 
-    private func isFrameUsable(_ frame: PoseFrame) -> Bool {
-        let indices: [Int]
-        switch exercise {
-        case .squat:
-            indices = [
-                PoseLandmarkIndex.leftShoulder, PoseLandmarkIndex.rightShoulder,
-                PoseLandmarkIndex.leftHip, PoseLandmarkIndex.rightHip,
-                PoseLandmarkIndex.leftKnee, PoseLandmarkIndex.rightKnee,
-                PoseLandmarkIndex.leftAnkle, PoseLandmarkIndex.rightAnkle
-            ]
-        case .curl:
-            let elbow = arm == .right ? PoseLandmarkIndex.rightElbow : PoseLandmarkIndex.leftElbow
-            let wrist = arm == .right ? PoseLandmarkIndex.rightWrist : PoseLandmarkIndex.leftWrist
-            let shoulder = arm == .right ? PoseLandmarkIndex.rightShoulder : PoseLandmarkIndex.leftShoulder
-            let hip = arm == .right ? PoseLandmarkIndex.rightHip : PoseLandmarkIndex.leftHip
-            indices = [
-                shoulder, elbow, wrist, hip,
-                PoseLandmarkIndex.leftShoulder, PoseLandmarkIndex.rightShoulder
-            ]
-        }
-
-        return indices.allSatisfy { frame[$0].visibility >= landmarkVisibilityThreshold }
-    }
-
     private func updateRepStatus(from event: RepEvent) {
         if repCount != event.count {
             repCount = event.count
+        }
+        if phase != event.phase {
+            phase = event.phase
+        }
+        if currentAngle.isNaN != event.currentAngle.isNaN || (!currentAngle.isNaN && abs(currentAngle - event.currentAngle) >= 0.5) {
+            currentAngle = event.currentAngle
         }
     }
 
@@ -276,39 +277,31 @@ extension WorkoutViewModel: PoseProviderDelegate {
                                   didDetect frame: PoseFrame?,
                                   imageSize: CGSize,
                                   timestampMs: Int) {
-        guard frameDispatchGate.trySchedule(timestampMs: timestampMs, minIntervalMs: ingestIntervalMs) else { return }
+        let bufferSize = cameraManager.bufferSize
         DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            defer { self.frameDispatchGate.finish() }
-            self.ingest(frame: frame)
+            self?.ingest(frame: frame, bufferSize: bufferSize)
         }
     }
 
-    private func ingest(frame: PoseFrame?) {
+    private func ingest(frame: PoseFrame?, bufferSize: CGSize) {
+        if imageSize != bufferSize {
+            imageSize = bufferSize
+        }
         guard let frame else {
             stableFrameCount = 0
+            overlayFrameCounter = 0
             recentFrames.removeAll(keepingCapacity: true)
-            if hasPoseInFrame {
-                hasPoseInFrame = false
-            }
+            currentFrame = nil
             setLiveState(.outOfFrame, message: "Get in frame to begin.", severity: .neutral)
-            return
-        }
-
-        guard isFrameUsable(frame) else {
-            stableFrameCount = 0
-            recentFrames.removeAll(keepingCapacity: true)
-            if hasPoseInFrame {
-                hasPoseInFrame = false
-            }
-            setLiveState(.stabilizing, message: "Hold still and keep the key joints visible.", severity: .neutral)
             return
         }
 
         stableFrameCount += 1
         liveFrameCounter += 1
-        if !hasPoseInFrame {
-            hasPoseInFrame = true
+        overlayFrameCounter += 1
+
+        if currentFrame == nil || overlayFrameCounter % overlayStride == 0 {
+            currentFrame = frame
         }
 
         if recentFrames.count == liveWindowSize {

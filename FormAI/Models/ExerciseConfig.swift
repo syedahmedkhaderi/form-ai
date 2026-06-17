@@ -174,3 +174,99 @@ struct LiveRuleEvaluation: Equatable {
     let stable: Bool
     let shouldSpeak: Bool
 }
+
+struct WorkoutSummary: Codable, Equatable, Identifiable {
+    let id: UUID
+    let timestamp: Date
+    let exerciseRawValue: String
+    let reps: Int
+    let averageScore: Int
+    let finalScore: Int
+
+    init(id: UUID = UUID(), timestamp: Date = Date(), exercise: Exercise, reps: Int, averageScore: Int, finalScore: Int) {
+        self.id = id
+        self.timestamp = timestamp
+        self.exerciseRawValue = exercise.rawValue
+        self.reps = reps
+        self.averageScore = averageScore
+        self.finalScore = finalScore
+    }
+
+    var exercise: Exercise {
+        Exercise(rawValue: exerciseRawValue) ?? .squat
+    }
+}
+
+struct WorkoutStats: Equatable {
+    let totalWorkouts: Int
+    let streakDays: Int
+    let lastWorkout: WorkoutSummary?
+    let bestAverageByExercise: [Exercise: Int]
+}
+
+final class WorkoutHistoryStore {
+    static let shared = WorkoutHistoryStore()
+
+    private let key = "formai.workoutHistory.v1"
+    private let defaults = UserDefaults.standard
+    private let calendar = Calendar.current
+
+    private init() {}
+
+    func record(_ summary: WorkoutSummary) {
+        var items = loadAll()
+        items.append(summary)
+        save(items)
+    }
+
+    func stats() -> WorkoutStats {
+        let workouts = loadAll().sorted { $0.timestamp > $1.timestamp }
+        var bestAverageByExercise: [Exercise: Int] = [:]
+        for summary in workouts {
+            bestAverageByExercise[summary.exercise] = max(bestAverageByExercise[summary.exercise] ?? 0, summary.averageScore)
+        }
+        return WorkoutStats(
+            totalWorkouts: workouts.count,
+            streakDays: streakDays(from: workouts),
+            lastWorkout: workouts.first,
+            bestAverageByExercise: bestAverageByExercise
+        )
+    }
+
+    private func loadAll() -> [WorkoutSummary] {
+        guard let data = defaults.data(forKey: key),
+              let items = try? JSONDecoder().decode([WorkoutSummary].self, from: data) else {
+            return []
+        }
+        return items
+    }
+
+    private func save(_ items: [WorkoutSummary]) {
+        guard let data = try? JSONEncoder().encode(items) else { return }
+        defaults.set(data, forKey: key)
+    }
+
+    private func streakDays(from workouts: [WorkoutSummary]) -> Int {
+        guard !workouts.isEmpty else { return 0 }
+        let uniqueDays = workouts
+            .map { calendar.startOfDay(for: $0.timestamp) }
+            .reduce(into: [Date]()) { days, day in
+                if !days.contains(day) { days.append(day) }
+            }
+            .sorted(by: >)
+
+        guard let firstDay = uniqueDays.first else { return 0 }
+        var expectedDay = firstDay
+        var streak = 0
+        for day in uniqueDays {
+            if calendar.isDate(day, inSameDayAs: expectedDay) {
+                streak += 1
+                guard let next = calendar.date(byAdding: .day, value: -1, to: expectedDay) else { break }
+                expectedDay = next
+            } else if day < expectedDay {
+                break
+            }
+        }
+        return streak
+    }
+}
