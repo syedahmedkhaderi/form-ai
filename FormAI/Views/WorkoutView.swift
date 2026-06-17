@@ -31,6 +31,7 @@ struct WorkoutView: View {
             VStack(spacing: 0) {
                 topBar
                 statusBanners
+                liveChipRow
                 Spacer()
                 bottomPanel
             }
@@ -117,6 +118,22 @@ struct WorkoutView: View {
         .padding(.top, 8)
     }
 
+    private var liveChipRow: some View {
+        HStack {
+            Text(vm.liveSeverity.chipText)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(vm.liveSeverity == .neutral ? .white : .black)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 7)
+                .background(
+                    Capsule()
+                        .fill(vm.liveSeverity == .neutral ? Color.black.opacity(0.45) : vm.liveSeverity.color)
+                )
+            Spacer()
+        }
+        .padding(.top, 8)
+    }
+
     private func banner(icon: String, text: String, tint: Color) -> some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
@@ -132,6 +149,8 @@ struct WorkoutView: View {
 
     private var bottomPanel: some View {
         VStack(spacing: 14) {
+            coachingCard
+
             // Last spoken cue
             HStack(spacing: 12) {
                 Image(systemName: Cue.isGood(vm.lastLabel) ? "checkmark.circle.fill" : "waveform")
@@ -176,7 +195,35 @@ struct WorkoutView: View {
             }
             .padding(10)
             .background(.black.opacity(0.35), in: RoundedRectangle(cornerRadius: 16))
+
+            if vm.liveState == .outOfFrame || vm.liveState == .stabilizing {
+                Text(vm.exercise == .squat ? "Tip: use a slight side angle and keep your full body visible." : "Tip: keep the working arm, shoulder, and torso clearly visible.")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.85))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 6)
+            }
         }
+    }
+
+    private var coachingCard: some View {
+        HStack(alignment: .center, spacing: 12) {
+            Image(systemName: coachingIcon)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(vm.liveSeverity.color)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(vm.liveState.title)
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Text(vm.liveMessage)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.92))
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(coachingCardBackground, in: RoundedRectangle(cornerRadius: 16))
     }
 
     private var cameraDeniedView: some View {
@@ -200,5 +247,32 @@ struct WorkoutView: View {
         case 50..<80: return .yellow
         default: return .red
         }
+    }
+
+    private var coachingIcon: String {
+        switch vm.liveState {
+        case .outOfFrame: return "viewfinder"
+        case .stabilizing: return "pause.circle.fill"
+        case .ready: return "checkmark.circle"
+        case .repActive: return "figure.strengthtraining.traditional"
+        case .warning: return "exclamationmark.triangle.fill"
+        case .goodMovement: return "hand.thumbsup.fill"
+        case .repComplete: return "number.circle.fill"
+        }
+    }
+
+    private var coachingCardBackground: LinearGradient {
+        let colors: [Color]
+        switch vm.liveSeverity {
+        case .neutral:
+            colors = [Color.black.opacity(0.62), Color.black.opacity(0.42)]
+        case .success:
+            colors = [Color.green.opacity(0.82), Color.black.opacity(0.45)]
+        case .caution:
+            colors = [Color.yellow.opacity(0.78), Color.black.opacity(0.5)]
+        case .warning:
+            colors = [Color.orange.opacity(0.85), Color.red.opacity(0.55)]
+        }
+        return LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
     }
 }

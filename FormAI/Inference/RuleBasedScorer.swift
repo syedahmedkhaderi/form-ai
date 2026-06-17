@@ -22,6 +22,21 @@ enum RuleBasedScorer {
         }
     }
 
+    static func liveEvaluation(
+        frames: [PoseFrame],
+        exercise: Exercise,
+        arm: Arm,
+        progress: RepProgress
+    ) -> LiveRuleEvaluation? {
+        guard frames.count >= 6 else { return nil }
+        switch exercise {
+        case .squat:
+            return liveSquatEvaluation(frames, progress: progress)
+        case .curl:
+            return liveCurlEvaluation(frames, arm: arm, progress: progress)
+        }
+    }
+
     // MARK: - Squat
 
     private static func scoreSquat(_ frames: [PoseFrame]) -> ScoreResult {
@@ -114,6 +129,145 @@ enum RuleBasedScorer {
             return result(label: "elbow_flare", score: 60)
         }
         return result(label: "good", score: 90)
+    }
+
+    // MARK: - Live Squat
+
+    private static func liveSquatEvaluation(_ frames: [PoseFrame], progress: RepProgress) -> LiveRuleEvaluation? {
+        let I = PoseLandmarkIndex.self
+        var kneeAngles: [Float] = []
+        var valgusSignals: [Float] = []
+        var torsoLeans: [Float] = []
+
+        for frame in frames {
+            guard let leftKnee = angle(frame, I.leftHip, I.leftKnee, I.leftAnkle),
+                  let rightKnee = angle(frame, I.rightHip, I.rightKnee, I.rightAnkle) else { continue }
+            kneeAngles.append((leftKnee + rightKnee) / 2)
+
+            let lk = frame[I.leftKnee], la = frame[I.leftAnkle]
+            let rk = frame[I.rightKnee], ra = frame[I.rightAnkle]
+            if [lk, la, rk, ra].allSatisfy({ $0.x.isFinite && $0.y.isFinite }) {
+                valgusSignals.append(abs((lk.x - la.x) - (rk.x - ra.x)))
+            }
+
+            let ls = frame[I.leftShoulder], rs = frame[I.rightShoulder], lh = frame[I.leftHip], rh = frame[I.rightHip]
+            if [ls, rs, lh, rh].allSatisfy({ $0.x.isFinite && $0.y.isFinite }) {
+                let shoulders = Vec2(x: (ls.x + rs.x) / 2, y: (ls.y + rs.y) / 2)
+                let hips = Vec2(x: (lh.x + rh.x) / 2, y: (lh.y + rh.y) / 2)
+                torsoLeans.append(Geometry.angleBetween(shoulders - hips, axis: Vec2(x: 0, y: -1)))
+            }
+        }
+
+        guard !kneeAngles.isEmpty else { return nil }
+
+        let minKnee = kneeAngles.min() ?? 180
+        let avgValgus = valgusSignals.isEmpty ? 0 : valgusSignals.reduce(0, +) / Float(valgusSignals.count)
+        let maxTorso = torsoLeans.max() ?? 0
+
+        if progress == .rising && minKnee > 120 {
+            return LiveRuleEvaluation(label: "insufficient_depth",
+                                      message: "Go a little lower before standing up.",
+                                      severity: .caution,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if progress == .descending || progress == .bottom, avgValgus > 0.18 {
+            return LiveRuleEvaluation(label: "knee_valgus",
+                                      message: "Push your knees out as you lower.",
+                                      severity: .warning,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if (progress == .descending || progress == .bottom) && maxTorso > 38 {
+            return LiveRuleEvaluation(label: "back_rounding",
+                                      message: "Keep your chest up and torso tall.",
+                                      severity: .warning,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if progress == .descending || progress == .bottom || progress == .rising {
+            return LiveRuleEvaluation(label: "good",
+                                      message: "Good movement. Stay controlled.",
+                                      severity: .success,
+                                      stable: true,
+                                      shouldSpeak: false)
+        }
+        return nil
+    }
+
+    // MARK: - Live Curl
+
+    private static func liveCurlEvaluation(_ frames: [PoseFrame], arm: Arm, progress: RepProgress) -> LiveRuleEvaluation? {
+        let I = PoseLandmarkIndex.self
+        let shoulder = arm == .right ? I.rightShoulder : I.leftShoulder
+        let elbow = arm == .right ? I.rightElbow : I.leftElbow
+        let wrist = arm == .right ? I.rightWrist : I.leftWrist
+        let otherShoulder = arm == .right ? I.leftShoulder : I.rightShoulder
+        let otherElbow = arm == .right ? I.leftElbow : I.rightElbow
+        let otherWrist = arm == .right ? I.leftWrist : I.rightWrist
+        let otherHip = arm == .right ? I.leftHip : I.rightHip
+        let workingHip = arm == .right ? I.rightHip : I.leftHip
+
+        var elbowAngles: [Float] = []
+        var torsoLeans: [Float] = []
+        var flares: [Float] = []
+
+        for frame in frames {
+            if let angle = angle(frame, shoulder, elbow, wrist) {
+                elbowAngles.append(angle)
+            }
+
+            let s = frame[shoulder], os = frame[otherShoulder], h = frame[workingHip], oh = frame[otherHip]
+            if [s, os, h, oh].allSatisfy({ $0.x.isFinite && $0.y.isFinite }) {
+                let shoulders = Vec2(x: (s.x + os.x) / 2, y: (s.y + os.y) / 2)
+                let hips = Vec2(x: (h.x + oh.x) / 2, y: (h.y + oh.y) / 2)
+                torsoLeans.append(Geometry.angleBetween(shoulders - hips, axis: Vec2(x: 0, y: -1)))
+            }
+
+            let elbowPoint = frame[elbow]
+            let shoulderPoint = frame[shoulder]
+            if elbowPoint.x.isFinite && shoulderPoint.x.isFinite {
+                flares.append(abs(elbowPoint.x - shoulderPoint.x))
+            }
+
+            _ = otherElbow
+            _ = otherWrist
+        }
+
+        guard let minElbow = elbowAngles.min(), let maxElbow = elbowAngles.max() else { return nil }
+        let elbowRange = maxElbow - minElbow
+        let maxTorso = torsoLeans.max() ?? 0
+        let maxFlare = flares.max() ?? 0
+
+        if (progress == .descending || progress == .rising || progress == .bottom) && maxTorso > 20 {
+            return LiveRuleEvaluation(label: "swing",
+                                      message: "Keep your torso still. Stop swinging.",
+                                      severity: .warning,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if (progress == .descending || progress == .bottom) && maxFlare > 0.16 {
+            return LiveRuleEvaluation(label: "elbow_flare",
+                                      message: "Tuck your elbow closer to your side.",
+                                      severity: .caution,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if progress == .rising && elbowRange < 45 {
+            return LiveRuleEvaluation(label: "partial_rom",
+                                      message: "Curl higher before lowering the weight.",
+                                      severity: .caution,
+                                      stable: true,
+                                      shouldSpeak: true)
+        }
+        if progress == .descending || progress == .bottom || progress == .rising {
+            return LiveRuleEvaluation(label: "good",
+                                      message: "Good control. Keep the rep smooth.",
+                                      severity: .success,
+                                      stable: true,
+                                      shouldSpeak: false)
+        }
+        return nil
     }
 
     // MARK: - Helpers

@@ -2,8 +2,8 @@
 //  HomeView.swift
 //  FormAI
 //
-//  Exercise picker + arm select + start (Islam doc section 8). Narrow scope,
-//  polished. Also exposes the preprocessing self-test (the golden gate).
+//  Exercise picker + dashboard. Keeps setup simple while adding progress,
+//  roadmap, and safety context around the live workout flow.
 //
 
 import SwiftUI
@@ -12,13 +12,13 @@ struct HomeView: View {
     @State private var exercise: Exercise = .squat
     @State private var arm: Arm = .right
     @State private var goldenMessage: String = ""
+    @State private var stats = WorkoutHistoryStore.shared.stats()
 
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 24) {
+                VStack(spacing: 22) {
                     header
-
                     exerciseCards
 
                     if exercise == .curl {
@@ -31,11 +31,14 @@ struct HomeView: View {
                         Label("Start workout", systemImage: "play.fill")
                             .font(.headline)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 6)
+                            .padding(.vertical, 8)
                     }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
 
+                    progressSection
+                    roadmapSection
+                    safetySection
                     developerSection
                 }
                 .padding()
@@ -44,6 +47,9 @@ struct HomeView: View {
             .background(Color(.systemGroupedBackground))
         }
         .navigationViewStyle(.stack)
+        .onAppear {
+            stats = WorkoutHistoryStore.shared.stats()
+        }
     }
 
     private var header: some View {
@@ -51,6 +57,8 @@ struct HomeView: View {
             Image(systemName: "figure.run.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.tint)
+            Text("FormAI")
+                .font(.system(size: 34, weight: .black, design: .rounded))
             Text("Real-time form coaching")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -98,6 +106,104 @@ struct HomeView: View {
         }
     }
 
+    private var progressSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
+                .font(.headline)
+
+            HStack(spacing: 12) {
+                statPill(title: "Workouts", value: "\(stats.totalWorkouts)")
+                statPill(title: "Streak", value: "\(stats.streakDays)d")
+                statPill(title: "Best Curl", value: bestValue(for: .curl))
+            }
+
+            if let lastWorkout = stats.lastWorkout {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Last workout")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                    Text("\(lastWorkout.exercise.displayName) · \(lastWorkout.reps) reps · avg \(lastWorkout.averageScore)")
+                        .font(.subheadline.weight(.semibold))
+                    Text(lastWorkout.timestamp.formatted(date: .abbreviated, time: .shortened))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            } else {
+                Text("No local history yet. Finish one workout to unlock streaks and recent session stats.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemGroupedBackground)))
+    }
+
+    private func statPill(title: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.title3.weight(.bold))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(RoundedRectangle(cornerRadius: 14).fill(Color.white.opacity(0.75)))
+    }
+
+    private func bestValue(for exercise: Exercise) -> String {
+        guard let value = stats.bestAverageByExercise[exercise] else { return "—" }
+        return "\(value)"
+    }
+
+    private var roadmapSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Supported Now", systemImage: "checkmark.seal.fill")
+                .font(.headline)
+
+            HStack(spacing: 10) {
+                tag("Squat", tint: .green)
+                tag("Dumbbell Curl", tint: .blue)
+            }
+
+            Divider()
+
+            Label("Planned Next", systemImage: "sparkles")
+                .font(.headline)
+
+            HStack(spacing: 10) {
+                tag("Lunge", tint: .orange)
+                tag("Guided Mode", tint: .purple)
+                tag("Exercise Library", tint: .pink)
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemGroupedBackground)))
+    }
+
+    private func tag(_ text: String, tint: Color) -> some View {
+        Text(text)
+            .font(.subheadline.weight(.semibold))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(Capsule().fill(tint.opacity(0.14)))
+            .foregroundStyle(tint)
+    }
+
+    private var safetySection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("Safety Tips", systemImage: "cross.case.fill")
+                .font(.headline)
+            Text("Stop the set if you feel pain, the pose keeps dropping out, or you cannot keep your full body in frame.")
+                .font(.subheadline)
+            Text("For squats, use a slight side angle. For curls, keep the working arm visible and move slowly to help the coach catch bad form early.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemGroupedBackground)))
+    }
+
     private var developerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Developer").font(.headline)
@@ -116,6 +222,6 @@ struct HomeView: View {
             }
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 16).fill(Color(.secondarySystemGroupedBackground)))
+        .background(RoundedRectangle(cornerRadius: 16).fill(Color(.tertiarySystemGroupedBackground)))
     }
 }

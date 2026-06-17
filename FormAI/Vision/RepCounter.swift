@@ -24,10 +24,20 @@ enum RepPhase {
     case moving      // between thresholds
 }
 
+enum RepProgress: Equatable {
+    case searching
+    case ready
+    case descending
+    case bottom
+    case rising
+    case completed
+}
+
 struct RepEvent {
     var count: Int
     var currentAngle: Float
     var phase: RepPhase
+    var progress: RepProgress
     /// Non-nil exactly on the frame a rep completes; the buffered rep clip.
     var completedRep: [PoseFrame]?
 }
@@ -72,7 +82,7 @@ final class RepCounter {
     func consume(_ frame: PoseFrame) -> RepEvent {
         guard let angle = trackedAngle(frame) else {
             // Bad detection this frame: report idle-ish state, change nothing.
-            return RepEvent(count: count, currentAngle: .nan, phase: started ? .moving : .idle, completedRep: nil)
+            return RepEvent(count: count, currentAngle: .nan, phase: started ? .moving : .idle, progress: started ? .ready : .searching, completedRep: nil)
         }
 
         let phase: RepPhase = angle > highThreshold ? .top : (angle < lowThreshold ? .bottom : .moving)
@@ -84,7 +94,13 @@ final class RepCounter {
                 hasBeenLow = false
                 buffer = [frame]
             }
-            return RepEvent(count: count, currentAngle: angle, phase: started ? .top : .idle, completedRep: nil)
+            return RepEvent(
+                count: count,
+                currentAngle: angle,
+                phase: started ? .top : .idle,
+                progress: started ? .ready : .searching,
+                completedRep: nil
+            )
         }
 
         buffer.append(frame)
@@ -103,10 +119,19 @@ final class RepCounter {
             let rep = buffer
             buffer = [frame]   // next rep starts at this top frame
             hasBeenLow = false
-            return RepEvent(count: count, currentAngle: angle, phase: .top, completedRep: rep)
+            return RepEvent(count: count, currentAngle: angle, phase: .top, progress: .completed, completedRep: rep)
         }
 
-        return RepEvent(count: count, currentAngle: angle, phase: phase, completedRep: nil)
+        let progress: RepProgress
+        if hasBeenLow {
+            progress = angle < lowThreshold ? .bottom : .rising
+        } else if angle > highThreshold {
+            progress = .ready
+        } else {
+            progress = .descending
+        }
+
+        return RepEvent(count: count, currentAngle: angle, phase: phase, progress: progress, completedRep: nil)
     }
 
     // MARK: - Tracked angle (raw landmarks; angle is scale/translation invariant)

@@ -21,7 +21,7 @@ struct SkeletonOverlay: View {
 
     var body: some View {
         GeometryReader { geo in
-            Canvas { context, size in
+            Canvas(rendersAsynchronously: true) { context, size in
                 guard let frame, imageSize.width > 0, imageSize.height > 0 else { return }
                 let transform = AspectFill.transform(image: imageSize, view: size)
 

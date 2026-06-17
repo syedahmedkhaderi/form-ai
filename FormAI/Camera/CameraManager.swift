@@ -60,7 +60,9 @@ final class CameraManager: NSObject {
     private func configure() {
         configured = true
         session.beginConfiguration()
-        session.sessionPreset = .hd1280x720
+        // 640x480 keeps pose quality acceptable while reducing the amount of
+        // camera and overlay work the device has to push through each frame.
+        session.sessionPreset = .vga640x480
 
         videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
         videoOutput.alwaysDiscardsLateVideoFrames = true
@@ -103,6 +105,15 @@ final class CameraManager: NSObject {
         session.addInput(input)
         videoInput = input
         position = newPosition
+
+        // Capping capture rate helps the live pipeline stay responsive instead
+        // of queueing more frames than the app can coach in real time.
+        if (try? device.lockForConfiguration()) != nil {
+            let targetFrameDuration = CMTime(value: 1, timescale: 24)
+            device.activeVideoMinFrameDuration = targetFrameDuration
+            device.activeVideoMaxFrameDuration = targetFrameDuration
+            device.unlockForConfiguration()
+        }
 
         // Rotate the output to portrait-upright (90 degrees). Keep the image
         // NON-mirrored on the front camera so left/right (and valgus) stay
