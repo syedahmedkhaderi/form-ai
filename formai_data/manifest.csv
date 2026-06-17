@@ -1,629 +1,643 @@
-clip_id,file,exercise,view,label,error_type,subject_id,fps,num_frames,notes
-squat_0001,squat/clip_0001.npy,squat,front,good,none,subject_01,30,181,real
-squat_0002,squat/clip_0002.npy,squat,front,bad,knee_valgus,subject_01,30,181,real+augmented
-squat_0003,squat/clip_0003.npy,squat,front,bad,insufficient_depth,subject_01,30,181,real+augmented
-squat_0004,squat/clip_0004.npy,squat,front,bad,back_rounding,subject_01,30,181,real+augmented
-squat_0005,squat/clip_0005.npy,squat,front,good,none,subject_02,30,122,real
-squat_0006,squat/clip_0006.npy,squat,front,bad,knee_valgus,subject_02,30,122,real+augmented
-squat_0007,squat/clip_0007.npy,squat,front,bad,insufficient_depth,subject_02,30,122,real+augmented
-squat_0008,squat/clip_0008.npy,squat,front,bad,back_rounding,subject_02,30,122,real+augmented
-squat_0009,squat/clip_0009.npy,squat,front,good,none,subject_03,30,184,real
-squat_0010,squat/clip_0010.npy,squat,front,bad,knee_valgus,subject_03,30,184,real+augmented
-squat_0011,squat/clip_0011.npy,squat,front,bad,insufficient_depth,subject_03,30,184,real+augmented
-squat_0012,squat/clip_0012.npy,squat,front,bad,back_rounding,subject_03,30,184,real+augmented
-squat_0013,squat/clip_0013.npy,squat,front,good,none,subject_04,30,109,real
-squat_0014,squat/clip_0014.npy,squat,front,bad,knee_valgus,subject_04,30,109,real+augmented
-squat_0015,squat/clip_0015.npy,squat,front,bad,insufficient_depth,subject_04,30,109,real+augmented
-squat_0016,squat/clip_0016.npy,squat,front,bad,back_rounding,subject_04,30,109,real+augmented
-squat_0017,squat/clip_0017.npy,squat,front,good,none,subject_05,30,102,real
-squat_0018,squat/clip_0018.npy,squat,front,bad,knee_valgus,subject_05,30,102,real+augmented
-squat_0019,squat/clip_0019.npy,squat,front,bad,insufficient_depth,subject_05,30,102,real+augmented
-squat_0020,squat/clip_0020.npy,squat,front,bad,back_rounding,subject_05,30,102,real+augmented
-squat_0021,squat/clip_0021.npy,squat,front,good,none,subject_06,30,101,real
-squat_0022,squat/clip_0022.npy,squat,front,bad,knee_valgus,subject_06,30,101,real+augmented
-squat_0023,squat/clip_0023.npy,squat,front,bad,insufficient_depth,subject_06,30,101,real+augmented
-squat_0024,squat/clip_0024.npy,squat,front,bad,back_rounding,subject_06,30,101,real+augmented
-squat_0025,squat/clip_0025.npy,squat,front,good,none,subject_07,30,108,real
-squat_0026,squat/clip_0026.npy,squat,front,bad,knee_valgus,subject_07,30,108,real+augmented
-squat_0027,squat/clip_0027.npy,squat,front,bad,insufficient_depth,subject_07,30,108,real+augmented
-squat_0028,squat/clip_0028.npy,squat,front,bad,back_rounding,subject_07,30,108,real+augmented
-squat_0029,squat/clip_0029.npy,squat,front,good,none,subject_08,30,107,real
-squat_0030,squat/clip_0030.npy,squat,front,bad,knee_valgus,subject_08,30,107,real+augmented
-squat_0031,squat/clip_0031.npy,squat,front,bad,insufficient_depth,subject_08,30,107,real+augmented
-squat_0032,squat/clip_0032.npy,squat,front,bad,back_rounding,subject_08,30,107,real+augmented
-squat_0033,squat/clip_0033.npy,squat,front,good,none,subject_01,30,85,real
-squat_0034,squat/clip_0034.npy,squat,front,bad,knee_valgus,subject_01,30,85,real+augmented
-squat_0035,squat/clip_0035.npy,squat,front,bad,insufficient_depth,subject_01,30,85,real+augmented
-squat_0036,squat/clip_0036.npy,squat,front,bad,back_rounding,subject_01,30,85,real+augmented
-squat_0037,squat/clip_0037.npy,squat,front,good,none,subject_02,30,84,real
-squat_0038,squat/clip_0038.npy,squat,front,bad,knee_valgus,subject_02,30,84,real+augmented
-squat_0039,squat/clip_0039.npy,squat,front,bad,insufficient_depth,subject_02,30,84,real+augmented
-squat_0040,squat/clip_0040.npy,squat,front,bad,back_rounding,subject_02,30,84,real+augmented
-squat_0041,squat/clip_0041.npy,squat,front,good,none,subject_03,30,75,real
-squat_0042,squat/clip_0042.npy,squat,front,bad,knee_valgus,subject_03,30,75,real+augmented
-squat_0043,squat/clip_0043.npy,squat,front,bad,insufficient_depth,subject_03,30,75,real+augmented
-squat_0044,squat/clip_0044.npy,squat,front,bad,back_rounding,subject_03,30,75,real+augmented
-squat_0045,squat/clip_0045.npy,squat,front,good,none,subject_04,30,105,real
-squat_0046,squat/clip_0046.npy,squat,front,bad,knee_valgus,subject_04,30,105,real+augmented
-squat_0047,squat/clip_0047.npy,squat,front,bad,insufficient_depth,subject_04,30,105,real+augmented
-squat_0048,squat/clip_0048.npy,squat,front,bad,back_rounding,subject_04,30,105,real+augmented
-squat_0049,squat/clip_0049.npy,squat,front,good,none,subject_05,30,105,real
-squat_0050,squat/clip_0050.npy,squat,front,bad,knee_valgus,subject_05,30,105,real+augmented
-squat_0051,squat/clip_0051.npy,squat,front,bad,insufficient_depth,subject_05,30,105,real+augmented
-squat_0052,squat/clip_0052.npy,squat,front,bad,back_rounding,subject_05,30,105,real+augmented
-squat_0053,squat/clip_0053.npy,squat,front,good,none,subject_06,30,96,real
-squat_0054,squat/clip_0054.npy,squat,front,bad,knee_valgus,subject_06,30,96,real+augmented
-squat_0055,squat/clip_0055.npy,squat,front,bad,insufficient_depth,subject_06,30,96,real+augmented
-squat_0056,squat/clip_0056.npy,squat,front,bad,back_rounding,subject_06,30,96,real+augmented
-squat_0057,squat/clip_0057.npy,squat,front,good,none,subject_07,30,80,real
-squat_0058,squat/clip_0058.npy,squat,front,bad,knee_valgus,subject_07,30,80,real+augmented
-squat_0059,squat/clip_0059.npy,squat,front,bad,insufficient_depth,subject_07,30,80,real+augmented
-squat_0060,squat/clip_0060.npy,squat,front,bad,back_rounding,subject_07,30,80,real+augmented
-squat_0061,squat/clip_0061.npy,squat,front,good,none,subject_08,30,93,real
-squat_0062,squat/clip_0062.npy,squat,front,bad,knee_valgus,subject_08,30,93,real+augmented
-squat_0063,squat/clip_0063.npy,squat,front,bad,insufficient_depth,subject_08,30,93,real+augmented
-squat_0064,squat/clip_0064.npy,squat,front,bad,back_rounding,subject_08,30,93,real+augmented
-squat_0065,squat/clip_0065.npy,squat,front,good,none,subject_01,30,120,real
-squat_0066,squat/clip_0066.npy,squat,front,bad,knee_valgus,subject_01,30,120,real+augmented
-squat_0067,squat/clip_0067.npy,squat,front,bad,insufficient_depth,subject_01,30,120,real+augmented
-squat_0068,squat/clip_0068.npy,squat,front,bad,back_rounding,subject_01,30,120,real+augmented
-squat_0069,squat/clip_0069.npy,squat,front,good,none,subject_02,30,90,real
-squat_0070,squat/clip_0070.npy,squat,front,bad,knee_valgus,subject_02,30,90,real+augmented
-squat_0071,squat/clip_0071.npy,squat,front,bad,insufficient_depth,subject_02,30,90,real+augmented
-squat_0072,squat/clip_0072.npy,squat,front,bad,back_rounding,subject_02,30,90,real+augmented
-squat_0073,squat/clip_0073.npy,squat,front,good,none,subject_03,30,156,real
-squat_0074,squat/clip_0074.npy,squat,front,bad,knee_valgus,subject_03,30,156,real+augmented
-squat_0075,squat/clip_0075.npy,squat,front,bad,insufficient_depth,subject_03,30,156,real+augmented
-squat_0076,squat/clip_0076.npy,squat,front,bad,back_rounding,subject_03,30,156,real+augmented
-squat_0077,squat/clip_0077.npy,squat,front,good,none,subject_04,30,110,real
-squat_0078,squat/clip_0078.npy,squat,front,bad,knee_valgus,subject_04,30,110,real+augmented
-squat_0079,squat/clip_0079.npy,squat,front,bad,insufficient_depth,subject_04,30,110,real+augmented
-squat_0080,squat/clip_0080.npy,squat,front,bad,back_rounding,subject_04,30,110,real+augmented
-squat_0081,squat/clip_0081.npy,squat,front,good,none,subject_05,30,102,real
-squat_0082,squat/clip_0082.npy,squat,front,bad,knee_valgus,subject_05,30,102,real+augmented
-squat_0083,squat/clip_0083.npy,squat,front,bad,insufficient_depth,subject_05,30,102,real+augmented
-squat_0084,squat/clip_0084.npy,squat,front,bad,back_rounding,subject_05,30,102,real+augmented
-squat_0085,squat/clip_0085.npy,squat,front,good,none,subject_06,30,108,real
-squat_0086,squat/clip_0086.npy,squat,front,bad,knee_valgus,subject_06,30,108,real+augmented
-squat_0087,squat/clip_0087.npy,squat,front,bad,insufficient_depth,subject_06,30,108,real+augmented
-squat_0088,squat/clip_0088.npy,squat,front,bad,back_rounding,subject_06,30,108,real+augmented
-squat_0089,squat/clip_0089.npy,squat,front,good,none,subject_07,30,103,real
-squat_0090,squat/clip_0090.npy,squat,front,bad,knee_valgus,subject_07,30,103,real+augmented
-squat_0091,squat/clip_0091.npy,squat,front,bad,insufficient_depth,subject_07,30,103,real+augmented
-squat_0092,squat/clip_0092.npy,squat,front,bad,back_rounding,subject_07,30,103,real+augmented
-squat_0093,squat/clip_0093.npy,squat,front,good,none,subject_08,30,98,real
-squat_0094,squat/clip_0094.npy,squat,front,bad,knee_valgus,subject_08,30,98,real+augmented
-squat_0095,squat/clip_0095.npy,squat,front,bad,insufficient_depth,subject_08,30,98,real+augmented
-squat_0096,squat/clip_0096.npy,squat,front,bad,back_rounding,subject_08,30,98,real+augmented
-squat_0097,squat/clip_0097.npy,squat,front,good,none,subject_01,30,90,real
-squat_0098,squat/clip_0098.npy,squat,front,bad,knee_valgus,subject_01,30,90,real+augmented
-squat_0099,squat/clip_0099.npy,squat,front,bad,insufficient_depth,subject_01,30,90,real+augmented
-squat_0100,squat/clip_0100.npy,squat,front,bad,back_rounding,subject_01,30,90,real+augmented
-squat_0101,squat/clip_0101.npy,squat,front,good,none,subject_02,30,112,real
-squat_0102,squat/clip_0102.npy,squat,front,bad,knee_valgus,subject_02,30,112,real+augmented
-squat_0103,squat/clip_0103.npy,squat,front,bad,insufficient_depth,subject_02,30,112,real+augmented
-squat_0104,squat/clip_0104.npy,squat,front,bad,back_rounding,subject_02,30,112,real+augmented
-squat_0105,squat/clip_0105.npy,squat,front,good,none,subject_03,30,74,real
-squat_0106,squat/clip_0106.npy,squat,front,bad,knee_valgus,subject_03,30,74,real+augmented
-squat_0107,squat/clip_0107.npy,squat,front,bad,insufficient_depth,subject_03,30,74,real+augmented
-squat_0108,squat/clip_0108.npy,squat,front,bad,back_rounding,subject_03,30,74,real+augmented
-squat_0109,squat/clip_0109.npy,squat,front,good,none,subject_04,30,118,real
-squat_0110,squat/clip_0110.npy,squat,front,bad,knee_valgus,subject_04,30,118,real+augmented
-squat_0111,squat/clip_0111.npy,squat,front,bad,insufficient_depth,subject_04,30,118,real+augmented
-squat_0112,squat/clip_0112.npy,squat,front,bad,back_rounding,subject_04,30,118,real+augmented
-squat_0113,squat/clip_0113.npy,squat,front,good,none,subject_05,30,114,real
-squat_0114,squat/clip_0114.npy,squat,front,bad,knee_valgus,subject_05,30,114,real+augmented
-squat_0115,squat/clip_0115.npy,squat,front,bad,insufficient_depth,subject_05,30,114,real+augmented
-squat_0116,squat/clip_0116.npy,squat,front,bad,back_rounding,subject_05,30,114,real+augmented
-squat_0117,squat/clip_0117.npy,squat,front,good,none,subject_06,30,123,real
-squat_0118,squat/clip_0118.npy,squat,front,bad,knee_valgus,subject_06,30,123,real+augmented
-squat_0119,squat/clip_0119.npy,squat,front,bad,insufficient_depth,subject_06,30,123,real+augmented
-squat_0120,squat/clip_0120.npy,squat,front,bad,back_rounding,subject_06,30,123,real+augmented
-squat_0121,squat/clip_0121.npy,squat,front,good,none,subject_07,30,125,real
-squat_0122,squat/clip_0122.npy,squat,front,bad,knee_valgus,subject_07,30,125,real+augmented
-squat_0123,squat/clip_0123.npy,squat,front,bad,insufficient_depth,subject_07,30,125,real+augmented
-squat_0124,squat/clip_0124.npy,squat,front,bad,back_rounding,subject_07,30,125,real+augmented
-squat_0125,squat/clip_0125.npy,squat,front,good,none,subject_08,30,96,real
-squat_0126,squat/clip_0126.npy,squat,front,bad,knee_valgus,subject_08,30,96,real+augmented
-squat_0127,squat/clip_0127.npy,squat,front,bad,insufficient_depth,subject_08,30,96,real+augmented
-squat_0128,squat/clip_0128.npy,squat,front,bad,back_rounding,subject_08,30,96,real+augmented
-squat_0129,squat/clip_0129.npy,squat,front,good,none,subject_01,30,131,real
-squat_0130,squat/clip_0130.npy,squat,front,bad,knee_valgus,subject_01,30,131,real+augmented
-squat_0131,squat/clip_0131.npy,squat,front,bad,insufficient_depth,subject_01,30,131,real+augmented
-squat_0132,squat/clip_0132.npy,squat,front,bad,back_rounding,subject_01,30,131,real+augmented
-squat_0133,squat/clip_0133.npy,squat,front,good,none,subject_02,30,99,real
-squat_0134,squat/clip_0134.npy,squat,front,bad,knee_valgus,subject_02,30,99,real+augmented
-squat_0135,squat/clip_0135.npy,squat,front,bad,insufficient_depth,subject_02,30,99,real+augmented
-squat_0136,squat/clip_0136.npy,squat,front,bad,back_rounding,subject_02,30,99,real+augmented
-squat_0137,squat/clip_0137.npy,squat,front,good,none,subject_03,30,112,real
-squat_0138,squat/clip_0138.npy,squat,front,bad,knee_valgus,subject_03,30,112,real+augmented
-squat_0139,squat/clip_0139.npy,squat,front,bad,insufficient_depth,subject_03,30,112,real+augmented
-squat_0140,squat/clip_0140.npy,squat,front,bad,back_rounding,subject_03,30,112,real+augmented
-squat_0141,squat/clip_0141.npy,squat,front,good,none,subject_04,30,153,real
-squat_0142,squat/clip_0142.npy,squat,front,bad,knee_valgus,subject_04,30,153,real+augmented
-squat_0143,squat/clip_0143.npy,squat,front,bad,insufficient_depth,subject_04,30,153,real+augmented
-squat_0144,squat/clip_0144.npy,squat,front,bad,back_rounding,subject_04,30,153,real+augmented
-squat_0145,squat/clip_0145.npy,squat,front,good,none,subject_05,30,68,real
-squat_0146,squat/clip_0146.npy,squat,front,bad,knee_valgus,subject_05,30,68,real+augmented
-squat_0147,squat/clip_0147.npy,squat,front,bad,insufficient_depth,subject_05,30,68,real+augmented
-squat_0148,squat/clip_0148.npy,squat,front,bad,back_rounding,subject_05,30,68,real+augmented
-squat_0149,squat/clip_0149.npy,squat,front,good,none,subject_06,30,149,real
-squat_0150,squat/clip_0150.npy,squat,front,bad,knee_valgus,subject_06,30,149,real+augmented
-squat_0151,squat/clip_0151.npy,squat,front,bad,insufficient_depth,subject_06,30,149,real+augmented
-squat_0152,squat/clip_0152.npy,squat,front,bad,back_rounding,subject_06,30,149,real+augmented
-curl_0001,curl/clip_0001.npy,curl,front,good,none,subject_02,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0002,curl/clip_0002.npy,curl,front,good,none,subject_03,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0003,curl/clip_0003.npy,curl,front,good,none,subject_04,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0004,curl/clip_0004.npy,curl,front,good,none,subject_05,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0005,curl/clip_0005.npy,curl,front,good,none,subject_06,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0006,curl/clip_0006.npy,curl,front,good,none,subject_07,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0007,curl/clip_0007.npy,curl,front,good,none,subject_08,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0008,curl/clip_0008.npy,curl,front,good,none,subject_01,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0009,curl/clip_0009.npy,curl,front,good,none,subject_02,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0010,curl/clip_0010.npy,curl,front,bad,swing,subject_03,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0011,curl/clip_0011.npy,curl,front,bad,swing,subject_04,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0012,curl/clip_0012.npy,curl,front,bad,swing,subject_05,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0013,curl/clip_0013.npy,curl,front,bad,swing,subject_06,30,57,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0014,curl/clip_0014.npy,curl,front,bad,swing,subject_07,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0015,curl/clip_0015.npy,curl,front,bad,swing,subject_08,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0016,curl/clip_0016.npy,curl,front,bad,swing,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0017,curl/clip_0017.npy,curl,front,bad,swing,subject_02,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0018,curl/clip_0018.npy,curl,front,good,none,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0019,curl/clip_0019.npy,curl,front,good,none,subject_04,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0020,curl/clip_0020.npy,curl,front,good,none,subject_05,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0021,curl/clip_0021.npy,curl,front,good,none,subject_06,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0022,curl/clip_0022.npy,curl,front,good,none,subject_07,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0023,curl/clip_0023.npy,curl,front,good,none,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0024,curl/clip_0024.npy,curl,front,good,none,subject_01,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0025,curl/clip_0025.npy,curl,front,good,none,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0026,curl/clip_0026.npy,curl,front,good,none,subject_03,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0027,curl/clip_0027.npy,curl,front,good,none,subject_04,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0028,curl/clip_0028.npy,curl,front,good,none,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0029,curl/clip_0029.npy,curl,front,good,none,subject_06,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0030,curl/clip_0030.npy,curl,front,bad,swing,subject_07,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0031,curl/clip_0031.npy,curl,front,bad,swing,subject_08,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0032,curl/clip_0032.npy,curl,front,bad,swing,subject_01,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0033,curl/clip_0033.npy,curl,front,bad,swing,subject_02,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0034,curl/clip_0034.npy,curl,front,bad,swing,subject_03,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0035,curl/clip_0035.npy,curl,front,bad,swing,subject_04,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0036,curl/clip_0036.npy,curl,front,bad,swing,subject_05,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0037,curl/clip_0037.npy,curl,front,bad,swing,subject_06,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0038,curl/clip_0038.npy,curl,front,bad,swing,subject_07,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0039,curl/clip_0039.npy,curl,front,bad,swing,subject_08,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0040,curl/clip_0040.npy,curl,front,good,none,subject_01,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0041,curl/clip_0041.npy,curl,front,good,none,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0042,curl/clip_0042.npy,curl,front,good,none,subject_03,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0043,curl/clip_0043.npy,curl,front,good,none,subject_04,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0044,curl/clip_0044.npy,curl,front,good,none,subject_05,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0045,curl/clip_0045.npy,curl,front,good,none,subject_06,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0046,curl/clip_0046.npy,curl,front,good,none,subject_07,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0047,curl/clip_0047.npy,curl,front,good,none,subject_08,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0048,curl/clip_0048.npy,curl,front,good,none,subject_01,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0049,curl/clip_0049.npy,curl,front,good,none,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0050,curl/clip_0050.npy,curl,front,bad,swing,subject_03,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0051,curl/clip_0051.npy,curl,front,bad,swing,subject_04,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0052,curl/clip_0052.npy,curl,front,bad,swing,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0053,curl/clip_0053.npy,curl,front,bad,swing,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0054,curl/clip_0054.npy,curl,front,bad,swing,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0055,curl/clip_0055.npy,curl,front,bad,swing,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0056,curl/clip_0056.npy,curl,front,bad,swing,subject_01,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0057,curl/clip_0057.npy,curl,front,bad,swing,subject_02,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0058,curl/clip_0058.npy,curl,front,bad,swing,subject_03,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0059,curl/clip_0059.npy,curl,front,bad,swing,subject_04,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0060,curl/clip_0060.npy,curl,front,good,none,subject_05,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0061,curl/clip_0061.npy,curl,front,good,none,subject_06,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0062,curl/clip_0062.npy,curl,front,good,none,subject_07,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0063,curl/clip_0063.npy,curl,front,good,none,subject_08,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0064,curl/clip_0064.npy,curl,front,good,none,subject_01,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0065,curl/clip_0065.npy,curl,front,good,none,subject_02,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0066,curl/clip_0066.npy,curl,front,good,none,subject_03,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0067,curl/clip_0067.npy,curl,front,good,none,subject_04,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0068,curl/clip_0068.npy,curl,front,good,none,subject_05,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0069,curl/clip_0069.npy,curl,front,bad,swing,subject_06,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0070,curl/clip_0070.npy,curl,front,bad,swing,subject_07,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0071,curl/clip_0071.npy,curl,front,bad,swing,subject_08,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0072,curl/clip_0072.npy,curl,front,bad,swing,subject_01,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0073,curl/clip_0073.npy,curl,front,bad,swing,subject_02,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0074,curl/clip_0074.npy,curl,front,bad,swing,subject_03,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0075,curl/clip_0075.npy,curl,front,bad,swing,subject_04,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0076,curl/clip_0076.npy,curl,front,bad,swing,subject_05,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0077,curl/clip_0077.npy,curl,front,bad,swing,subject_06,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0078,curl/clip_0078.npy,curl,front,bad,swing,subject_07,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0079,curl/clip_0079.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0080,curl/clip_0080.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0081,curl/clip_0081.npy,curl,front,good,none,subject_02,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0082,curl/clip_0082.npy,curl,front,good,none,subject_03,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0083,curl/clip_0083.npy,curl,front,good,none,subject_04,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0084,curl/clip_0084.npy,curl,front,good,none,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0085,curl/clip_0085.npy,curl,front,good,none,subject_06,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0086,curl/clip_0086.npy,curl,front,good,none,subject_07,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0087,curl/clip_0087.npy,curl,front,good,none,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0088,curl/clip_0088.npy,curl,front,good,none,subject_01,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0089,curl/clip_0089.npy,curl,front,good,none,subject_02,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0090,curl/clip_0090.npy,curl,front,good,none,subject_03,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0091,curl/clip_0091.npy,curl,front,bad,swing,subject_04,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0092,curl/clip_0092.npy,curl,front,bad,swing,subject_05,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0093,curl/clip_0093.npy,curl,front,bad,swing,subject_06,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0094,curl/clip_0094.npy,curl,front,bad,swing,subject_07,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0095,curl/clip_0095.npy,curl,front,bad,swing,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0096,curl/clip_0096.npy,curl,front,bad,swing,subject_01,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0097,curl/clip_0097.npy,curl,front,bad,swing,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0098,curl/clip_0098.npy,curl,front,bad,swing,subject_03,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0099,curl/clip_0099.npy,curl,front,bad,swing,subject_04,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0100,curl/clip_0100.npy,curl,front,good,none,subject_05,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0101,curl/clip_0101.npy,curl,front,good,none,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0102,curl/clip_0102.npy,curl,front,good,none,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0103,curl/clip_0103.npy,curl,front,good,none,subject_08,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0104,curl/clip_0104.npy,curl,front,good,none,subject_01,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0105,curl/clip_0105.npy,curl,front,good,none,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0106,curl/clip_0106.npy,curl,front,good,none,subject_03,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0107,curl/clip_0107.npy,curl,front,good,none,subject_04,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0108,curl/clip_0108.npy,curl,front,good,none,subject_05,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0109,curl/clip_0109.npy,curl,front,bad,swing,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0110,curl/clip_0110.npy,curl,front,bad,swing,subject_07,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0111,curl/clip_0111.npy,curl,front,bad,swing,subject_08,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0112,curl/clip_0112.npy,curl,front,bad,swing,subject_01,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0113,curl/clip_0113.npy,curl,front,bad,swing,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0114,curl/clip_0114.npy,curl,front,bad,swing,subject_03,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0115,curl/clip_0115.npy,curl,front,bad,swing,subject_04,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0116,curl/clip_0116.npy,curl,front,bad,swing,subject_05,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0117,curl/clip_0117.npy,curl,front,good,none,subject_06,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0118,curl/clip_0118.npy,curl,front,good,none,subject_07,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0119,curl/clip_0119.npy,curl,front,good,none,subject_08,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0120,curl/clip_0120.npy,curl,front,good,none,subject_01,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0121,curl/clip_0121.npy,curl,front,good,none,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0122,curl/clip_0122.npy,curl,front,good,none,subject_03,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0123,curl/clip_0123.npy,curl,front,good,none,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0124,curl/clip_0124.npy,curl,front,good,none,subject_05,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0125,curl/clip_0125.npy,curl,front,good,none,subject_06,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0126,curl/clip_0126.npy,curl,front,good,none,subject_07,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0127,curl/clip_0127.npy,curl,front,bad,swing,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0128,curl/clip_0128.npy,curl,front,bad,swing,subject_01,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0129,curl/clip_0129.npy,curl,front,bad,swing,subject_02,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0130,curl/clip_0130.npy,curl,front,bad,swing,subject_03,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0131,curl/clip_0131.npy,curl,front,bad,swing,subject_04,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0132,curl/clip_0132.npy,curl,front,bad,swing,subject_05,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0133,curl/clip_0133.npy,curl,front,bad,swing,subject_06,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0134,curl/clip_0134.npy,curl,front,bad,swing,subject_07,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0135,curl/clip_0135.npy,curl,front,bad,swing,subject_08,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0136,curl/clip_0136.npy,curl,front,good,none,subject_01,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0137,curl/clip_0137.npy,curl,front,good,none,subject_02,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0138,curl/clip_0138.npy,curl,front,good,none,subject_03,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0139,curl/clip_0139.npy,curl,front,good,none,subject_04,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0140,curl/clip_0140.npy,curl,front,good,none,subject_05,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0141,curl/clip_0141.npy,curl,front,good,none,subject_06,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0142,curl/clip_0142.npy,curl,front,good,none,subject_07,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0143,curl/clip_0143.npy,curl,front,good,none,subject_08,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0144,curl/clip_0144.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0145,curl/clip_0145.npy,curl,front,good,none,subject_02,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0146,curl/clip_0146.npy,curl,front,good,none,subject_03,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0147,curl/clip_0147.npy,curl,front,good,none,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0148,curl/clip_0148.npy,curl,front,good,none,subject_05,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0149,curl/clip_0149.npy,curl,front,good,none,subject_06,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0150,curl/clip_0150.npy,curl,front,good,none,subject_07,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0151,curl/clip_0151.npy,curl,front,bad,swing,subject_08,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0152,curl/clip_0152.npy,curl,front,bad,swing,subject_01,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0153,curl/clip_0153.npy,curl,front,bad,swing,subject_02,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0154,curl/clip_0154.npy,curl,front,bad,swing,subject_03,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0155,curl/clip_0155.npy,curl,front,bad,swing,subject_04,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0156,curl/clip_0156.npy,curl,front,bad,swing,subject_05,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0157,curl/clip_0157.npy,curl,front,bad,swing,subject_06,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0158,curl/clip_0158.npy,curl,front,bad,swing,subject_07,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0159,curl/clip_0159.npy,curl,front,bad,swing,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0160,curl/clip_0160.npy,curl,front,bad,swing,subject_01,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0161,curl/clip_0161.npy,curl,front,good,none,subject_02,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0162,curl/clip_0162.npy,curl,front,good,none,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0163,curl/clip_0163.npy,curl,front,good,none,subject_04,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0164,curl/clip_0164.npy,curl,front,good,none,subject_05,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0165,curl/clip_0165.npy,curl,front,good,none,subject_06,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0166,curl/clip_0166.npy,curl,front,good,none,subject_07,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0167,curl/clip_0167.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0168,curl/clip_0168.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0169,curl/clip_0169.npy,curl,front,good,none,subject_02,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0170,curl/clip_0170.npy,curl,front,good,none,subject_03,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0171,curl/clip_0171.npy,curl,front,bad,swing,subject_04,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0172,curl/clip_0172.npy,curl,front,bad,swing,subject_05,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0173,curl/clip_0173.npy,curl,front,bad,swing,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0174,curl/clip_0174.npy,curl,front,bad,swing,subject_07,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0175,curl/clip_0175.npy,curl,front,bad,swing,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0176,curl/clip_0176.npy,curl,front,bad,swing,subject_01,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0177,curl/clip_0177.npy,curl,front,bad,swing,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0178,curl/clip_0178.npy,curl,front,bad,swing,subject_03,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0179,curl/clip_0179.npy,curl,front,bad,swing,subject_04,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0180,curl/clip_0180.npy,curl,front,bad,swing,subject_05,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0181,curl/clip_0181.npy,curl,front,good,none,subject_06,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0182,curl/clip_0182.npy,curl,front,good,none,subject_07,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0183,curl/clip_0183.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0184,curl/clip_0184.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0185,curl/clip_0185.npy,curl,front,good,none,subject_02,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0186,curl/clip_0186.npy,curl,front,good,none,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0187,curl/clip_0187.npy,curl,front,good,none,subject_04,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0188,curl/clip_0188.npy,curl,front,good,none,subject_05,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0189,curl/clip_0189.npy,curl,front,good,none,subject_06,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0190,curl/clip_0190.npy,curl,front,good,none,subject_07,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0191,curl/clip_0191.npy,curl,front,good,none,subject_08,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0192,curl/clip_0192.npy,curl,front,good,none,subject_01,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0193,curl/clip_0193.npy,curl,front,bad,swing,subject_02,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0194,curl/clip_0194.npy,curl,front,bad,swing,subject_03,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0195,curl/clip_0195.npy,curl,front,bad,swing,subject_04,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0196,curl/clip_0196.npy,curl,front,bad,swing,subject_05,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0197,curl/clip_0197.npy,curl,front,bad,swing,subject_06,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0198,curl/clip_0198.npy,curl,front,bad,swing,subject_07,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0199,curl/clip_0199.npy,curl,front,bad,swing,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0200,curl/clip_0200.npy,curl,front,bad,swing,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0201,curl/clip_0201.npy,curl,front,bad,swing,subject_02,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0202,curl/clip_0202.npy,curl,front,good,none,subject_03,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0203,curl/clip_0203.npy,curl,front,good,none,subject_04,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0204,curl/clip_0204.npy,curl,front,good,none,subject_05,30,51,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0205,curl/clip_0205.npy,curl,front,good,none,subject_06,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0206,curl/clip_0206.npy,curl,front,good,none,subject_07,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0207,curl/clip_0207.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0208,curl/clip_0208.npy,curl,front,good,none,subject_01,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0209,curl/clip_0209.npy,curl,front,bad,swing,subject_02,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0210,curl/clip_0210.npy,curl,front,bad,swing,subject_03,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0211,curl/clip_0211.npy,curl,front,bad,swing,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0212,curl/clip_0212.npy,curl,front,bad,swing,subject_05,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0213,curl/clip_0213.npy,curl,front,bad,swing,subject_06,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0214,curl/clip_0214.npy,curl,front,bad,swing,subject_07,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0215,curl/clip_0215.npy,curl,front,bad,swing,subject_08,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0216,curl/clip_0216.npy,curl,front,bad,swing,subject_01,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0217,curl/clip_0217.npy,curl,front,bad,swing,subject_02,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0218,curl/clip_0218.npy,curl,front,bad,swing,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0219,curl/clip_0219.npy,curl,front,bad,swing,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0220,curl/clip_0220.npy,curl,front,bad,swing,subject_05,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0221,curl/clip_0221.npy,curl,front,bad,swing,subject_06,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0222,curl/clip_0222.npy,curl,front,good,none,subject_07,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0223,curl/clip_0223.npy,curl,front,good,none,subject_08,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0224,curl/clip_0224.npy,curl,front,good,none,subject_01,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0225,curl/clip_0225.npy,curl,front,good,none,subject_02,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0226,curl/clip_0226.npy,curl,front,good,none,subject_03,30,48,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0227,curl/clip_0227.npy,curl,front,good,none,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0228,curl/clip_0228.npy,curl,front,good,none,subject_05,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0229,curl/clip_0229.npy,curl,front,good,none,subject_06,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0230,curl/clip_0230.npy,curl,front,good,none,subject_07,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0231,curl/clip_0231.npy,curl,front,good,none,subject_08,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0232,curl/clip_0232.npy,curl,front,bad,swing,subject_01,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0233,curl/clip_0233.npy,curl,front,bad,swing,subject_02,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0234,curl/clip_0234.npy,curl,front,bad,swing,subject_03,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0235,curl/clip_0235.npy,curl,front,bad,swing,subject_04,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0236,curl/clip_0236.npy,curl,front,bad,swing,subject_05,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0237,curl/clip_0237.npy,curl,front,bad,swing,subject_06,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0238,curl/clip_0238.npy,curl,front,bad,swing,subject_07,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0239,curl/clip_0239.npy,curl,front,bad,swing,subject_08,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0240,curl/clip_0240.npy,curl,front,bad,swing,subject_01,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0241,curl/clip_0241.npy,curl,front,bad,swing,subject_02,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0242,curl/clip_0242.npy,curl,front,bad,swing,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0243,curl/clip_0243.npy,curl,front,bad,swing,subject_04,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0244,curl/clip_0244.npy,curl,front,bad,swing,subject_05,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0245,curl/clip_0245.npy,curl,front,bad,swing,subject_06,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0246,curl/clip_0246.npy,curl,front,good,none,subject_07,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0247,curl/clip_0247.npy,curl,front,good,none,subject_08,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0248,curl/clip_0248.npy,curl,front,good,none,subject_01,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0249,curl/clip_0249.npy,curl,front,good,none,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0250,curl/clip_0250.npy,curl,front,good,none,subject_03,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0251,curl/clip_0251.npy,curl,front,good,none,subject_04,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0252,curl/clip_0252.npy,curl,front,good,none,subject_05,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0253,curl/clip_0253.npy,curl,front,bad,swing,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0254,curl/clip_0254.npy,curl,front,bad,swing,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0255,curl/clip_0255.npy,curl,front,bad,swing,subject_08,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0256,curl/clip_0256.npy,curl,front,bad,swing,subject_01,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0257,curl/clip_0257.npy,curl,front,bad,swing,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0258,curl/clip_0258.npy,curl,front,bad,swing,subject_03,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0259,curl/clip_0259.npy,curl,front,bad,swing,subject_04,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0260,curl/clip_0260.npy,curl,front,bad,swing,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0261,curl/clip_0261.npy,curl,front,bad,swing,subject_06,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0262,curl/clip_0262.npy,curl,front,bad,swing,subject_07,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0263,curl/clip_0263.npy,curl,front,bad,swing,subject_08,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0264,curl/clip_0264.npy,curl,front,bad,swing,subject_01,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0265,curl/clip_0265.npy,curl,front,good,none,subject_02,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0266,curl/clip_0266.npy,curl,front,good,none,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0267,curl/clip_0267.npy,curl,front,good,none,subject_04,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0268,curl/clip_0268.npy,curl,front,good,none,subject_05,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0269,curl/clip_0269.npy,curl,front,good,none,subject_06,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0270,curl/clip_0270.npy,curl,front,good,none,subject_07,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0271,curl/clip_0271.npy,curl,front,good,none,subject_08,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0272,curl/clip_0272.npy,curl,front,good,none,subject_01,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0273,curl/clip_0273.npy,curl,front,good,none,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0274,curl/clip_0274.npy,curl,front,good,none,subject_03,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0275,curl/clip_0275.npy,curl,front,good,none,subject_04,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0276,curl/clip_0276.npy,curl,front,bad,swing,subject_05,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0277,curl/clip_0277.npy,curl,front,bad,swing,subject_06,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0278,curl/clip_0278.npy,curl,front,bad,swing,subject_07,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0279,curl/clip_0279.npy,curl,front,bad,swing,subject_08,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0280,curl/clip_0280.npy,curl,front,bad,swing,subject_01,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0281,curl/clip_0281.npy,curl,front,bad,swing,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0282,curl/clip_0282.npy,curl,front,bad,swing,subject_03,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0283,curl/clip_0283.npy,curl,front,bad,swing,subject_04,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0284,curl/clip_0284.npy,curl,front,bad,swing,subject_05,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0285,curl/clip_0285.npy,curl,front,bad,swing,subject_06,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0286,curl/clip_0286.npy,curl,front,bad,swing,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0287,curl/clip_0287.npy,curl,front,bad,swing,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0288,curl/clip_0288.npy,curl,front,bad,swing,subject_01,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0289,curl/clip_0289.npy,curl,front,bad,swing,subject_02,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0290,curl/clip_0290.npy,curl,front,good,none,subject_03,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0291,curl/clip_0291.npy,curl,front,good,none,subject_04,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0292,curl/clip_0292.npy,curl,front,good,none,subject_05,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0293,curl/clip_0293.npy,curl,front,good,none,subject_06,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0294,curl/clip_0294.npy,curl,front,good,none,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0295,curl/clip_0295.npy,curl,front,good,none,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0296,curl/clip_0296.npy,curl,front,good,none,subject_01,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0297,curl/clip_0297.npy,curl,front,good,none,subject_02,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0298,curl/clip_0298.npy,curl,front,good,none,subject_03,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0299,curl/clip_0299.npy,curl,front,bad,swing,subject_04,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0300,curl/clip_0300.npy,curl,front,bad,swing,subject_05,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0301,curl/clip_0301.npy,curl,front,bad,swing,subject_06,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0302,curl/clip_0302.npy,curl,front,bad,swing,subject_07,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0303,curl/clip_0303.npy,curl,front,bad,swing,subject_08,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0304,curl/clip_0304.npy,curl,front,bad,swing,subject_01,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0305,curl/clip_0305.npy,curl,front,bad,swing,subject_02,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0306,curl/clip_0306.npy,curl,front,bad,swing,subject_03,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0307,curl/clip_0307.npy,curl,front,bad,swing,subject_04,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0308,curl/clip_0308.npy,curl,front,bad,swing,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0309,curl/clip_0309.npy,curl,front,bad,swing,subject_06,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0310,curl/clip_0310.npy,curl,front,good,none,subject_07,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0311,curl/clip_0311.npy,curl,front,good,none,subject_08,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0312,curl/clip_0312.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0313,curl/clip_0313.npy,curl,front,good,none,subject_02,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0314,curl/clip_0314.npy,curl,front,good,none,subject_03,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0315,curl/clip_0315.npy,curl,front,good,none,subject_04,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0316,curl/clip_0316.npy,curl,front,good,none,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0317,curl/clip_0317.npy,curl,front,good,none,subject_06,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0318,curl/clip_0318.npy,curl,front,good,none,subject_07,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0319,curl/clip_0319.npy,curl,front,bad,swing,subject_08,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0320,curl/clip_0320.npy,curl,front,bad,swing,subject_01,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0321,curl/clip_0321.npy,curl,front,bad,swing,subject_02,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0322,curl/clip_0322.npy,curl,front,bad,swing,subject_03,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0323,curl/clip_0323.npy,curl,front,bad,swing,subject_04,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0324,curl/clip_0324.npy,curl,front,bad,swing,subject_05,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0325,curl/clip_0325.npy,curl,front,bad,swing,subject_06,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0326,curl/clip_0326.npy,curl,front,bad,swing,subject_07,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0327,curl/clip_0327.npy,curl,front,bad,swing,subject_08,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0328,curl/clip_0328.npy,curl,front,bad,swing,subject_01,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0329,curl/clip_0329.npy,curl,front,bad,swing,subject_02,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0330,curl/clip_0330.npy,curl,front,good,none,subject_03,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0331,curl/clip_0331.npy,curl,front,good,none,subject_04,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0332,curl/clip_0332.npy,curl,front,good,none,subject_05,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0333,curl/clip_0333.npy,curl,front,good,none,subject_06,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0334,curl/clip_0334.npy,curl,front,good,none,subject_07,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0335,curl/clip_0335.npy,curl,front,good,none,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0336,curl/clip_0336.npy,curl,front,good,none,subject_01,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0337,curl/clip_0337.npy,curl,front,good,none,subject_02,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0338,curl/clip_0338.npy,curl,front,good,none,subject_03,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0339,curl/clip_0339.npy,curl,front,good,none,subject_04,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0340,curl/clip_0340.npy,curl,front,good,none,subject_05,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0341,curl/clip_0341.npy,curl,front,bad,swing,subject_06,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0342,curl/clip_0342.npy,curl,front,bad,swing,subject_07,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0343,curl/clip_0343.npy,curl,front,bad,swing,subject_08,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0344,curl/clip_0344.npy,curl,front,bad,swing,subject_01,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0345,curl/clip_0345.npy,curl,front,bad,swing,subject_02,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0346,curl/clip_0346.npy,curl,front,bad,swing,subject_03,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0347,curl/clip_0347.npy,curl,front,bad,swing,subject_04,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0348,curl/clip_0348.npy,curl,front,bad,swing,subject_05,30,62,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0349,curl/clip_0349.npy,curl,front,bad,swing,subject_06,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0350,curl/clip_0350.npy,curl,front,good,none,subject_07,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0351,curl/clip_0351.npy,curl,front,good,none,subject_08,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0352,curl/clip_0352.npy,curl,front,good,none,subject_01,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0353,curl/clip_0353.npy,curl,front,good,none,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0354,curl/clip_0354.npy,curl,front,good,none,subject_03,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0355,curl/clip_0355.npy,curl,front,bad,swing,subject_04,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0356,curl/clip_0356.npy,curl,front,bad,swing,subject_05,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0357,curl/clip_0357.npy,curl,front,bad,swing,subject_06,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0358,curl/clip_0358.npy,curl,front,bad,swing,subject_07,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0359,curl/clip_0359.npy,curl,front,bad,swing,subject_08,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0360,curl/clip_0360.npy,curl,front,bad,swing,subject_01,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0361,curl/clip_0361.npy,curl,front,bad,swing,subject_02,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0362,curl/clip_0362.npy,curl,front,good,none,subject_03,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0363,curl/clip_0363.npy,curl,front,good,none,subject_04,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0364,curl/clip_0364.npy,curl,front,good,none,subject_05,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0365,curl/clip_0365.npy,curl,front,bad,swing,subject_06,30,56,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0366,curl/clip_0366.npy,curl,front,bad,swing,subject_07,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0367,curl/clip_0367.npy,curl,front,bad,swing,subject_08,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0368,curl/clip_0368.npy,curl,front,bad,swing,subject_01,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0369,curl/clip_0369.npy,curl,front,bad,swing,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0370,curl/clip_0370.npy,curl,front,bad,swing,subject_03,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0371,curl/clip_0371.npy,curl,front,good,none,subject_04,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0372,curl/clip_0372.npy,curl,front,good,none,subject_05,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0373,curl/clip_0373.npy,curl,front,good,none,subject_06,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0374,curl/clip_0374.npy,curl,front,good,none,subject_07,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0375,curl/clip_0375.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0376,curl/clip_0376.npy,curl,front,good,none,subject_01,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0377,curl/clip_0377.npy,curl,front,good,none,subject_02,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0378,curl/clip_0378.npy,curl,front,good,none,subject_03,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0379,curl/clip_0379.npy,curl,front,bad,swing,subject_04,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0380,curl/clip_0380.npy,curl,front,bad,swing,subject_05,30,47,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0381,curl/clip_0381.npy,curl,front,bad,swing,subject_06,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0382,curl/clip_0382.npy,curl,front,bad,swing,subject_07,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0383,curl/clip_0383.npy,curl,front,bad,swing,subject_08,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0384,curl/clip_0384.npy,curl,front,bad,swing,subject_01,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0385,curl/clip_0385.npy,curl,front,bad,swing,subject_02,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0386,curl/clip_0386.npy,curl,front,good,none,subject_03,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0387,curl/clip_0387.npy,curl,front,good,none,subject_04,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0388,curl/clip_0388.npy,curl,front,good,none,subject_05,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0389,curl/clip_0389.npy,curl,front,good,none,subject_06,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0390,curl/clip_0390.npy,curl,front,bad,swing,subject_07,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0391,curl/clip_0391.npy,curl,front,bad,swing,subject_08,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0392,curl/clip_0392.npy,curl,front,bad,swing,subject_01,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0393,curl/clip_0393.npy,curl,front,bad,swing,subject_02,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0394,curl/clip_0394.npy,curl,front,bad,swing,subject_03,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0395,curl/clip_0395.npy,curl,front,good,none,subject_04,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0396,curl/clip_0396.npy,curl,front,good,none,subject_05,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0397,curl/clip_0397.npy,curl,front,good,none,subject_06,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0398,curl/clip_0398.npy,curl,front,good,none,subject_07,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0399,curl/clip_0399.npy,curl,front,good,none,subject_08,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0400,curl/clip_0400.npy,curl,front,good,none,subject_01,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0401,curl/clip_0401.npy,curl,front,good,none,subject_02,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0402,curl/clip_0402.npy,curl,front,good,none,subject_03,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0403,curl/clip_0403.npy,curl,front,good,none,subject_04,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0404,curl/clip_0404.npy,curl,front,bad,swing,subject_05,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0405,curl/clip_0405.npy,curl,front,bad,swing,subject_06,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0406,curl/clip_0406.npy,curl,front,bad,swing,subject_07,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0407,curl/clip_0407.npy,curl,front,bad,swing,subject_08,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0408,curl/clip_0408.npy,curl,front,bad,swing,subject_01,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0409,curl/clip_0409.npy,curl,front,bad,swing,subject_02,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0410,curl/clip_0410.npy,curl,front,bad,swing,subject_03,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0411,curl/clip_0411.npy,curl,front,good,none,subject_04,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0412,curl/clip_0412.npy,curl,front,good,none,subject_05,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0413,curl/clip_0413.npy,curl,front,good,none,subject_06,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0414,curl/clip_0414.npy,curl,front,good,none,subject_07,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0415,curl/clip_0415.npy,curl,front,good,none,subject_08,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0416,curl/clip_0416.npy,curl,front,good,none,subject_01,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0417,curl/clip_0417.npy,curl,front,bad,swing,subject_02,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0418,curl/clip_0418.npy,curl,front,bad,swing,subject_03,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0419,curl/clip_0419.npy,curl,front,bad,swing,subject_04,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0420,curl/clip_0420.npy,curl,front,bad,swing,subject_05,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0421,curl/clip_0421.npy,curl,front,bad,swing,subject_06,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0422,curl/clip_0422.npy,curl,front,good,none,subject_07,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0423,curl/clip_0423.npy,curl,front,good,none,subject_08,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0424,curl/clip_0424.npy,curl,front,good,none,subject_01,30,47,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0425,curl/clip_0425.npy,curl,front,good,none,subject_02,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0426,curl/clip_0426.npy,curl,front,good,none,subject_03,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0427,curl/clip_0427.npy,curl,front,good,none,subject_04,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0428,curl/clip_0428.npy,curl,front,good,none,subject_05,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0429,curl/clip_0429.npy,curl,front,good,none,subject_06,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0430,curl/clip_0430.npy,curl,front,good,none,subject_07,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0431,curl/clip_0431.npy,curl,front,good,none,subject_08,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0432,curl/clip_0432.npy,curl,front,good,none,subject_01,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0433,curl/clip_0433.npy,curl,front,good,none,subject_02,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0434,curl/clip_0434.npy,curl,front,good,none,subject_03,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0435,curl/clip_0435.npy,curl,front,good,none,subject_04,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0436,curl/clip_0436.npy,curl,front,good,none,subject_05,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0437,curl/clip_0437.npy,curl,front,good,none,subject_06,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0438,curl/clip_0438.npy,curl,front,good,none,subject_07,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0439,curl/clip_0439.npy,curl,front,good,none,subject_08,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0440,curl/clip_0440.npy,curl,front,good,none,subject_01,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0441,curl/clip_0441.npy,curl,front,good,none,subject_02,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0442,curl/clip_0442.npy,curl,front,good,none,subject_03,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0443,curl/clip_0443.npy,curl,front,good,none,subject_04,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0444,curl/clip_0444.npy,curl,front,good,none,subject_05,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0445,curl/clip_0445.npy,curl,front,good,none,subject_06,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0446,curl/clip_0446.npy,curl,front,good,none,subject_07,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0447,curl/clip_0447.npy,curl,front,good,none,subject_08,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0448,curl/clip_0448.npy,curl,front,good,none,subject_01,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0449,curl/clip_0449.npy,curl,front,good,none,subject_02,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0450,curl/clip_0450.npy,curl,front,good,none,subject_03,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0451,curl/clip_0451.npy,curl,front,good,none,subject_04,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0452,curl/clip_0452.npy,curl,front,good,none,subject_05,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0453,curl/clip_0453.npy,curl,front,good,none,subject_06,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0454,curl/clip_0454.npy,curl,front,good,none,subject_07,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0455,curl/clip_0455.npy,curl,front,good,none,subject_08,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0456,curl/clip_0456.npy,curl,front,good,none,subject_01,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0457,curl/clip_0457.npy,curl,front,good,none,subject_02,30,51,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0458,curl/clip_0458.npy,curl,front,good,none,subject_03,30,65,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0459,curl/clip_0459.npy,curl,front,good,none,subject_04,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0460,curl/clip_0460.npy,curl,front,good,none,subject_05,30,39,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0461,curl/clip_0461.npy,curl,front,good,none,subject_06,30,57,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0462,curl/clip_0462.npy,curl,front,good,none,subject_07,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0463,curl/clip_0463.npy,curl,front,good,none,subject_08,30,54,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0464,curl/clip_0464.npy,curl,front,good,none,subject_01,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0465,curl/clip_0465.npy,curl,front,good,none,subject_02,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0466,curl/clip_0466.npy,curl,front,good,none,subject_03,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0467,curl/clip_0467.npy,curl,front,good,none,subject_04,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0468,curl/clip_0468.npy,curl,front,good,none,subject_05,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0469,curl/clip_0469.npy,curl,front,good,none,subject_06,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0470,curl/clip_0470.npy,curl,front,good,none,subject_07,30,53,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0471,curl/clip_0471.npy,curl,front,good,none,subject_08,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0472,curl/clip_0472.npy,curl,front,good,none,subject_01,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0473,curl/clip_0473.npy,curl,front,good,none,subject_02,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0474,curl/clip_0474.npy,curl,front,good,none,subject_03,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0475,curl/clip_0475.npy,curl,front,good,none,subject_04,30,49,real — NgoQuocBao1010/Exercise-Correction bicep curl
-curl_0476,curl/clip_0476.npy,curl,front,good,none,subject_05,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl
+clip_id,file,exercise,view,label,error_type,subject_id,split,fps,num_frames,notes
+squat_0001,squat/clip_0001.npy,squat,front,good,none,subject_01,train,30,181,real
+squat_0002,squat/clip_0002.npy,squat,front,bad,knee_valgus,subject_01,train,30,181,real+augmented
+squat_0003,squat/clip_0003.npy,squat,front,bad,insufficient_depth,subject_01,train,30,181,real+augmented
+squat_0004,squat/clip_0004.npy,squat,front,bad,back_rounding,subject_01,train,30,181,real+augmented
+squat_0005,squat/clip_0005.npy,squat,front,good,none,subject_02,train,30,122,real
+squat_0006,squat/clip_0006.npy,squat,front,bad,knee_valgus,subject_02,train,30,122,real+augmented
+squat_0007,squat/clip_0007.npy,squat,front,bad,insufficient_depth,subject_02,train,30,122,real+augmented
+squat_0008,squat/clip_0008.npy,squat,front,bad,back_rounding,subject_02,train,30,122,real+augmented
+squat_0009,squat/clip_0009.npy,squat,front,good,none,subject_03,train,30,184,real
+squat_0010,squat/clip_0010.npy,squat,front,bad,knee_valgus,subject_03,train,30,184,real+augmented
+squat_0011,squat/clip_0011.npy,squat,front,bad,insufficient_depth,subject_03,train,30,184,real+augmented
+squat_0012,squat/clip_0012.npy,squat,front,bad,back_rounding,subject_03,train,30,184,real+augmented
+squat_0013,squat/clip_0013.npy,squat,front,good,none,subject_04,train,30,109,real
+squat_0014,squat/clip_0014.npy,squat,front,bad,knee_valgus,subject_04,train,30,109,real+augmented
+squat_0015,squat/clip_0015.npy,squat,front,bad,insufficient_depth,subject_04,train,30,109,real+augmented
+squat_0016,squat/clip_0016.npy,squat,front,bad,back_rounding,subject_04,train,30,109,real+augmented
+squat_0017,squat/clip_0017.npy,squat,front,good,none,subject_05,train,30,102,real
+squat_0018,squat/clip_0018.npy,squat,front,bad,knee_valgus,subject_05,train,30,102,real+augmented
+squat_0019,squat/clip_0019.npy,squat,front,bad,insufficient_depth,subject_05,train,30,102,real+augmented
+squat_0020,squat/clip_0020.npy,squat,front,bad,back_rounding,subject_05,train,30,102,real+augmented
+squat_0021,squat/clip_0021.npy,squat,front,good,none,subject_06,train,30,101,real
+squat_0022,squat/clip_0022.npy,squat,front,bad,knee_valgus,subject_06,train,30,101,real+augmented
+squat_0023,squat/clip_0023.npy,squat,front,bad,insufficient_depth,subject_06,train,30,101,real+augmented
+squat_0024,squat/clip_0024.npy,squat,front,bad,back_rounding,subject_06,train,30,101,real+augmented
+squat_0025,squat/clip_0025.npy,squat,front,good,none,subject_07,train,30,108,real
+squat_0026,squat/clip_0026.npy,squat,front,bad,knee_valgus,subject_07,train,30,108,real+augmented
+squat_0027,squat/clip_0027.npy,squat,front,bad,insufficient_depth,subject_07,train,30,108,real+augmented
+squat_0028,squat/clip_0028.npy,squat,front,bad,back_rounding,subject_07,train,30,108,real+augmented
+squat_0029,squat/clip_0029.npy,squat,front,good,none,subject_08,train,30,107,real
+squat_0030,squat/clip_0030.npy,squat,front,bad,knee_valgus,subject_08,train,30,107,real+augmented
+squat_0031,squat/clip_0031.npy,squat,front,bad,insufficient_depth,subject_08,train,30,107,real+augmented
+squat_0032,squat/clip_0032.npy,squat,front,bad,back_rounding,subject_08,train,30,107,real+augmented
+squat_0033,squat/clip_0033.npy,squat,front,good,none,subject_01,train,30,85,real
+squat_0034,squat/clip_0034.npy,squat,front,bad,knee_valgus,subject_01,train,30,85,real+augmented
+squat_0035,squat/clip_0035.npy,squat,front,bad,insufficient_depth,subject_01,train,30,85,real+augmented
+squat_0036,squat/clip_0036.npy,squat,front,bad,back_rounding,subject_01,train,30,85,real+augmented
+squat_0037,squat/clip_0037.npy,squat,front,good,none,subject_02,train,30,84,real
+squat_0038,squat/clip_0038.npy,squat,front,bad,knee_valgus,subject_02,train,30,84,real+augmented
+squat_0039,squat/clip_0039.npy,squat,front,bad,insufficient_depth,subject_02,train,30,84,real+augmented
+squat_0040,squat/clip_0040.npy,squat,front,bad,back_rounding,subject_02,train,30,84,real+augmented
+squat_0041,squat/clip_0041.npy,squat,front,good,none,subject_03,train,30,75,real
+squat_0042,squat/clip_0042.npy,squat,front,bad,knee_valgus,subject_03,train,30,75,real+augmented
+squat_0043,squat/clip_0043.npy,squat,front,bad,insufficient_depth,subject_03,train,30,75,real+augmented
+squat_0044,squat/clip_0044.npy,squat,front,bad,back_rounding,subject_03,train,30,75,real+augmented
+squat_0045,squat/clip_0045.npy,squat,front,good,none,subject_04,train,30,105,real
+squat_0046,squat/clip_0046.npy,squat,front,bad,knee_valgus,subject_04,train,30,105,real+augmented
+squat_0047,squat/clip_0047.npy,squat,front,bad,insufficient_depth,subject_04,train,30,105,real+augmented
+squat_0048,squat/clip_0048.npy,squat,front,bad,back_rounding,subject_04,train,30,105,real+augmented
+squat_0049,squat/clip_0049.npy,squat,front,good,none,subject_05,train,30,105,real
+squat_0050,squat/clip_0050.npy,squat,front,bad,knee_valgus,subject_05,train,30,105,real+augmented
+squat_0051,squat/clip_0051.npy,squat,front,bad,insufficient_depth,subject_05,train,30,105,real+augmented
+squat_0052,squat/clip_0052.npy,squat,front,bad,back_rounding,subject_05,train,30,105,real+augmented
+squat_0053,squat/clip_0053.npy,squat,front,good,none,subject_06,train,30,96,real
+squat_0054,squat/clip_0054.npy,squat,front,bad,knee_valgus,subject_06,train,30,96,real+augmented
+squat_0055,squat/clip_0055.npy,squat,front,bad,insufficient_depth,subject_06,train,30,96,real+augmented
+squat_0056,squat/clip_0056.npy,squat,front,bad,back_rounding,subject_06,train,30,96,real+augmented
+squat_0057,squat/clip_0057.npy,squat,front,good,none,subject_07,train,30,80,real
+squat_0058,squat/clip_0058.npy,squat,front,bad,knee_valgus,subject_07,train,30,80,real+augmented
+squat_0059,squat/clip_0059.npy,squat,front,bad,insufficient_depth,subject_07,train,30,80,real+augmented
+squat_0060,squat/clip_0060.npy,squat,front,bad,back_rounding,subject_07,train,30,80,real+augmented
+squat_0061,squat/clip_0061.npy,squat,front,good,none,subject_08,train,30,93,real
+squat_0062,squat/clip_0062.npy,squat,front,bad,knee_valgus,subject_08,train,30,93,real+augmented
+squat_0063,squat/clip_0063.npy,squat,front,bad,insufficient_depth,subject_08,train,30,93,real+augmented
+squat_0064,squat/clip_0064.npy,squat,front,bad,back_rounding,subject_08,train,30,93,real+augmented
+squat_0065,squat/clip_0065.npy,squat,front,good,none,subject_01,train,30,120,real
+squat_0066,squat/clip_0066.npy,squat,front,bad,knee_valgus,subject_01,train,30,120,real+augmented
+squat_0067,squat/clip_0067.npy,squat,front,bad,insufficient_depth,subject_01,train,30,120,real+augmented
+squat_0068,squat/clip_0068.npy,squat,front,bad,back_rounding,subject_01,train,30,120,real+augmented
+squat_0069,squat/clip_0069.npy,squat,front,good,none,subject_02,train,30,90,real
+squat_0070,squat/clip_0070.npy,squat,front,bad,knee_valgus,subject_02,train,30,90,real+augmented
+squat_0071,squat/clip_0071.npy,squat,front,bad,insufficient_depth,subject_02,train,30,90,real+augmented
+squat_0072,squat/clip_0072.npy,squat,front,bad,back_rounding,subject_02,train,30,90,real+augmented
+squat_0073,squat/clip_0073.npy,squat,front,good,none,subject_03,train,30,156,real
+squat_0074,squat/clip_0074.npy,squat,front,bad,knee_valgus,subject_03,train,30,156,real+augmented
+squat_0075,squat/clip_0075.npy,squat,front,bad,insufficient_depth,subject_03,train,30,156,real+augmented
+squat_0076,squat/clip_0076.npy,squat,front,bad,back_rounding,subject_03,train,30,156,real+augmented
+squat_0077,squat/clip_0077.npy,squat,front,good,none,subject_04,train,30,110,real
+squat_0078,squat/clip_0078.npy,squat,front,bad,knee_valgus,subject_04,train,30,110,real+augmented
+squat_0079,squat/clip_0079.npy,squat,front,bad,insufficient_depth,subject_04,train,30,110,real+augmented
+squat_0080,squat/clip_0080.npy,squat,front,bad,back_rounding,subject_04,train,30,110,real+augmented
+squat_0081,squat/clip_0081.npy,squat,front,good,none,subject_05,train,30,102,real
+squat_0082,squat/clip_0082.npy,squat,front,bad,knee_valgus,subject_05,train,30,102,real+augmented
+squat_0083,squat/clip_0083.npy,squat,front,bad,insufficient_depth,subject_05,train,30,102,real+augmented
+squat_0084,squat/clip_0084.npy,squat,front,bad,back_rounding,subject_05,train,30,102,real+augmented
+squat_0085,squat/clip_0085.npy,squat,front,good,none,subject_06,train,30,108,real
+squat_0086,squat/clip_0086.npy,squat,front,bad,knee_valgus,subject_06,train,30,108,real+augmented
+squat_0087,squat/clip_0087.npy,squat,front,bad,insufficient_depth,subject_06,train,30,108,real+augmented
+squat_0088,squat/clip_0088.npy,squat,front,bad,back_rounding,subject_06,train,30,108,real+augmented
+squat_0089,squat/clip_0089.npy,squat,front,good,none,subject_07,train,30,103,real
+squat_0090,squat/clip_0090.npy,squat,front,bad,knee_valgus,subject_07,train,30,103,real+augmented
+squat_0091,squat/clip_0091.npy,squat,front,bad,insufficient_depth,subject_07,train,30,103,real+augmented
+squat_0092,squat/clip_0092.npy,squat,front,bad,back_rounding,subject_07,train,30,103,real+augmented
+squat_0093,squat/clip_0093.npy,squat,front,good,none,subject_08,train,30,98,real
+squat_0094,squat/clip_0094.npy,squat,front,bad,knee_valgus,subject_08,train,30,98,real+augmented
+squat_0095,squat/clip_0095.npy,squat,front,bad,insufficient_depth,subject_08,train,30,98,real+augmented
+squat_0096,squat/clip_0096.npy,squat,front,bad,back_rounding,subject_08,train,30,98,real+augmented
+squat_0097,squat/clip_0097.npy,squat,front,good,none,subject_01,train,30,90,real
+squat_0098,squat/clip_0098.npy,squat,front,bad,knee_valgus,subject_01,train,30,90,real+augmented
+squat_0099,squat/clip_0099.npy,squat,front,bad,insufficient_depth,subject_01,train,30,90,real+augmented
+squat_0100,squat/clip_0100.npy,squat,front,bad,back_rounding,subject_01,train,30,90,real+augmented
+squat_0101,squat/clip_0101.npy,squat,front,good,none,subject_02,train,30,112,real
+squat_0102,squat/clip_0102.npy,squat,front,bad,knee_valgus,subject_02,train,30,112,real+augmented
+squat_0103,squat/clip_0103.npy,squat,front,bad,insufficient_depth,subject_02,train,30,112,real+augmented
+squat_0104,squat/clip_0104.npy,squat,front,bad,back_rounding,subject_02,train,30,112,real+augmented
+squat_0105,squat/clip_0105.npy,squat,front,good,none,subject_03,train,30,74,real
+squat_0106,squat/clip_0106.npy,squat,front,bad,knee_valgus,subject_03,train,30,74,real+augmented
+squat_0107,squat/clip_0107.npy,squat,front,bad,insufficient_depth,subject_03,train,30,74,real+augmented
+squat_0108,squat/clip_0108.npy,squat,front,bad,back_rounding,subject_03,train,30,74,real+augmented
+squat_0109,squat/clip_0109.npy,squat,front,good,none,subject_04,train,30,118,real
+squat_0110,squat/clip_0110.npy,squat,front,bad,knee_valgus,subject_04,train,30,118,real+augmented
+squat_0111,squat/clip_0111.npy,squat,front,bad,insufficient_depth,subject_04,train,30,118,real+augmented
+squat_0112,squat/clip_0112.npy,squat,front,bad,back_rounding,subject_04,train,30,118,real+augmented
+squat_0113,squat/clip_0113.npy,squat,front,good,none,subject_05,train,30,114,real
+squat_0114,squat/clip_0114.npy,squat,front,bad,knee_valgus,subject_05,train,30,114,real+augmented
+squat_0115,squat/clip_0115.npy,squat,front,bad,insufficient_depth,subject_05,train,30,114,real+augmented
+squat_0116,squat/clip_0116.npy,squat,front,bad,back_rounding,subject_05,train,30,114,real+augmented
+squat_0117,squat/clip_0117.npy,squat,front,good,none,subject_06,train,30,123,real
+squat_0118,squat/clip_0118.npy,squat,front,bad,knee_valgus,subject_06,train,30,123,real+augmented
+squat_0119,squat/clip_0119.npy,squat,front,bad,insufficient_depth,subject_06,train,30,123,real+augmented
+squat_0120,squat/clip_0120.npy,squat,front,bad,back_rounding,subject_06,train,30,123,real+augmented
+squat_0121,squat/clip_0121.npy,squat,front,good,none,subject_07,train,30,125,real
+squat_0122,squat/clip_0122.npy,squat,front,bad,knee_valgus,subject_07,train,30,125,real+augmented
+squat_0123,squat/clip_0123.npy,squat,front,bad,insufficient_depth,subject_07,train,30,125,real+augmented
+squat_0124,squat/clip_0124.npy,squat,front,bad,back_rounding,subject_07,train,30,125,real+augmented
+squat_0125,squat/clip_0125.npy,squat,front,good,none,subject_08,train,30,96,real
+squat_0126,squat/clip_0126.npy,squat,front,bad,knee_valgus,subject_08,train,30,96,real+augmented
+squat_0127,squat/clip_0127.npy,squat,front,bad,insufficient_depth,subject_08,train,30,96,real+augmented
+squat_0128,squat/clip_0128.npy,squat,front,bad,back_rounding,subject_08,train,30,96,real+augmented
+squat_0129,squat/clip_0129.npy,squat,front,good,none,subject_01,train,30,131,real
+squat_0130,squat/clip_0130.npy,squat,front,bad,knee_valgus,subject_01,train,30,131,real+augmented
+squat_0131,squat/clip_0131.npy,squat,front,bad,insufficient_depth,subject_01,train,30,131,real+augmented
+squat_0132,squat/clip_0132.npy,squat,front,bad,back_rounding,subject_01,train,30,131,real+augmented
+squat_0133,squat/clip_0133.npy,squat,front,good,none,subject_02,train,30,99,real
+squat_0134,squat/clip_0134.npy,squat,front,bad,knee_valgus,subject_02,train,30,99,real+augmented
+squat_0135,squat/clip_0135.npy,squat,front,bad,insufficient_depth,subject_02,train,30,99,real+augmented
+squat_0136,squat/clip_0136.npy,squat,front,bad,back_rounding,subject_02,train,30,99,real+augmented
+squat_0137,squat/clip_0137.npy,squat,front,good,none,subject_03,train,30,112,real
+squat_0138,squat/clip_0138.npy,squat,front,bad,knee_valgus,subject_03,train,30,112,real+augmented
+squat_0139,squat/clip_0139.npy,squat,front,bad,insufficient_depth,subject_03,train,30,112,real+augmented
+squat_0140,squat/clip_0140.npy,squat,front,bad,back_rounding,subject_03,train,30,112,real+augmented
+squat_0141,squat/clip_0141.npy,squat,front,good,none,subject_04,train,30,153,real
+squat_0142,squat/clip_0142.npy,squat,front,bad,knee_valgus,subject_04,train,30,153,real+augmented
+squat_0143,squat/clip_0143.npy,squat,front,bad,insufficient_depth,subject_04,train,30,153,real+augmented
+squat_0144,squat/clip_0144.npy,squat,front,bad,back_rounding,subject_04,train,30,153,real+augmented
+squat_0145,squat/clip_0145.npy,squat,front,good,none,subject_05,train,30,68,real
+squat_0146,squat/clip_0146.npy,squat,front,bad,knee_valgus,subject_05,train,30,68,real+augmented
+squat_0147,squat/clip_0147.npy,squat,front,bad,insufficient_depth,subject_05,train,30,68,real+augmented
+squat_0148,squat/clip_0148.npy,squat,front,bad,back_rounding,subject_05,train,30,68,real+augmented
+squat_0149,squat/clip_0149.npy,squat,front,good,none,subject_06,train,30,149,real
+squat_0150,squat/clip_0150.npy,squat,front,bad,knee_valgus,subject_06,train,30,149,real+augmented
+squat_0151,squat/clip_0151.npy,squat,front,bad,insufficient_depth,subject_06,train,30,149,real+augmented
+squat_0152,squat/clip_0152.npy,squat,front,bad,back_rounding,subject_06,train,30,149,real+augmented
+curl_0001,curl/clip_0001.npy,curl,front,good,none,train_seg_0000,train,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0002,curl/clip_0002.npy,curl,front,good,none,train_seg_0000,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0003,curl/clip_0003.npy,curl,front,good,none,train_seg_0000,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0004,curl/clip_0004.npy,curl,front,good,none,train_seg_0000,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0005,curl/clip_0005.npy,curl,front,good,none,train_seg_0000,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0006,curl/clip_0006.npy,curl,front,good,none,train_seg_0000,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0007,curl/clip_0007.npy,curl,front,good,none,train_seg_0000,train,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0008,curl/clip_0008.npy,curl,front,good,none,train_seg_0000,train,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0009,curl/clip_0009.npy,curl,front,good,none,train_seg_0000,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0010,curl/clip_0010.npy,curl,front,bad,swing,train_seg_0000,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0011,curl/clip_0011.npy,curl,front,bad,swing,train_seg_0000,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0012,curl/clip_0012.npy,curl,front,bad,swing,train_seg_0000,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0013,curl/clip_0013.npy,curl,front,bad,swing,train_seg_0000,train,30,57,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0014,curl/clip_0014.npy,curl,front,bad,swing,train_seg_0000,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0015,curl/clip_0015.npy,curl,front,bad,swing,train_seg_0000,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0016,curl/clip_0016.npy,curl,front,bad,swing,train_seg_0000,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0017,curl/clip_0017.npy,curl,front,good,none,train_seg_0000,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0018,curl/clip_0018.npy,curl,front,good,none,train_seg_0000,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0019,curl/clip_0019.npy,curl,front,good,none,train_seg_0000,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0020,curl/clip_0020.npy,curl,front,good,none,train_seg_0000,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0021,curl/clip_0021.npy,curl,front,good,none,train_seg_0000,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0022,curl/clip_0022.npy,curl,front,good,none,train_seg_0000,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0023,curl/clip_0023.npy,curl,front,good,none,train_seg_0000,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0024,curl/clip_0024.npy,curl,front,good,none,train_seg_0000,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0025,curl/clip_0025.npy,curl,front,good,none,train_seg_0000,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0026,curl/clip_0026.npy,curl,front,good,none,train_seg_0000,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0027,curl/clip_0027.npy,curl,front,good,none,train_seg_0000,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0028,curl/clip_0028.npy,curl,front,good,none,train_seg_0000,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0029,curl/clip_0029.npy,curl,front,bad,swing,train_seg_0001,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0030,curl/clip_0030.npy,curl,front,bad,swing,train_seg_0001,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0031,curl/clip_0031.npy,curl,front,bad,swing,train_seg_0001,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0032,curl/clip_0032.npy,curl,front,bad,swing,train_seg_0001,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0033,curl/clip_0033.npy,curl,front,bad,swing,train_seg_0001,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0034,curl/clip_0034.npy,curl,front,bad,swing,train_seg_0001,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0035,curl/clip_0035.npy,curl,front,bad,swing,train_seg_0001,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0036,curl/clip_0036.npy,curl,front,bad,swing,train_seg_0001,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0037,curl/clip_0037.npy,curl,front,bad,swing,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0038,curl/clip_0038.npy,curl,front,good,none,train_seg_0002,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0039,curl/clip_0039.npy,curl,front,good,none,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0040,curl/clip_0040.npy,curl,front,good,none,train_seg_0002,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0041,curl/clip_0041.npy,curl,front,good,none,train_seg_0002,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0042,curl/clip_0042.npy,curl,front,good,none,train_seg_0002,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0043,curl/clip_0043.npy,curl,front,good,none,train_seg_0002,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0044,curl/clip_0044.npy,curl,front,good,none,train_seg_0002,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0045,curl/clip_0045.npy,curl,front,good,none,train_seg_0002,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0046,curl/clip_0046.npy,curl,front,good,none,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0047,curl/clip_0047.npy,curl,front,good,none,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0048,curl/clip_0048.npy,curl,front,bad,swing,train_seg_0002,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0049,curl/clip_0049.npy,curl,front,bad,swing,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0050,curl/clip_0050.npy,curl,front,bad,swing,train_seg_0002,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0051,curl/clip_0051.npy,curl,front,bad,swing,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0052,curl/clip_0052.npy,curl,front,bad,swing,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0053,curl/clip_0053.npy,curl,front,bad,swing,train_seg_0002,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0054,curl/clip_0054.npy,curl,front,bad,swing,train_seg_0002,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0055,curl/clip_0055.npy,curl,front,bad,swing,train_seg_0002,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0056,curl/clip_0056.npy,curl,front,good,none,train_seg_0002,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0057,curl/clip_0057.npy,curl,front,good,none,train_seg_0002,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0058,curl/clip_0058.npy,curl,front,good,none,train_seg_0002,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0059,curl/clip_0059.npy,curl,front,good,none,train_seg_0002,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0060,curl/clip_0060.npy,curl,front,good,none,train_seg_0002,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0061,curl/clip_0061.npy,curl,front,good,none,train_seg_0002,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0062,curl/clip_0062.npy,curl,front,good,none,train_seg_0002,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0063,curl/clip_0063.npy,curl,front,good,none,train_seg_0002,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0064,curl/clip_0064.npy,curl,front,good,none,train_seg_0002,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0065,curl/clip_0065.npy,curl,front,bad,swing,train_seg_0002,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0066,curl/clip_0066.npy,curl,front,bad,swing,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0067,curl/clip_0067.npy,curl,front,bad,swing,train_seg_0002,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0068,curl/clip_0068.npy,curl,front,bad,swing,train_seg_0002,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0069,curl/clip_0069.npy,curl,front,bad,swing,train_seg_0002,train,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0070,curl/clip_0070.npy,curl,front,bad,swing,train_seg_0002,train,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0071,curl/clip_0071.npy,curl,front,bad,swing,train_seg_0002,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0072,curl/clip_0072.npy,curl,front,bad,swing,train_seg_0002,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0073,curl/clip_0073.npy,curl,front,good,none,train_seg_0002,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0074,curl/clip_0074.npy,curl,front,good,none,train_seg_0002,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0075,curl/clip_0075.npy,curl,front,good,none,train_seg_0002,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0076,curl/clip_0076.npy,curl,front,good,none,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0077,curl/clip_0077.npy,curl,front,good,none,train_seg_0002,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0078,curl/clip_0078.npy,curl,front,good,none,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0079,curl/clip_0079.npy,curl,front,good,none,train_seg_0002,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0080,curl/clip_0080.npy,curl,front,good,none,train_seg_0002,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0081,curl/clip_0081.npy,curl,front,good,none,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0082,curl/clip_0082.npy,curl,front,good,none,train_seg_0002,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0083,curl/clip_0083.npy,curl,front,good,none,train_seg_0002,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0084,curl/clip_0084.npy,curl,front,good,none,train_seg_0002,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0085,curl/clip_0085.npy,curl,front,bad,swing,train_seg_0003,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0086,curl/clip_0086.npy,curl,front,bad,swing,train_seg_0003,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0087,curl/clip_0087.npy,curl,front,bad,swing,train_seg_0003,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0088,curl/clip_0088.npy,curl,front,bad,swing,train_seg_0003,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0089,curl/clip_0089.npy,curl,front,bad,swing,train_seg_0003,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0090,curl/clip_0090.npy,curl,front,bad,swing,train_seg_0003,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0091,curl/clip_0091.npy,curl,front,bad,swing,train_seg_0003,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0092,curl/clip_0092.npy,curl,front,bad,swing,train_seg_0003,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0093,curl/clip_0093.npy,curl,front,bad,swing,train_seg_0004,train,30,51,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0094,curl/clip_0094.npy,curl,front,good,none,train_seg_0005,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0095,curl/clip_0095.npy,curl,front,good,none,train_seg_0005,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0096,curl/clip_0096.npy,curl,front,good,none,train_seg_0005,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0097,curl/clip_0097.npy,curl,front,good,none,train_seg_0005,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0098,curl/clip_0098.npy,curl,front,good,none,train_seg_0005,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0099,curl/clip_0099.npy,curl,front,good,none,train_seg_0005,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0100,curl/clip_0100.npy,curl,front,good,none,train_seg_0005,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0101,curl/clip_0101.npy,curl,front,good,none,train_seg_0005,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0102,curl/clip_0102.npy,curl,front,good,none,train_seg_0005,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0103,curl/clip_0103.npy,curl,front,bad,swing,train_seg_0005,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0104,curl/clip_0104.npy,curl,front,bad,swing,train_seg_0005,train,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0105,curl/clip_0105.npy,curl,front,bad,swing,train_seg_0005,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0106,curl/clip_0106.npy,curl,front,bad,swing,train_seg_0005,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0107,curl/clip_0107.npy,curl,front,bad,swing,train_seg_0005,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0108,curl/clip_0108.npy,curl,front,bad,swing,train_seg_0005,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0109,curl/clip_0109.npy,curl,front,bad,swing,train_seg_0005,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0110,curl/clip_0110.npy,curl,front,good,none,train_seg_0005,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0111,curl/clip_0111.npy,curl,front,good,none,train_seg_0005,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0112,curl/clip_0112.npy,curl,front,good,none,train_seg_0005,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0113,curl/clip_0113.npy,curl,front,good,none,train_seg_0005,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0114,curl/clip_0114.npy,curl,front,good,none,train_seg_0005,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0115,curl/clip_0115.npy,curl,front,good,none,train_seg_0005,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0116,curl/clip_0116.npy,curl,front,good,none,train_seg_0005,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0117,curl/clip_0117.npy,curl,front,good,none,train_seg_0005,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0118,curl/clip_0118.npy,curl,front,good,none,train_seg_0005,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0119,curl/clip_0119.npy,curl,front,good,none,train_seg_0005,train,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0120,curl/clip_0120.npy,curl,front,bad,swing,train_seg_0005,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0121,curl/clip_0121.npy,curl,front,bad,swing,train_seg_0005,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0122,curl/clip_0122.npy,curl,front,bad,swing,train_seg_0005,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0123,curl/clip_0123.npy,curl,front,bad,swing,train_seg_0005,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0124,curl/clip_0124.npy,curl,front,bad,swing,train_seg_0005,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0125,curl/clip_0125.npy,curl,front,bad,swing,train_seg_0005,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0126,curl/clip_0126.npy,curl,front,bad,swing,train_seg_0005,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0127,curl/clip_0127.npy,curl,front,bad,swing,train_seg_0005,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0128,curl/clip_0128.npy,curl,front,good,none,train_seg_0006,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0129,curl/clip_0129.npy,curl,front,good,none,train_seg_0006,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0130,curl/clip_0130.npy,curl,front,good,none,train_seg_0006,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0131,curl/clip_0131.npy,curl,front,good,none,train_seg_0006,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0132,curl/clip_0132.npy,curl,front,good,none,train_seg_0006,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0133,curl/clip_0133.npy,curl,front,good,none,train_seg_0006,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0134,curl/clip_0134.npy,curl,front,good,none,train_seg_0006,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0135,curl/clip_0135.npy,curl,front,good,none,train_seg_0006,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0136,curl/clip_0136.npy,curl,front,good,none,train_seg_0006,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0137,curl/clip_0137.npy,curl,front,good,none,train_seg_0006,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0138,curl/clip_0138.npy,curl,front,good,none,train_seg_0006,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0139,curl/clip_0139.npy,curl,front,good,none,train_seg_0006,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0140,curl/clip_0140.npy,curl,front,good,none,train_seg_0006,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0141,curl/clip_0141.npy,curl,front,good,none,train_seg_0006,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0142,curl/clip_0142.npy,curl,front,good,none,train_seg_0006,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0143,curl/clip_0143.npy,curl,front,bad,swing,train_seg_0007,train,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0144,curl/clip_0144.npy,curl,front,bad,swing,train_seg_0007,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0145,curl/clip_0145.npy,curl,front,bad,swing,train_seg_0007,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0146,curl/clip_0146.npy,curl,front,bad,swing,train_seg_0007,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0147,curl/clip_0147.npy,curl,front,bad,swing,train_seg_0007,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0148,curl/clip_0148.npy,curl,front,bad,swing,train_seg_0007,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0149,curl/clip_0149.npy,curl,front,bad,swing,train_seg_0007,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0150,curl/clip_0150.npy,curl,front,bad,swing,train_seg_0007,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0151,curl/clip_0151.npy,curl,front,bad,swing,train_seg_0007,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0152,curl/clip_0152.npy,curl,front,bad,swing,train_seg_0007,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0153,curl/clip_0153.npy,curl,front,good,none,train_seg_0008,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0154,curl/clip_0154.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0155,curl/clip_0155.npy,curl,front,good,none,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0156,curl/clip_0156.npy,curl,front,good,none,train_seg_0008,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0157,curl/clip_0157.npy,curl,front,good,none,train_seg_0008,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0158,curl/clip_0158.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0159,curl/clip_0159.npy,curl,front,good,none,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0160,curl/clip_0160.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0161,curl/clip_0161.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0162,curl/clip_0162.npy,curl,front,good,none,train_seg_0008,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0163,curl/clip_0163.npy,curl,front,bad,swing,train_seg_0008,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0164,curl/clip_0164.npy,curl,front,bad,swing,train_seg_0008,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0165,curl/clip_0165.npy,curl,front,bad,swing,train_seg_0008,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0166,curl/clip_0166.npy,curl,front,bad,swing,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0167,curl/clip_0167.npy,curl,front,bad,swing,train_seg_0008,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0168,curl/clip_0168.npy,curl,front,bad,swing,train_seg_0008,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0169,curl/clip_0169.npy,curl,front,bad,swing,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0170,curl/clip_0170.npy,curl,front,bad,swing,train_seg_0008,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0171,curl/clip_0171.npy,curl,front,good,none,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0172,curl/clip_0172.npy,curl,front,good,none,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0173,curl/clip_0173.npy,curl,front,good,none,train_seg_0008,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0174,curl/clip_0174.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0175,curl/clip_0175.npy,curl,front,good,none,train_seg_0008,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0176,curl/clip_0176.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0177,curl/clip_0177.npy,curl,front,good,none,train_seg_0008,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0178,curl/clip_0178.npy,curl,front,good,none,train_seg_0008,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0179,curl/clip_0179.npy,curl,front,good,none,train_seg_0008,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0180,curl/clip_0180.npy,curl,front,good,none,train_seg_0008,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0181,curl/clip_0181.npy,curl,front,good,none,train_seg_0008,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0182,curl/clip_0182.npy,curl,front,good,none,train_seg_0008,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0183,curl/clip_0183.npy,curl,front,bad,swing,train_seg_0009,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0184,curl/clip_0184.npy,curl,front,bad,swing,train_seg_0009,train,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0185,curl/clip_0185.npy,curl,front,bad,swing,train_seg_0009,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0186,curl/clip_0186.npy,curl,front,bad,swing,train_seg_0009,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0187,curl/clip_0187.npy,curl,front,bad,swing,train_seg_0009,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0188,curl/clip_0188.npy,curl,front,bad,swing,train_seg_0009,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0189,curl/clip_0189.npy,curl,front,bad,swing,train_seg_0009,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0190,curl/clip_0190.npy,curl,front,bad,swing,train_seg_0009,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0191,curl/clip_0191.npy,curl,front,bad,swing,train_seg_0009,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0192,curl/clip_0192.npy,curl,front,good,none,train_seg_0010,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0193,curl/clip_0193.npy,curl,front,good,none,train_seg_0010,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0194,curl/clip_0194.npy,curl,front,good,none,train_seg_0010,train,30,51,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0195,curl/clip_0195.npy,curl,front,good,none,train_seg_0010,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0196,curl/clip_0196.npy,curl,front,good,none,train_seg_0010,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0197,curl/clip_0197.npy,curl,front,good,none,train_seg_0010,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0198,curl/clip_0198.npy,curl,front,good,none,train_seg_0010,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0199,curl/clip_0199.npy,curl,front,bad,swing,train_seg_0011,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0200,curl/clip_0200.npy,curl,front,bad,swing,train_seg_0011,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0201,curl/clip_0201.npy,curl,front,bad,swing,train_seg_0011,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0202,curl/clip_0202.npy,curl,front,bad,swing,train_seg_0011,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0203,curl/clip_0203.npy,curl,front,bad,swing,train_seg_0011,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0204,curl/clip_0204.npy,curl,front,bad,swing,train_seg_0011,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0205,curl/clip_0205.npy,curl,front,bad,swing,train_seg_0011,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0206,curl/clip_0206.npy,curl,front,bad,swing,train_seg_0011,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0207,curl/clip_0207.npy,curl,front,bad,swing,train_seg_0011,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0208,curl/clip_0208.npy,curl,front,bad,swing,train_seg_0011,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0209,curl/clip_0209.npy,curl,front,bad,swing,train_seg_0011,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0210,curl/clip_0210.npy,curl,front,bad,swing,train_seg_0011,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0211,curl/clip_0211.npy,curl,front,bad,swing,train_seg_0011,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0212,curl/clip_0212.npy,curl,front,good,none,train_seg_0012,train,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0213,curl/clip_0213.npy,curl,front,good,none,train_seg_0012,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0214,curl/clip_0214.npy,curl,front,good,none,train_seg_0012,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0215,curl/clip_0215.npy,curl,front,good,none,train_seg_0012,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0216,curl/clip_0216.npy,curl,front,good,none,train_seg_0012,train,30,48,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0217,curl/clip_0217.npy,curl,front,good,none,train_seg_0013,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0218,curl/clip_0218.npy,curl,front,good,none,train_seg_0013,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0219,curl/clip_0219.npy,curl,front,good,none,train_seg_0013,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0220,curl/clip_0220.npy,curl,front,good,none,train_seg_0013,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0221,curl/clip_0221.npy,curl,front,good,none,train_seg_0013,train,30,15,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0222,curl/clip_0222.npy,curl,front,bad,swing,train_seg_0014,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0223,curl/clip_0223.npy,curl,front,bad,swing,train_seg_0014,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0224,curl/clip_0224.npy,curl,front,bad,swing,train_seg_0014,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0225,curl/clip_0225.npy,curl,front,bad,swing,train_seg_0014,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0226,curl/clip_0226.npy,curl,front,bad,swing,train_seg_0014,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0227,curl/clip_0227.npy,curl,front,bad,swing,train_seg_0014,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0228,curl/clip_0228.npy,curl,front,bad,swing,train_seg_0014,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0229,curl/clip_0229.npy,curl,front,bad,swing,train_seg_0014,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0230,curl/clip_0230.npy,curl,front,bad,swing,train_seg_0014,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0231,curl/clip_0231.npy,curl,front,bad,swing,train_seg_0014,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0232,curl/clip_0232.npy,curl,front,bad,swing,train_seg_0014,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0233,curl/clip_0233.npy,curl,front,bad,swing,train_seg_0014,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0234,curl/clip_0234.npy,curl,front,bad,swing,train_seg_0014,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0235,curl/clip_0235.npy,curl,front,bad,swing,train_seg_0014,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0236,curl/clip_0236.npy,curl,front,good,none,train_seg_0015,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0237,curl/clip_0237.npy,curl,front,good,none,train_seg_0015,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0238,curl/clip_0238.npy,curl,front,good,none,train_seg_0015,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0239,curl/clip_0239.npy,curl,front,good,none,train_seg_0015,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0240,curl/clip_0240.npy,curl,front,good,none,train_seg_0015,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0241,curl/clip_0241.npy,curl,front,good,none,train_seg_0015,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0242,curl/clip_0242.npy,curl,front,good,none,train_seg_0015,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0243,curl/clip_0243.npy,curl,front,bad,swing,train_seg_0016,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0244,curl/clip_0244.npy,curl,front,bad,swing,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0245,curl/clip_0245.npy,curl,front,bad,swing,train_seg_0016,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0246,curl/clip_0246.npy,curl,front,bad,swing,train_seg_0016,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0247,curl/clip_0247.npy,curl,front,bad,swing,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0248,curl/clip_0248.npy,curl,front,bad,swing,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0249,curl/clip_0249.npy,curl,front,bad,swing,train_seg_0016,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0250,curl/clip_0250.npy,curl,front,bad,swing,train_seg_0016,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0251,curl/clip_0251.npy,curl,front,bad,swing,train_seg_0016,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0252,curl/clip_0252.npy,curl,front,bad,swing,train_seg_0016,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0253,curl/clip_0253.npy,curl,front,bad,swing,train_seg_0016,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0254,curl/clip_0254.npy,curl,front,bad,swing,train_seg_0016,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0255,curl/clip_0255.npy,curl,front,good,none,train_seg_0016,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0256,curl/clip_0256.npy,curl,front,good,none,train_seg_0016,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0257,curl/clip_0257.npy,curl,front,good,none,train_seg_0016,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0258,curl/clip_0258.npy,curl,front,good,none,train_seg_0016,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0259,curl/clip_0259.npy,curl,front,good,none,train_seg_0016,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0260,curl/clip_0260.npy,curl,front,good,none,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0261,curl/clip_0261.npy,curl,front,good,none,train_seg_0016,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0262,curl/clip_0262.npy,curl,front,good,none,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0263,curl/clip_0263.npy,curl,front,good,none,train_seg_0016,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0264,curl/clip_0264.npy,curl,front,good,none,train_seg_0016,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0265,curl/clip_0265.npy,curl,front,bad,swing,train_seg_0017,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0266,curl/clip_0266.npy,curl,front,bad,swing,train_seg_0017,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0267,curl/clip_0267.npy,curl,front,bad,swing,train_seg_0017,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0268,curl/clip_0268.npy,curl,front,bad,swing,train_seg_0017,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0269,curl/clip_0269.npy,curl,front,bad,swing,train_seg_0017,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0270,curl/clip_0270.npy,curl,front,bad,swing,train_seg_0017,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0271,curl/clip_0271.npy,curl,front,bad,swing,train_seg_0017,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0272,curl/clip_0272.npy,curl,front,bad,swing,train_seg_0017,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0273,curl/clip_0273.npy,curl,front,bad,swing,train_seg_0017,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0274,curl/clip_0274.npy,curl,front,bad,swing,train_seg_0017,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0275,curl/clip_0275.npy,curl,front,bad,swing,train_seg_0017,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0276,curl/clip_0276.npy,curl,front,bad,swing,train_seg_0017,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0277,curl/clip_0277.npy,curl,front,bad,swing,train_seg_0017,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0278,curl/clip_0278.npy,curl,front,bad,swing,train_seg_0017,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0279,curl/clip_0279.npy,curl,front,good,none,train_seg_0018,train,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0280,curl/clip_0280.npy,curl,front,good,none,train_seg_0018,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0281,curl/clip_0281.npy,curl,front,good,none,train_seg_0018,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0282,curl/clip_0282.npy,curl,front,good,none,train_seg_0018,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0283,curl/clip_0283.npy,curl,front,good,none,train_seg_0018,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0284,curl/clip_0284.npy,curl,front,good,none,train_seg_0018,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0285,curl/clip_0285.npy,curl,front,good,none,train_seg_0018,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0286,curl/clip_0286.npy,curl,front,good,none,train_seg_0018,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0287,curl/clip_0287.npy,curl,front,good,none,train_seg_0018,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0288,curl/clip_0288.npy,curl,front,bad,swing,train_seg_0019,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0289,curl/clip_0289.npy,curl,front,bad,swing,train_seg_0019,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0290,curl/clip_0290.npy,curl,front,bad,swing,train_seg_0019,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0291,curl/clip_0291.npy,curl,front,bad,swing,train_seg_0019,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0292,curl/clip_0292.npy,curl,front,bad,swing,train_seg_0019,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0293,curl/clip_0293.npy,curl,front,bad,swing,train_seg_0019,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0294,curl/clip_0294.npy,curl,front,bad,swing,train_seg_0019,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0295,curl/clip_0295.npy,curl,front,bad,swing,train_seg_0019,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0296,curl/clip_0296.npy,curl,front,bad,swing,train_seg_0019,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0297,curl/clip_0297.npy,curl,front,bad,swing,train_seg_0019,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0298,curl/clip_0298.npy,curl,front,bad,swing,train_seg_0019,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0299,curl/clip_0299.npy,curl,front,good,none,train_seg_0021,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0300,curl/clip_0300.npy,curl,front,good,none,train_seg_0021,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0301,curl/clip_0301.npy,curl,front,good,none,train_seg_0021,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0302,curl/clip_0302.npy,curl,front,good,none,train_seg_0021,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0303,curl/clip_0303.npy,curl,front,good,none,train_seg_0021,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0304,curl/clip_0304.npy,curl,front,good,none,train_seg_0021,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0305,curl/clip_0305.npy,curl,front,good,none,train_seg_0021,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0306,curl/clip_0306.npy,curl,front,good,none,train_seg_0021,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0307,curl/clip_0307.npy,curl,front,good,none,train_seg_0021,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0308,curl/clip_0308.npy,curl,front,bad,swing,train_seg_0023,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0309,curl/clip_0309.npy,curl,front,bad,swing,train_seg_0023,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0310,curl/clip_0310.npy,curl,front,bad,swing,train_seg_0023,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0311,curl/clip_0311.npy,curl,front,bad,swing,train_seg_0023,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0312,curl/clip_0312.npy,curl,front,bad,swing,train_seg_0023,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0313,curl/clip_0313.npy,curl,front,bad,swing,train_seg_0023,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0314,curl/clip_0314.npy,curl,front,bad,swing,train_seg_0023,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0315,curl/clip_0315.npy,curl,front,bad,swing,train_seg_0023,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0316,curl/clip_0316.npy,curl,front,bad,swing,train_seg_0023,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0317,curl/clip_0317.npy,curl,front,bad,swing,train_seg_0023,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0318,curl/clip_0318.npy,curl,front,bad,swing,train_seg_0023,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0319,curl/clip_0319.npy,curl,front,good,none,train_seg_0025,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0320,curl/clip_0320.npy,curl,front,good,none,train_seg_0025,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0321,curl/clip_0321.npy,curl,front,good,none,train_seg_0025,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0322,curl/clip_0322.npy,curl,front,good,none,train_seg_0025,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0323,curl/clip_0323.npy,curl,front,good,none,train_seg_0025,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0324,curl/clip_0324.npy,curl,front,good,none,train_seg_0025,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0325,curl/clip_0325.npy,curl,front,good,none,train_seg_0025,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0326,curl/clip_0326.npy,curl,front,good,none,train_seg_0025,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0327,curl/clip_0327.npy,curl,front,good,none,train_seg_0025,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0328,curl/clip_0328.npy,curl,front,good,none,train_seg_0025,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0329,curl/clip_0329.npy,curl,front,good,none,train_seg_0025,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0330,curl/clip_0330.npy,curl,front,bad,swing,train_seg_0026,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0331,curl/clip_0331.npy,curl,front,bad,swing,train_seg_0026,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0332,curl/clip_0332.npy,curl,front,bad,swing,train_seg_0026,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0333,curl/clip_0333.npy,curl,front,bad,swing,train_seg_0026,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0334,curl/clip_0334.npy,curl,front,bad,swing,train_seg_0026,train,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0335,curl/clip_0335.npy,curl,front,bad,swing,train_seg_0026,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0336,curl/clip_0336.npy,curl,front,bad,swing,train_seg_0026,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0337,curl/clip_0337.npy,curl,front,bad,swing,train_seg_0026,train,30,62,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0338,curl/clip_0338.npy,curl,front,bad,swing,train_seg_0026,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0339,curl/clip_0339.npy,curl,front,good,none,train_seg_0027,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0340,curl/clip_0340.npy,curl,front,good,none,train_seg_0027,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0341,curl/clip_0341.npy,curl,front,good,none,train_seg_0027,train,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0342,curl/clip_0342.npy,curl,front,good,none,train_seg_0027,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0343,curl/clip_0343.npy,curl,front,good,none,train_seg_0027,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0344,curl/clip_0344.npy,curl,front,bad,swing,train_seg_0027,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0345,curl/clip_0345.npy,curl,front,bad,swing,train_seg_0027,train,30,43,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0346,curl/clip_0346.npy,curl,front,bad,swing,train_seg_0027,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0347,curl/clip_0347.npy,curl,front,bad,swing,train_seg_0027,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0348,curl/clip_0348.npy,curl,front,bad,swing,train_seg_0027,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0349,curl/clip_0349.npy,curl,front,bad,swing,train_seg_0027,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0350,curl/clip_0350.npy,curl,front,good,none,train_seg_0028,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0351,curl/clip_0351.npy,curl,front,good,none,train_seg_0028,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0352,curl/clip_0352.npy,curl,front,good,none,train_seg_0028,train,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0353,curl/clip_0353.npy,curl,front,bad,swing,train_seg_0029,train,30,56,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0354,curl/clip_0354.npy,curl,front,bad,swing,train_seg_0029,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0355,curl/clip_0355.npy,curl,front,bad,swing,train_seg_0029,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0356,curl/clip_0356.npy,curl,front,bad,swing,train_seg_0029,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0357,curl/clip_0357.npy,curl,front,bad,swing,train_seg_0029,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0358,curl/clip_0358.npy,curl,front,bad,swing,train_seg_0029,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0359,curl/clip_0359.npy,curl,front,good,none,train_seg_0030,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0360,curl/clip_0360.npy,curl,front,good,none,train_seg_0030,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0361,curl/clip_0361.npy,curl,front,good,none,train_seg_0030,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0362,curl/clip_0362.npy,curl,front,good,none,train_seg_0030,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0363,curl/clip_0363.npy,curl,front,good,none,train_seg_0030,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0364,curl/clip_0364.npy,curl,front,good,none,train_seg_0030,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0365,curl/clip_0365.npy,curl,front,good,none,train_seg_0030,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0366,curl/clip_0366.npy,curl,front,good,none,train_seg_0030,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0367,curl/clip_0367.npy,curl,front,bad,swing,train_seg_0030,train,30,47,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0368,curl/clip_0368.npy,curl,front,bad,swing,train_seg_0030,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0369,curl/clip_0369.npy,curl,front,bad,swing,train_seg_0030,train,30,22,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0370,curl/clip_0370.npy,curl,front,bad,swing,train_seg_0030,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0371,curl/clip_0371.npy,curl,front,bad,swing,train_seg_0030,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0372,curl/clip_0372.npy,curl,front,bad,swing,train_seg_0030,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0373,curl/clip_0373.npy,curl,front,good,none,train_seg_0031,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0374,curl/clip_0374.npy,curl,front,good,none,train_seg_0031,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0375,curl/clip_0375.npy,curl,front,good,none,train_seg_0031,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0376,curl/clip_0376.npy,curl,front,good,none,train_seg_0031,train,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0377,curl/clip_0377.npy,curl,front,bad,swing,train_seg_0032,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0378,curl/clip_0378.npy,curl,front,bad,swing,train_seg_0032,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0379,curl/clip_0379.npy,curl,front,bad,swing,train_seg_0032,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0380,curl/clip_0380.npy,curl,front,bad,swing,train_seg_0032,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0381,curl/clip_0381.npy,curl,front,bad,swing,train_seg_0032,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0382,curl/clip_0382.npy,curl,front,good,none,train_seg_0033,train,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0383,curl/clip_0383.npy,curl,front,good,none,train_seg_0033,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0384,curl/clip_0384.npy,curl,front,good,none,train_seg_0033,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0385,curl/clip_0385.npy,curl,front,good,none,train_seg_0033,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0386,curl/clip_0386.npy,curl,front,good,none,train_seg_0033,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0387,curl/clip_0387.npy,curl,front,good,none,train_seg_0033,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0388,curl/clip_0388.npy,curl,front,good,none,train_seg_0033,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0389,curl/clip_0389.npy,curl,front,good,none,train_seg_0033,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0390,curl/clip_0390.npy,curl,front,bad,swing,train_seg_0033,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0391,curl/clip_0391.npy,curl,front,bad,swing,train_seg_0033,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0392,curl/clip_0392.npy,curl,front,bad,swing,train_seg_0033,train,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0393,curl/clip_0393.npy,curl,front,bad,swing,train_seg_0033,train,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0394,curl/clip_0394.npy,curl,front,bad,swing,train_seg_0033,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0395,curl/clip_0395.npy,curl,front,bad,swing,train_seg_0033,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0396,curl/clip_0396.npy,curl,front,bad,swing,train_seg_0033,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0397,curl/clip_0397.npy,curl,front,good,none,train_seg_0034,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0398,curl/clip_0398.npy,curl,front,good,none,train_seg_0034,train,30,21,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0399,curl/clip_0399.npy,curl,front,good,none,train_seg_0034,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0400,curl/clip_0400.npy,curl,front,good,none,train_seg_0034,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0401,curl/clip_0401.npy,curl,front,good,none,train_seg_0034,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0402,curl/clip_0402.npy,curl,front,good,none,train_seg_0034,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0403,curl/clip_0403.npy,curl,front,bad,swing,train_seg_0035,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0404,curl/clip_0404.npy,curl,front,bad,swing,train_seg_0035,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0405,curl/clip_0405.npy,curl,front,bad,swing,train_seg_0035,train,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0406,curl/clip_0406.npy,curl,front,bad,swing,train_seg_0035,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0407,curl/clip_0407.npy,curl,front,bad,swing,train_seg_0035,train,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0408,curl/clip_0408.npy,curl,front,good,none,train_seg_0036,train,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0409,curl/clip_0409.npy,curl,front,good,none,train_seg_0036,train,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0410,curl/clip_0410.npy,curl,front,good,none,train_seg_0036,train,30,47,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0411,curl/clip_0411.npy,curl,front,good,none,train_seg_0036,train,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0412,curl/clip_0412.npy,curl,front,good,none,train_seg_0037,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0413,curl/clip_0413.npy,curl,front,good,none,train_seg_0037,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0414,curl/clip_0414.npy,curl,front,good,none,train_seg_0037,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0415,curl/clip_0415.npy,curl,front,good,none,train_seg_0038,train,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0416,curl/clip_0416.npy,curl,front,good,none,train_seg_0038,train,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0417,curl/clip_0417.npy,curl,front,good,none,train_seg_0038,train,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0418,curl/clip_0418.npy,curl,front,good,none,train_seg_0038,train,30,42,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0419,curl/clip_0419.npy,curl,front,good,none,train_seg_0038,train,30,36,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0420,curl/clip_0420.npy,curl,front,good,none,train_seg_0038,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0421,curl/clip_0421.npy,curl,front,good,none,train_seg_0042,train,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0422,curl/clip_0422.npy,curl,front,good,none,train_seg_0042,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0423,curl/clip_0423.npy,curl,front,good,none,train_seg_0042,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0424,curl/clip_0424.npy,curl,front,bad,swing,train_seg_0044,train,30,54,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0425,curl/clip_0425.npy,curl,front,bad,swing,train_seg_0045,train,30,24,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0426,curl/clip_0426.npy,curl,front,good,none,train_seg_0047,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0427,curl/clip_0427.npy,curl,front,good,none,train_seg_0047,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0428,curl/clip_0428.npy,curl,front,good,none,train_seg_0047,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0429,curl/clip_0429.npy,curl,front,bad,swing,train_seg_0048,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0430,curl/clip_0430.npy,curl,front,bad,swing,train_seg_0049,train,30,39,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0431,curl/clip_0431.npy,curl,front,bad,swing,train_seg_0051,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0432,curl/clip_0432.npy,curl,front,good,none,train_seg_0052,train,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0433,curl/clip_0433.npy,curl,front,good,none,train_seg_0052,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0434,curl/clip_0434.npy,curl,front,good,none,train_seg_0054,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0435,curl/clip_0435.npy,curl,front,good,none,train_seg_0054,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0436,curl/clip_0436.npy,curl,front,good,none,train_seg_0054,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0437,curl/clip_0437.npy,curl,front,good,none,train_seg_0058,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0438,curl/clip_0438.npy,curl,front,good,none,train_seg_0058,train,30,30,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0439,curl/clip_0439.npy,curl,front,bad,swing,train_seg_0060,train,30,19,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0440,curl/clip_0440.npy,curl,front,bad,swing,train_seg_0061,train,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0441,curl/clip_0441.npy,curl,front,bad,swing,train_seg_0062,train,30,29,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0442,curl/clip_0442.npy,curl,front,bad,swing,train_seg_0064,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0443,curl/clip_0443.npy,curl,front,good,none,train_seg_0065,train,30,28,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0444,curl/clip_0444.npy,curl,front,good,none,train_seg_0065,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0445,curl/clip_0445.npy,curl,front,good,none,train_seg_0065,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0446,curl/clip_0446.npy,curl,front,bad,swing,train_seg_0066,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0447,curl/clip_0447.npy,curl,front,bad,swing,train_seg_0068,train,30,70,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0448,curl/clip_0448.npy,curl,front,good,none,train_seg_0069,train,30,89,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0449,curl/clip_0449.npy,curl,front,bad,swing,train_seg_0070,train,30,55,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0450,curl/clip_0450.npy,curl,front,bad,swing,train_seg_0071,train,30,76,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0451,curl/clip_0451.npy,curl,front,bad,swing,train_seg_0072,train,30,40,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0452,curl/clip_0452.npy,curl,front,good,none,train_seg_0073,train,30,31,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0453,curl/clip_0453.npy,curl,front,good,none,train_seg_0073,train,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0454,curl/clip_0454.npy,curl,front,good,none,train_seg_0073,train,30,35,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0455,curl/clip_0455.npy,curl,front,bad,swing,train_seg_0074,train,30,89,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0456,curl/clip_0456.npy,curl,front,bad,swing,train_seg_0075,train,30,44,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0457,curl/clip_0457.npy,curl,front,good,none,train_seg_0076,train,30,41,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0458,curl/clip_0458.npy,curl,front,good,none,train_seg_0076,train,30,51,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0459,curl/clip_0459.npy,curl,front,good,none,train_seg_0076,train,30,65,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0460,curl/clip_0460.npy,curl,front,good,none,train_seg_0076,train,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0461,curl/clip_0461.npy,curl,front,good,none,train_seg_0076,train,30,39,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0462,curl/clip_0462.npy,curl,front,good,none,train_seg_0076,train,30,57,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0463,curl/clip_0463.npy,curl,front,good,none,train_seg_0076,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0464,curl/clip_0464.npy,curl,front,good,none,train_seg_0076,train,30,54,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0465,curl/clip_0465.npy,curl,front,good,none,train_seg_0077,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0466,curl/clip_0466.npy,curl,front,good,none,train_seg_0077,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0467,curl/clip_0467.npy,curl,front,good,none,train_seg_0077,train,30,46,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0468,curl/clip_0468.npy,curl,front,good,none,train_seg_0077,train,30,20,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0469,curl/clip_0469.npy,curl,front,good,none,train_seg_0077,train,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0470,curl/clip_0470.npy,curl,front,good,none,train_seg_0077,train,30,18,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0471,curl/clip_0471.npy,curl,front,good,none,train_seg_0077,train,30,53,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0472,curl/clip_0472.npy,curl,front,good,none,train_seg_0077,train,30,37,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0473,curl/clip_0473.npy,curl,front,good,none,train_seg_0077,train,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0474,curl/clip_0474.npy,curl,front,good,none,train_seg_0077,train,30,45,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0475,curl/clip_0475.npy,curl,front,good,none,train_seg_0077,train,30,38,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0476,curl/clip_0476.npy,curl,front,good,none,train_seg_0077,train,30,49,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0477,curl/clip_0477.npy,curl,front,good,none,train_seg_0077,train,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_train.csv)
+curl_0478,curl/clip_0478.npy,curl,front,good,none,test_seg_0000,test,30,87,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0479,curl/clip_0479.npy,curl,front,bad,swing,test_seg_0001,test,30,32,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0480,curl/clip_0480.npy,curl,front,bad,swing,test_seg_0002,test,30,23,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0481,curl/clip_0481.npy,curl,front,bad,swing,test_seg_0003,test,30,17,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0482,curl/clip_0482.npy,curl,front,good,none,test_seg_0004,test,30,86,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0483,curl/clip_0483.npy,curl,front,good,none,test_seg_0005,test,30,16,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0484,curl/clip_0484.npy,curl,front,bad,swing,test_seg_0007,test,30,73,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0485,curl/clip_0485.npy,curl,front,good,none,test_seg_0008,test,30,90,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0486,curl/clip_0486.npy,curl,front,bad,swing,test_seg_0009,test,30,34,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0487,curl/clip_0487.npy,curl,front,good,none,test_seg_0010,test,30,27,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0488,curl/clip_0488.npy,curl,front,bad,swing,test_seg_0011,test,30,33,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0489,curl/clip_0489.npy,curl,front,bad,swing,test_seg_0015,test,30,25,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)
+curl_0490,curl/clip_0490.npy,curl,front,bad,swing,test_seg_0019,test,30,26,real — NgoQuocBao1010/Exercise-Correction bicep curl (/tmp/curl_test.csv)

@@ -3,7 +3,7 @@
 //  FormAI
 //
 //  Exercise/arm selection and the per-exercise constants from the
-//  integration contract (W=32, F_squat=21, F_curl=11), plus the
+//  integration contract (W=32, F_squat=21, F_curl=24), plus the
 //  label -> spoken cue mapping (Islam doc section 5f).
 //
 
@@ -37,7 +37,7 @@ enum Exercise: String, CaseIterable, Identifiable {
     var featureCount: Int {
         switch self {
         case .squat: return 21
-        case .curl: return 11
+        case .curl: return 24
         }
     }
 

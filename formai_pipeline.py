@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Environment check
+import argparse
 import json
 import math
 import os
@@ -64,17 +64,30 @@ SQUAT_FEATURE_ORDER = [
 ]
 
 CURL_FEATURE_ORDER = [
-    "12x",
-    "12y",
-    "14x",
-    "14y",
-    "16x",
-    "16y",
-    "11x",
-    "11y",
-    "right_elbow_angle",
+    "working_shoulder_x",
+    "working_shoulder_y",
+    "working_elbow_x",
+    "working_elbow_y",
+    "working_wrist_x",
+    "working_wrist_y",
+    "support_shoulder_x",
+    "support_shoulder_y",
+    "support_elbow_x",
+    "support_elbow_y",
+    "support_wrist_x",
+    "support_wrist_y",
+    "working_hip_x",
+    "working_hip_y",
+    "support_hip_x",
+    "support_hip_y",
+    "nose_x",
+    "nose_y",
+    "working_elbow_angle",
+    "support_elbow_angle",
     "shoulder_tilt",
-    "elbow_flare",
+    "torso_lean",
+    "working_elbow_flare",
+    "support_elbow_flare",
 ]
 
 CLASS_LABELS = {
@@ -273,17 +286,19 @@ def _resample_features(features: np.ndarray, w: int = W) -> np.ndarray:
     return out
 
 
-def preprocess_rep(raw: np.ndarray, exercise: str) -> np.ndarray:
+def preprocess_rep(raw: np.ndarray, exercise: str, arm: str = "right") -> np.ndarray:
     if exercise not in {"squat", "curl"}:
         raise ValueError("exercise must be 'squat' or 'curl'")
     if raw.ndim != 3 or raw.shape[1:] != (33, 4):
         raise ValueError("raw must have shape [T, 33, 4]")
+    if arm not in {"right", "left"}:
+        raise ValueError("arm must be 'right' or 'left'")
 
     required = [11, 12, 23, 24]
     if exercise == "squat":
         required += [25, 26, 27, 28]
     else:
-        required += [14, 16]
+        required += [0, 13, 14, 15, 16]
 
     frames = []
     for frame in raw.astype(np.float32, copy=False):
@@ -325,19 +340,51 @@ def preprocess_rep(raw: np.ndarray, exercise: str) -> np.ndarray:
                 norm_xy[26, 0] - norm_xy[28, 0],
             ]
         else:
+            if arm == "right":
+                working_shoulder, working_elbow, working_wrist, working_hip = 12, 14, 16, 24
+                support_shoulder, support_elbow, support_wrist, support_hip = 11, 13, 15, 23
+                x_sign = 1.0
+            else:
+                working_shoulder, working_elbow, working_wrist, working_hip = 11, 13, 15, 23
+                support_shoulder, support_elbow, support_wrist, support_hip = 12, 14, 16, 24
+                x_sign = -1.0
+
+            def canonical(idx: int) -> np.ndarray:
+                point = norm_xy[idx].copy()
+                point[0] *= x_sign
+                return point
+
+            torso_vec = ((canonical(11) + canonical(12)) / 2.0)
             feature = [
-                norm_xy[12, 0],
-                norm_xy[12, 1],
-                norm_xy[14, 0],
-                norm_xy[14, 1],
-                norm_xy[16, 0],
-                norm_xy[16, 1],
-                norm_xy[11, 0],
-                norm_xy[11, 1],
-                _angle_at_b(norm_xy[12], norm_xy[14], norm_xy[16]) / 180.0,
-                _angle_between(norm_xy[12] - norm_xy[11], np.array([1.0, 0.0], dtype=np.float32))
+                canonical(working_shoulder)[0],
+                canonical(working_shoulder)[1],
+                canonical(working_elbow)[0],
+                canonical(working_elbow)[1],
+                canonical(working_wrist)[0],
+                canonical(working_wrist)[1],
+                canonical(support_shoulder)[0],
+                canonical(support_shoulder)[1],
+                canonical(support_elbow)[0],
+                canonical(support_elbow)[1],
+                canonical(support_wrist)[0],
+                canonical(support_wrist)[1],
+                canonical(working_hip)[0],
+                canonical(working_hip)[1],
+                canonical(support_hip)[0],
+                canonical(support_hip)[1],
+                canonical(0)[0],
+                canonical(0)[1],
+                _angle_at_b(canonical(working_shoulder), canonical(working_elbow), canonical(working_wrist))
                 / 180.0,
-                norm_xy[14, 0] - norm_xy[12, 0],
+                _angle_at_b(canonical(support_shoulder), canonical(support_elbow), canonical(support_wrist))
+                / 180.0,
+                _angle_between(
+                    canonical(working_shoulder) - canonical(support_shoulder),
+                    np.array([1.0, 0.0], dtype=np.float32),
+                ) / 180.0,
+                _angle_between(torso_vec, np.array([0.0, -1.0], dtype=np.float32)) / 180.0,
+                canonical(working_elbow)[0] - canonical(working_shoulder)[0],
+                canonical(support_elbow)[0] - canonical(support_shoulder)[0],
             ]
         frames.append(feature)
 
@@ -359,7 +406,7 @@ def load_dataset(root: Path, exercise: str):
     manifest = pd.read_csv(root / "manifest.csv")
     manifest = manifest[manifest["exercise"] == exercise].copy()
 
-    xs, ys, subjects, clip_ids = [], [], [], []
+    xs, ys, subjects, clip_ids, splits = [], [], [], [], []
     for _, row in manifest.iterrows():
         raw = np.load(root / row["file"]).astype(np.float32)
         if raw.ndim != 3 or raw.shape[1:] != (33, 4):
@@ -379,10 +426,17 @@ def load_dataset(root: Path, exercise: str):
         ys.append(y)
         subjects.append(row["subject_id"])
         clip_ids.append(row["clip_id"])
+        splits.append(row["split"] if "split" in row else "train")
 
     x_np = np.stack(xs).astype(np.float32)
     y_np = np.asarray(ys, dtype=np.int64)
-    return torch.from_numpy(x_np), torch.from_numpy(y_np), np.asarray(subjects), clip_ids
+    return (
+        torch.from_numpy(x_np),
+        torch.from_numpy(y_np),
+        np.asarray(subjects),
+        clip_ids,
+        np.asarray(splits),
+    )
 
 
 def subject_held_out_split(subjects: np.ndarray, holdout_count: int = 2):
@@ -396,10 +450,15 @@ def subject_held_out_split(subjects: np.ndarray, holdout_count: int = 2):
 
 # Model definition
 class FormScorer(nn.Module):
-    def __init__(self, in_dim, hidden=64, num_classes=4):
+    def __init__(self, in_dim, hidden=96, num_classes=4):
         super().__init__()
-        self.gru = nn.GRU(in_dim, hidden, batch_first=True)
-        self.head = nn.Linear(hidden, num_classes)
+        self.gru = nn.GRU(in_dim, hidden, num_layers=2, dropout=0.15, batch_first=True)
+        self.head = nn.Sequential(
+            nn.Linear(hidden, hidden),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(hidden, num_classes),
+        )
 
     def forward(self, x):
         out, _ = self.gru(x)
@@ -414,10 +473,19 @@ def _class_weights(y_train: torch.Tensor, num_classes: int, device: torch.device
     return weights.to(device)
 
 
-def train_model(exercise: str, x: torch.Tensor, y: torch.Tensor, subjects: np.ndarray) -> FormScorer:
+def train_model(exercise: str,
+                x: torch.Tensor,
+                y: torch.Tensor,
+                subjects: np.ndarray,
+                splits: np.ndarray | None = None) -> FormScorer:
     f = x.shape[-1]
     num_classes = len(CLASS_LABELS[exercise])
-    train_idx, val_idx, val_subjects = subject_held_out_split(subjects)
+    if exercise == "curl" and splits is not None and np.any(splits == "test"):
+        train_idx = np.where(splits == "train")[0]
+        val_idx = np.where(splits == "test")[0]
+        val_subjects = ["upstream_test"]
+    else:
+        train_idx, val_idx, val_subjects = subject_held_out_split(subjects)
     print(f"{exercise}: train={len(train_idx)} val={len(val_idx)} val_subjects={val_subjects}")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -430,6 +498,8 @@ def train_model(exercise: str, x: torch.Tensor, y: torch.Tensor, subjects: np.nd
 
     criterion = nn.CrossEntropyLoss(weight=_class_weights(y_train.cpu(), num_classes, device))
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+    best_state = None
+    best_val_acc = -1.0
 
     for epoch in range(1, 31):
         model.train()
@@ -458,10 +528,15 @@ def train_model(exercise: str, x: torch.Tensor, y: torch.Tensor, subjects: np.nd
             val_pred = val_logits.argmax(dim=1).cpu().numpy()
             val_true = y_val.cpu().numpy()
             val_acc = accuracy_score(val_true, val_pred)
+            if val_acc >= best_val_acc:
+                best_val_acc = val_acc
+                best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
 
         avg_loss = total_loss / max(total_count, 1)
         print(f"{exercise} epoch {epoch:02d}/30 loss={avg_loss:.4f} val_acc={val_acc:.4f}")
 
+    if best_state is not None:
+        model.load_state_dict(best_state)
     with torch.no_grad():
         final_pred = model(x_val).argmax(dim=1).cpu().numpy()
         final_true = y_val.cpu().numpy()
@@ -516,27 +591,38 @@ def write_golden_test(root: Path = DATA_DIR) -> None:
 
 
 # Main pipeline
-def main() -> None:
+def main(exercises: list[str]) -> None:
     set_all_seeds(SEED)
     MODELS_DIR.mkdir(exist_ok=True)
     generate_synthetic_data(DATA_DIR)
 
-    squat_probe = preprocess_rep(np.load(DATA_DIR / "squat/clip_0001.npy"), "squat")
-    curl_probe = preprocess_rep(np.load(DATA_DIR / "curl/clip_0001.npy"), "curl")
-    assert squat_probe.shape == (W, len(SQUAT_FEATURE_ORDER))
-    assert curl_probe.shape == (W, len(CURL_FEATURE_ORDER))
-    assert np.isfinite(squat_probe).all()
-    assert np.isfinite(curl_probe).all()
+    if "squat" in exercises:
+        squat_probe = preprocess_rep(np.load(DATA_DIR / "squat/clip_0001.npy"), "squat")
+        assert squat_probe.shape == (W, len(SQUAT_FEATURE_ORDER))
+        assert np.isfinite(squat_probe).all()
+        write_golden_test(DATA_DIR)
 
-    write_golden_test(DATA_DIR)
+    if "curl" in exercises:
+        curl_probe = preprocess_rep(np.load(DATA_DIR / "curl/clip_0001.npy"), "curl")
+        assert curl_probe.shape == (W, len(CURL_FEATURE_ORDER))
+        assert np.isfinite(curl_probe).all()
 
-    for exercise in ("squat", "curl"):
-        x, y, subjects, _ = load_dataset(DATA_DIR, exercise)
-        model = train_model(exercise, x, y, subjects)
+    for exercise in exercises:
+        x, y, subjects, _, splits = load_dataset(DATA_DIR, exercise)
+        model = train_model(exercise, x, y, subjects, splits=splits)
         f = x.shape[-1]
         export_coreml(model, exercise, f)
         write_model_card(exercise, f)
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--exercise",
+        choices=["all", "squat", "curl"],
+        default="all",
+        help="Train/export one exercise or both.",
+    )
+    args = parser.parse_args()
+    selected = ["squat", "curl"] if args.exercise == "all" else [args.exercise]
+    main(selected)

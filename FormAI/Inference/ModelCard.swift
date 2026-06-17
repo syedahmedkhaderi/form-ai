@@ -42,9 +42,9 @@ struct ModelCard: Decodable {
                 version: "placeholder", built: nil)
         case .curl:
             return ModelCard(
-                exercise: "curl", W: 32, F: 11,
+                exercise: "curl", W: 32, F: 24,
                 feature_order: [],
-                class_labels: ["good", "swing", "partial_rom", "elbow_flare"],
+                class_labels: ["good", "swing"],
                 normalization: "hip-center origin, torso-length scale",
                 version: "placeholder", built: nil)
         }

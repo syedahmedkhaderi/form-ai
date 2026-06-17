@@ -19,10 +19,11 @@
 //      UP axis (0, -1). Upright torso -> ~0 degrees. Then /180.
 //    • shoulder_tilt: angle between (working_shoulder - other_shoulder) and the
 //      RIGHT axis (1, 0). Then /180.
-//    • Angles are computed on the normalized (and, for left-arm curl, mirrored)
-//      coordinates. Reflection preserves interior angles, so elbow/knee angles
-//      are unaffected by mirroring; tilt/lean stay consistent because the sign
-//      is applied to BOTH endpoints.
+//    • Curl uses a canonical "working side" representation: the selected arm is
+//      mirrored into a right-arm frame, and the support side follows in the
+//      feature vector. Reflection preserves interior angles, so elbow/knee
+//      angles are unaffected; tilt/lean stay consistent because the sign is
+//      applied to BOTH endpoints.
 //  If Syed's reference differs on any of these, change it HERE and in his
 //  model_card; nothing else couples.
 //  ─────────────────────────────────────────────────────────────────────────
@@ -154,46 +155,55 @@ enum FormPreprocessor {
         return f
     }
 
-    /// CURL, F = 11 (contract section 7). Right arm is canonical; left arm is
-    /// mirrored (negate normalized x of all landmarks, read left indices into
-    /// the same slots) so a left-arm rep looks like a right-arm rep.
+    /// CURL, F = 24. The working arm is canonical; left-arm reps are mirrored
+    /// into the same right-arm frame used during training.
     private static func curlFeatures(_ frame: PoseFrame, arm: Arm) -> [Float]? {
         let I = PoseLandmarkIndex.self
 
         // Working-arm index mapping + x sign.
-        let shoulder: Int, elbow: Int, wrist: Int, otherShoulder: Int
+        let shoulder: Int, elbow: Int, wrist: Int, hip: Int
+        let otherShoulder: Int, otherElbow: Int, otherWrist: Int, otherHip: Int
         let xSign: Float
         switch arm {
         case .right:
-            shoulder = I.rightShoulder; elbow = I.rightElbow; wrist = I.rightWrist
-            otherShoulder = I.leftShoulder; xSign = 1
+            shoulder = I.rightShoulder; elbow = I.rightElbow; wrist = I.rightWrist; hip = I.rightHip
+            otherShoulder = I.leftShoulder; otherElbow = I.leftElbow; otherWrist = I.leftWrist; otherHip = I.leftHip
+            xSign = 1
         case .left:
-            shoulder = I.leftShoulder; elbow = I.leftElbow; wrist = I.leftWrist
-            otherShoulder = I.rightShoulder; xSign = -1
+            shoulder = I.leftShoulder; elbow = I.leftElbow; wrist = I.leftWrist; hip = I.leftHip
+            otherShoulder = I.rightShoulder; otherElbow = I.rightElbow; otherWrist = I.rightWrist; otherHip = I.rightHip
+            xSign = -1
         }
 
-        let needed = [shoulder, elbow, wrist, otherShoulder]
+        let needed = [I.nose, shoulder, elbow, wrist, hip, otherShoulder, otherElbow, otherWrist, otherHip]
         guard let raw = normalized(frame, needed: needed) else { return nil }
 
         // Apply the mirror sign to x for every used landmark.
         func p(_ i: Int) -> Vec2 { Vec2(x: xSign * raw[i]!.x, y: raw[i]!.y) }
 
         var f: [Float] = []
-        f.reserveCapacity(11)
+        f.reserveCapacity(24)
 
-        // 8 normalized coords: working shoulder, elbow, wrist, other shoulder
-        for idx in [shoulder, elbow, wrist, otherShoulder] {
+        // 18 normalized coords in canonical order.
+        for idx in [shoulder, elbow, wrist, otherShoulder, otherElbow, otherWrist, hip, otherHip, I.nose] {
             f.append(p(idx).x)
             f.append(p(idx).y)
         }
 
-        // right_elbow_angle = angle_at_B(shoulder, elbow, wrist)/180
+        // working_elbow_angle = angle_at_B(shoulder, elbow, wrist)/180
         f.append(Geometry.angleAtB(p(shoulder), p(elbow), p(wrist)) / 180)
+        // support_elbow_angle = angle_at_B(other_shoulder, other_elbow, other_wrist)/180
+        f.append(Geometry.angleAtB(p(otherShoulder), p(otherElbow), p(otherWrist)) / 180)
         // shoulder_tilt = angle((working_shoulder - other_shoulder), right)/180
         let tilt = p(shoulder) - p(otherShoulder)
         f.append(Geometry.angleBetween(tilt, axis: rightAxis) / 180)
-        // elbow_flare = elbow_x - shoulder_x  (normalized, signed)
+        // torso_lean = angle((sh_mid - hip_mid), up)/180
+        let torso = raw[normShKey]! - raw[normHipKey]!
+        f.append(Geometry.angleBetween(Vec2(x: xSign * torso.x, y: torso.y), axis: upAxis) / 180)
+        // working_elbow_flare = elbow_x - shoulder_x
         f.append(p(elbow).x - p(shoulder).x)
+        // support_elbow_flare = support_elbow_x - support_shoulder_x
+        f.append(p(otherElbow).x - p(otherShoulder).x)
 
         return f
     }

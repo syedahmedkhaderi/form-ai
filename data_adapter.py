@@ -78,7 +78,20 @@ CURL_COL_TO_LM = {
 
 MANIFEST_COLUMNS = [
     "clip_id", "file", "exercise", "view", "label",
-    "error_type", "subject_id", "fps", "num_frames", "notes",
+    "error_type", "subject_id", "split", "fps", "num_frames", "notes",
+]
+
+CURL_SOURCES = [
+    (
+        "train",
+        Path("/tmp/curl_train.csv"),
+        "https://raw.githubusercontent.com/NgoQuocBao1010/Exercise-Correction/main/core/bicep_model/train.csv",
+    ),
+    (
+        "test",
+        Path("/tmp/curl_test.csv"),
+        "https://raw.githubusercontent.com/NgoQuocBao1010/Exercise-Correction/main/core/bicep_model/test.csv",
+    ),
 ]
 
 
@@ -131,6 +144,23 @@ def find_video_breaks(df, threshold=0.05):
     dy = np.diff(df["nose_y"].values)
     breaks = [0] + list(np.where(np.hypot(dx, dy) > threshold)[0] + 1) + [len(df)]
     return breaks
+
+
+def dominant_label(labels, min_fraction=0.9):
+    """Return the majority label if it clearly dominates, else None."""
+    if len(labels) == 0:
+        return None
+    counts = pd.Series(labels).value_counts(normalize=True)
+    if counts.empty or float(counts.iloc[0]) < min_fraction:
+        return None
+    return str(counts.index[0])
+
+
+def load_csv_source(local_path, upstream_url):
+    """Load a CSV from /tmp if present, otherwise fall back to the upstream raw URL."""
+    if local_path.exists():
+        return pd.read_csv(local_path), str(local_path)
+    return pd.read_csv(upstream_url), upstream_url
 
 
 def jitter(frames, std=0.006):
@@ -302,6 +332,7 @@ def generate_real_squat(root, rows):
                 "label": "good" if error_type == "none" else "bad",
                 "error_type": error_type,
                 "subject_id": subject_id,
+                "split": "train",
                 "fps": 30,
                 "num_frames": T,
                 "notes": "real" if error_type == "none" else "real+augmented",
@@ -315,10 +346,41 @@ def generate_real_squat(root, rows):
 
 # ── curl: real data (C=good, L=swing) ────────────────────────────────────────
 
-def process_curl_segment(df_seg, lm_seg, rows, clip_counter,
-                         curl_dir, subjects, min_frames=15, max_frames=150):
-    """Segment by right-elbow angle peaks → per-rep clips. Returns updated counter."""
+def append_curl_clip(rows, curl_dir, clip_counter, clip, dominant, source_id, split_name, source_ref):
+    """Persist one real curl rep and append its manifest row."""
+    quality = "good" if dominant == "C" else "bad"
+    error_type = "none" if dominant == "C" else "swing"
+    file_rel = f"curl/clip_{clip_counter:04d}.npy"
+    np.save(curl_dir / f"clip_{clip_counter:04d}.npy", clip.astype(np.float32))
+    rows.append({
+        "clip_id": f"curl_{clip_counter:04d}",
+        "file": file_rel,
+        "exercise": "curl",
+        "view": "front",
+        "label": quality,
+        "error_type": error_type,
+        "subject_id": source_id,
+        "split": split_name,
+        "fps": 30,
+        "num_frames": len(clip),
+        "notes": f"real — NgoQuocBao1010/Exercise-Correction bicep curl ({source_ref})",
+    })
+    return clip_counter + 1
+
+
+def process_curl_video_segment(df_seg, lm_seg, rows, clip_counter, curl_dir,
+                               source_id, split_name, source_ref,
+                               min_frames=15, max_frames=150, purity=0.9):
+    """Turn one source video segment into one or more high-purity rep clips."""
     labels_col = df_seg["label"].values
+
+    # Some upstream test segments are already isolated single reps.
+    dominant = dominant_label(labels_col, min_fraction=purity)
+    if dominant is not None and min_frames <= len(df_seg) <= 90:
+        return append_curl_clip(
+            rows, curl_dir, clip_counter, lm_seg, dominant, source_id, split_name, source_ref
+        )
+
     sh = lm_seg[:, 12, :2]
     el = lm_seg[:, 14, :2]
     wr = lm_seg[:, 16, :2]
@@ -332,57 +394,60 @@ def process_curl_segment(df_seg, lm_seg, rows, clip_counter,
         start, end = peaks[k], peaks[k + 1]
         if not (min_frames <= end - start <= max_frames):
             continue
-        rep_labels = labels_col[start:end]
-        n_c = int((rep_labels == "C").sum())
-        n_l = int((rep_labels == "L").sum())
-        if n_c + n_l == 0:
+        dominant = dominant_label(labels_col[start:end], min_fraction=purity)
+        if dominant is None:
             continue
-        quality = "good" if n_c >= n_l else "bad"
-        error_type = "none" if quality == "good" else "swing"
-        file_rel = f"curl/clip_{clip_counter:04d}.npy"
-        np.save(curl_dir / f"clip_{clip_counter:04d}.npy",
-                lm_seg[start:end].astype(np.float32))
-        rows.append({
-            "clip_id": f"curl_{clip_counter:04d}",
-            "file": file_rel,
-            "exercise": "curl",
-            "view": "front",
-            "label": quality,
-            "error_type": error_type,
-            "subject_id": subjects[clip_counter % len(subjects)],
-            "fps": 30,
-            "num_frames": end - start,
-            "notes": "real — NgoQuocBao1010/Exercise-Correction bicep curl",
-        })
-        clip_counter += 1
+        clip_counter = append_curl_clip(
+            rows,
+            curl_dir,
+            clip_counter,
+            lm_seg[start:end],
+            dominant,
+            source_id,
+            split_name,
+            source_ref,
+        )
 
     return clip_counter
 
 
 def generate_real_curl(root, rows):
-    """Process curl CSVs and write per-rep clips."""
-    csv_paths = [Path("/tmp/curl_train.csv"), Path("/tmp/curl_test.csv")]
-    available = [p for p in csv_paths if p.exists()]
-    if not available:
-        print("  WARNING: no curl CSVs found — skipping")
-        return
-
+    """Process curl CSVs and write per-rep clips using the upstream train/test split."""
     curl_dir = root / "curl"
     curl_dir.mkdir(parents=True, exist_ok=True)
-    subjects = [f"subject_{i:02d}" for i in range(1, 9)]
     clip_counter = 1
+    loaded_any = False
 
-    for csv_path in available:
-        print(f"  Loading {csv_path.name} ...")
-        df = pd.read_csv(csv_path)
+    for split_name, local_path, upstream_url in CURL_SOURCES:
+        try:
+            df, source_ref = load_csv_source(local_path, upstream_url)
+        except Exception as exc:
+            print(f"  WARNING: failed to load curl {split_name} CSV: {exc}")
+            continue
+
+        loaded_any = True
+        print(f"  Loading curl {split_name} from {source_ref} ...")
         breaks = find_video_breaks(df)
-        for seg_start, seg_end in zip(breaks[:-1], breaks[1:]):
-            if seg_end - seg_start < 20:
+        for seg_idx, (seg_start, seg_end) in enumerate(zip(breaks[:-1], breaks[1:])):
+            if seg_end - seg_start < 15:
                 continue
             df_seg = df.iloc[seg_start:seg_end].reset_index(drop=True)
             lm_seg = df_to_landmarks(df_seg, CURL_COL_TO_LM)
-            clip_counter = process_curl_segment(
-                df_seg, lm_seg, rows, clip_counter, curl_dir, subjects)
+            source_id = f"{split_name}_seg_{seg_idx:04d}"
+            clip_counter = process_curl_video_segment(
+                df_seg,
+                lm_seg,
+                rows,
+                clip_counter,
+                curl_dir,
+                source_id,
+                split_name,
+                source_ref,
+            )
+
+    if not loaded_any:
+        print("  WARNING: no curl CSVs found — skipping")
+        return
 
 
 # ── main ─────────────────────────────────────────────────────────────────────

@@ -48,6 +48,7 @@ struct PoseFrame: Equatable {
 enum PoseLandmarkIndex {
     static let count = 33
 
+    static let nose = 0
     static let leftShoulder = 11
     static let rightShoulder = 12
     static let leftElbow = 13
