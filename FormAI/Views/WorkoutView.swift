@@ -3,8 +3,7 @@
 //  FormAI
 //
 //  The live workout screen: camera + skeleton overlay + framing guide +
-//  big rep counter + form score + last spoken cue + model/rules toggle
-//  (Islam doc section 8).
+//  big rep counter + final score + one coaching card for the MVP.
 //
 
 import SwiftUI
@@ -22,16 +21,12 @@ struct WorkoutView: View {
             CameraPreview(session: vm.session)
                 .ignoresSafeArea()
 
-            SkeletonOverlay(frame: vm.currentFrame, imageSize: vm.imageSize, color: scoreColor)
-                .ignoresSafeArea()
-
-            FramingGuideOverlay(exercise: vm.exercise, visible: vm.currentFrame == nil && vm.isRunning)
+            FramingGuideOverlay(exercise: vm.exercise, visible: !vm.hasPoseInFrame && vm.isRunning)
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 topBar
                 statusBanners
-                liveChipRow
                 Spacer()
                 bottomPanel
             }
@@ -62,12 +57,6 @@ struct WorkoutView: View {
                 } label: {
                     circleIcon("xmark")
                 }
-                Button {
-                    vm.flipCamera()
-                } label: {
-                    circleIcon("arrow.triangle.2.circlepath.camera")
-                }
-                .accessibilityLabel(vm.usingFrontCamera ? "Switch to back camera" : "Switch to front camera")
             }
         }
     }
@@ -118,22 +107,6 @@ struct WorkoutView: View {
         .padding(.top, 8)
     }
 
-    private var liveChipRow: some View {
-        HStack {
-            Text(vm.liveSeverity.chipText)
-                .font(.caption.weight(.bold))
-                .foregroundStyle(vm.liveSeverity == .neutral ? .white : .black)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 7)
-                .background(
-                    Capsule()
-                        .fill(vm.liveSeverity == .neutral ? Color.black.opacity(0.45) : vm.liveSeverity.color)
-                )
-            Spacer()
-        }
-        .padding(.top, 8)
-    }
-
     private func banner(icon: String, text: String, tint: Color) -> some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
@@ -151,30 +124,7 @@ struct WorkoutView: View {
         VStack(spacing: 14) {
             coachingCard
 
-            // Last spoken cue
             HStack(spacing: 12) {
-                Image(systemName: Cue.isGood(vm.lastLabel) ? "checkmark.circle.fill" : "waveform")
-                    .font(.title2)
-                    .foregroundStyle(Cue.isGood(vm.lastLabel) ? .green : .white)
-                Text(vm.lastCue)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.white)
-                Spacer(minLength: 0)
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
-
-            // Controls
-            HStack(spacing: 12) {
-                Toggle(isOn: $vm.useModel) {
-                    Label(vm.useModel ? "AI model" : "Rules", systemImage: vm.useModel ? "brain" : "ruler")
-                        .font(.subheadline.weight(.semibold))
-                }
-                .toggleStyle(.button)
-                .tint(.white)
-                .disabled(!vm.modelLoaded)
-
                 Button {
                     vm.voiceEnabled.toggle()
                 } label: {
@@ -220,6 +170,15 @@ struct WorkoutView: View {
                     .foregroundStyle(.white.opacity(0.92))
             }
             Spacer(minLength: 0)
+            Text(vm.liveSeverity.chipText)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(vm.liveSeverity == .neutral ? .white : .black)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(
+                    Capsule()
+                        .fill(vm.liveSeverity == .neutral ? Color.black.opacity(0.35) : vm.liveSeverity.color)
+                )
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
