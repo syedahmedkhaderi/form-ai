@@ -2,9 +2,6 @@
 //  HomeView.swift
 //  FormAI
 //
-//  Exercise picker + dashboard. Keeps setup simple while adding progress,
-//  roadmap, and safety context around the live workout flow.
-//
 
 import SwiftUI
 
@@ -37,8 +34,7 @@ struct HomeView: View {
                     .controlSize(.large)
 
                     progressSection
-                    roadmapSection
-                    safetySection
+                    healthSection
                     developerSection
                 }
                 .padding()
@@ -57,8 +53,6 @@ struct HomeView: View {
             Image(systemName: "figure.run.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.tint)
-            Text("FormAI")
-                .font(.system(size: 34, weight: .black, design: .rounded))
             Text("Real-time form coaching")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -156,43 +150,9 @@ struct HomeView: View {
         return "\(value)"
     }
 
-    private var roadmapSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Label("Supported Now", systemImage: "checkmark.seal.fill")
-                .font(.headline)
-
-            HStack(spacing: 10) {
-                tag("Squat", tint: .green)
-                tag("Dumbbell Curl", tint: .blue)
-            }
-
-            Divider()
-
-            Label("Planned Next", systemImage: "sparkles")
-                .font(.headline)
-
-            HStack(spacing: 10) {
-                tag("Lunge", tint: .orange)
-                tag("Guided Mode", tint: .purple)
-                tag("Exercise Library", tint: .pink)
-            }
-        }
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemGroupedBackground)))
-    }
-
-    private func tag(_ text: String, tint: Color) -> some View {
-        Text(text)
-            .font(.subheadline.weight(.semibold))
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(Capsule().fill(tint.opacity(0.14)))
-            .foregroundStyle(tint)
-    }
-
-    private var safetySection: some View {
+    private var healthSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label("Safety Tips", systemImage: "cross.case.fill")
+            Label("Health Tips", systemImage: "cross.case.fill")
                 .font(.headline)
             Text("Stop the set if you feel pain, the pose keeps dropping out, or you cannot keep your full body in frame.")
                 .font(.subheadline)

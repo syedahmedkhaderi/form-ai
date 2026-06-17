@@ -2,30 +2,20 @@
 //  FormPreprocessor.swift
 //  FormAI
 //
-//  THE contract-critical file (Islam doc section 6). This is a step-for-step
-//  Swift port of the preprocessing recipe in 00_INTEGRATION_CONTRACTS.txt
-//  section 7. The function "raw landmarks -> model input tensor" must be
-//  byte-for-byte identical offline (Syed, Python) and on-device (here).
-//
-//  Verify with the golden test (PreprocessGoldenTest): feed Syed's known
-//  input landmarks, confirm the output [32, F] matches within 1e-3. If that
-//  passes, the model sees on-device exactly what it saw in training.
+//  Converts raw landmark frames into the fixed [32, F] tensor the model expects.
+//  The preprocessing must exactly match the Python training pipeline —
+//  verify with PreprocessGoldenTest (golden input → output within 1e-3).
 //
 //  ─────────────────────────────────────────────────────────────────────────
-//  CONVENTIONS that must match Syed's Python (documented because the contract
-//  leaves the axis sign implicit):
+//  AXIS/SIGN CONVENTIONS (must match the Python pipeline):
 //    • Image space: x,y in [0,1], y increases DOWNWARD (standard image coords).
 //    • torso_lean: angle between the torso vector (sh_mid - hip_mid) and the
-//      UP axis (0, -1). Upright torso -> ~0 degrees. Then /180.
+//      UP axis (0, -1). Upright torso → ~0 degrees. Then /180.
 //    • shoulder_tilt: angle between (working_shoulder - other_shoulder) and the
 //      RIGHT axis (1, 0). Then /180.
 //    • Curl uses a canonical "working side" representation: the selected arm is
-//      mirrored into a right-arm frame, and the support side follows in the
-//      feature vector. Reflection preserves interior angles, so elbow/knee
-//      angles are unaffected; tilt/lean stay consistent because the sign is
-//      applied to BOTH endpoints.
-//  If Syed's reference differs on any of these, change it HERE and in his
-//  model_card; nothing else couples.
+//      mirrored into a right-arm frame. Reflection preserves interior angles;
+//      tilt/lean stay consistent because the sign is applied to BOTH endpoints.
 //  ─────────────────────────────────────────────────────────────────────────
 //
 
@@ -33,7 +23,7 @@ import Foundation
 
 enum FormPreprocessor {
 
-    /// Minimum torso scale; below this the person isn't well detected (contract).
+    /// Minimum torso scale; below this the person is not well framed.
     static let minScale: Float = 1e-4
 
     /// Up axis in image space (y grows downward, so "up" is -y).
@@ -119,7 +109,7 @@ enum FormPreprocessor {
         }
     }
 
-    /// SQUAT, F = 21 (contract section 7).
+    /// SQUAT, F = 21.
     private static func squatFeatures(_ frame: PoseFrame) -> [Float]? {
         let I = PoseLandmarkIndex.self
         let needed = [I.leftShoulder, I.rightShoulder,

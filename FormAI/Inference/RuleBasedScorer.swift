@@ -2,13 +2,9 @@
 //  RuleBasedScorer.swift
 //  FormAI
 //
-//  Threshold-based fallback (Islam doc section 7). The rep counter already
-//  computes the key joint angles, so we can drive cues directly from per-rep
-//  statistics when the ML model is weak or absent. This keeps the demo
-//  bulletproof: default to the model, flip to rules if needed, and the app
-//  always shows live form correction.
-//
-//  Thresholds are starting points — tune on real clips.
+//  Threshold-based fallback scorer and live coaching evaluator.
+//  Used as the primary scorer when the ML model is unavailable and as
+//  the live-rep coaching engine for both exercises.
 //
 
 import Foundation
@@ -55,28 +51,27 @@ enum RuleBasedScorer {
             return result(label: "bad", score: 0)
         }
 
-        // Depth: deeper squat -> smaller knee angle. ~95 deg or below is solid.
+        // Depth: deeper squat → smaller knee angle. ≤95 deg is solid parallel depth.
         let insufficientDepth = minKnee > 110
 
-        // Valgus: at the bottom, knees collapse toward the midline.
+        // Valgus: detect symmetric inward drift of both knees toward their ankles.
         let lk = deep[I.leftKnee], la = deep[I.leftAnkle]
         let rk = deep[I.rightKnee], ra = deep[I.rightAnkle]
-        // Left leg is on the right side of a front-facing image (larger x) is
-        // not guaranteed, so detect symmetric inward drift: both knees pulled
-        // toward each other relative to their ankles.
         let leftIn = (lk.x - la.x)
         let rightIn = (rk.x - ra.x)
         let kneeValgus = (leftIn * rightIn < 0) && (abs(leftIn) + abs(rightIn) > 0.04)
 
         if insufficientDepth {
-            // Map depth onto a score: 95deg->~90, 160deg->~20.
+            // Map depth onto a score: 95 deg → ~90, 160 deg → ~20.
             let s = Int(max(10, min(90, 90 - (minKnee - 95) * 1.2)))
             return result(label: "insufficient_depth", score: s)
         }
         if kneeValgus {
             return result(label: "knee_valgus", score: 55)
         }
-        return result(label: "good", score: 92)
+        // Good form: reward deeper squats. 95 deg or below → 98, 110 deg → 88.
+        let depthBonus = Int(max(0, min(10, (110 - minKnee) * 0.67)))
+        return result(label: "good", score: 88 + depthBonus)
     }
 
     // MARK: - Curl
@@ -203,8 +198,6 @@ enum RuleBasedScorer {
         let elbow = arm == .right ? I.rightElbow : I.leftElbow
         let wrist = arm == .right ? I.rightWrist : I.leftWrist
         let otherShoulder = arm == .right ? I.leftShoulder : I.rightShoulder
-        let otherElbow = arm == .right ? I.leftElbow : I.rightElbow
-        let otherWrist = arm == .right ? I.leftWrist : I.rightWrist
         let otherHip = arm == .right ? I.leftHip : I.rightHip
         let workingHip = arm == .right ? I.rightHip : I.leftHip
 
@@ -230,8 +223,6 @@ enum RuleBasedScorer {
                 flares.append(abs(elbowPoint.x - shoulderPoint.x))
             }
 
-            _ = otherElbow
-            _ = otherWrist
         }
 
         guard let minElbow = elbowAngles.min(), let maxElbow = elbowAngles.max() else { return nil }

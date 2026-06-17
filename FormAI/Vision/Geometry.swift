@@ -2,10 +2,7 @@
 //  Geometry.swift
 //  FormAI
 //
-//  Small 2D vector helpers and the angle convention used by both the
-//  preprocessing recipe (contract section 7) and the rule-based rep counter
-//  (section 8). Kept dependency-light and pure so the math is easy to verify
-//  against Syed's Python.
+//  2D vector helpers and angle utilities shared by the preprocessor and rep counter.
 //
 
 import Foundation

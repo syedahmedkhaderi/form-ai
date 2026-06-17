@@ -2,15 +2,14 @@
 //  ExerciseConfig.swift
 //  FormAI
 //
-//  Exercise/arm selection and the per-exercise constants from the
-//  integration contract (W=32, F_squat=21, F_curl=24), plus the
-//  label -> spoken cue mapping (Islam doc section 5f).
+//  Exercise/arm selection, per-exercise constants (W=32, F_squat=21, F_curl=24),
+//  and the label→cue mapping for voice coaching.
 //
 
 import Foundation
 import SwiftUI
 
-/// The two exercises in scope (contract: nothing else).
+/// The two supported exercises.
 enum Exercise: String, CaseIterable, Identifiable {
     case squat
     case curl
@@ -31,10 +30,10 @@ enum Exercise: String, CaseIterable, Identifiable {
         }
     }
 
-    /// Resampled window length W (contract: 32 for both).
+    /// Resampled window length W (32 for both exercises).
     var windowLength: Int { 32 }
 
-    /// Feature count F per frame (contract section 7).
+    /// Feature count F per frame.
     var featureCount: Int {
         switch self {
         case .squat: return 21
@@ -42,9 +41,8 @@ enum Exercise: String, CaseIterable, Identifiable {
         }
     }
 
-    /// Bundled Core ML model name (without extension). When Syed's
-    /// `<name>.mlpackage` is added to the target, Xcode compiles it to
-    /// `<name>.mlmodelc` which `FormScorer` loads by this name at runtime.
+    /// Bundled Core ML model name (without extension). Xcode compiles the
+    /// `.mlpackage` to `.mlmodelc` which FormScorer loads by this name at runtime.
     var modelName: String {
         switch self {
         case .squat: return "SquatFormScorer"

@@ -2,26 +2,21 @@
 //  PreprocessGoldenTest.swift
 //  FormAI
 //
-//  Cross-language validation gate (Islam doc section 6). Syed exports a few
-//  preprocessed reps with known input landmarks and known output [32, F]; we
-//  feed the same inputs through the Swift preprocessor and confirm we
-//  reproduce the output within 1e-3. If this passes, the model behaves
-//  on-device exactly as in Syed's testing.
+//  Validates that the Swift preprocessor matches the Python training pipeline.
+//  Bundle golden_squat.json / golden_curl.json with known inputs and expected
+//  outputs; any mismatch > 1e-3 fails the test.
 //
-//  Golden file format (bundle a `golden_squat.json` / `golden_curl.json`):
+//  Golden file format:
 //    {
-//      "exercise": "squat",            // or "curl"
-//      "arm": "right",                 // optional, curl only ("right"/"left")
+//      "exercise": "squat",
+//      "arm": "right",                           // optional, curl only
 //      "reps": [
-//        {
-//          "input":    [ [ [x,y,z,vis] x33 ] xT ],   // raw landmarks per frame
-//          "expected": [ [ f x F ] x32 ]             // preprocessed window
-//        }
+//        { "input": [ [[x,y,z,vis] x33] xT ],
+//          "expected": [ [f x F] x32 ] }
 //      ]
 //    }
 //
-//  If no golden file is bundled, runs a synthetic shape/finiteness check
-//  (matching Syed's Python unit test) so the harness still reports something.
+//  Falls back to a synthetic shape/finiteness check when no golden file is bundled.
 //
 
 import Foundation

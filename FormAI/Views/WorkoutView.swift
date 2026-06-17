@@ -2,10 +2,6 @@
 //  WorkoutView.swift
 //  FormAI
 //
-//  The live workout screen: camera + skeleton overlay + framing guide +
-//  big rep counter + form score + last spoken cue + model/rules toggle
-//  (Islam doc section 8).
-//
 
 import SwiftUI
 
@@ -25,13 +21,9 @@ struct WorkoutView: View {
             SkeletonOverlay(frame: vm.currentFrame, imageSize: vm.imageSize, color: scoreColor)
                 .ignoresSafeArea()
 
-            FramingGuideOverlay(exercise: vm.exercise, visible: vm.currentFrame == nil && vm.isRunning)
-                .ignoresSafeArea()
-
             VStack(spacing: 0) {
                 topBar
                 statusBanners
-                liveChipRow
                 Spacer()
                 bottomPanel
             }
@@ -118,22 +110,6 @@ struct WorkoutView: View {
         .padding(.top, 8)
     }
 
-    private var liveChipRow: some View {
-        HStack {
-            Text(vm.liveSeverity.chipText)
-                .font(.caption.weight(.bold))
-                .foregroundStyle(vm.liveSeverity == .neutral ? .white : .black)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 7)
-                .background(
-                    Capsule()
-                        .fill(vm.liveSeverity == .neutral ? Color.black.opacity(0.45) : vm.liveSeverity.color)
-                )
-            Spacer()
-        }
-        .padding(.top, 8)
-    }
-
     private func banner(icon: String, text: String, tint: Color) -> some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
@@ -149,21 +125,24 @@ struct WorkoutView: View {
 
     private var bottomPanel: some View {
         VStack(spacing: 14) {
-            coachingCard
-
-            // Last spoken cue
-            HStack(spacing: 12) {
-                Image(systemName: Cue.isGood(vm.lastLabel) ? "checkmark.circle.fill" : "waveform")
-                    .font(.title2)
-                    .foregroundStyle(Cue.isGood(vm.lastLabel) ? .green : .white)
-                Text(vm.lastCue)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.white)
-                Spacer(minLength: 0)
+            if shouldShowCoachingCard {
+                coachingCard
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
+
+            if !vm.lastCue.isEmpty {
+                HStack(spacing: 12) {
+                    Image(systemName: Cue.isGood(vm.lastLabel) ? "checkmark.circle.fill" : "waveform")
+                        .font(.title2)
+                        .foregroundStyle(Cue.isGood(vm.lastLabel) ? .green : .white)
+                    Text(vm.lastCue)
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(.white)
+                    Spacer(minLength: 0)
+                }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
+            }
 
             // Controls
             HStack(spacing: 12) {
@@ -195,14 +174,6 @@ struct WorkoutView: View {
             }
             .padding(10)
             .background(.black.opacity(0.35), in: RoundedRectangle(cornerRadius: 16))
-
-            if vm.liveState == .outOfFrame || vm.liveState == .stabilizing {
-                Text(vm.exercise == .squat ? "Tip: use a slight side angle and keep your full body visible." : "Tip: keep the working arm, shoulder, and torso clearly visible.")
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 6)
-            }
         }
     }
 
@@ -274,5 +245,14 @@ struct WorkoutView: View {
             colors = [Color.orange.opacity(0.85), Color.red.opacity(0.55)]
         }
         return LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
+    }
+
+    private var shouldShowCoachingCard: Bool {
+        switch vm.liveState {
+        case .outOfFrame, .stabilizing, .ready:
+            return false
+        case .repActive, .warning, .goodMovement, .repComplete:
+            return true
+        }
     }
 }

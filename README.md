@@ -43,14 +43,12 @@ Built for a lightweight MVP with a focused live coaching flow and a Python-to-Co
 
 <table>
   <tr>
-    <td><img src="docs/readme-assets/home-squat.png" width="150" alt="Home screen squat"></td>
-    <td><img src="docs/readme-assets/home-curl.png" width="150" alt="Home screen curl"></td>
-    <td><img src="docs/readme-assets/live-workout.png" width="150" alt="Live workout overlay"></td>
+    <td><img src="docs/readme-assets/home-squat.png" width="200" alt="Home screen — Squat selected"></td>
+    <td><img src="docs/readme-assets/home-curl.png" width="200" alt="Home screen — Curl selected"></td>
   </tr>
   <tr>
     <td align="center">Home — Squat</td>
     <td align="center">Home — Curl</td>
-    <td align="center">Live Workout</td>
   </tr>
 </table>
 
@@ -140,17 +138,17 @@ form-ai-1/
 ├── FormAI/                         # iOS app source
 │   ├── Camera/                     # camera capture and preview
 │   ├── Feedback/                   # voice coaching
-│   ├── Inference/                  # Core ML scoring
-│   ├── Models/                     # exercise config and pose types
+│   ├── Inference/                  # Core ML scoring and rule-based fallback
+│   ├── Models/                     # exercise config, pose types, history store
 │   ├── Pose/                       # MediaPipe provider
-│   ├── Resources/                  # bundled models and cards
+│   ├── Resources/                  # bundled .mlpackage models and model cards
+│   ├── SelfTest/                   # preprocessing golden test
 │   ├── ViewModels/                 # workout orchestration
 │   ├── Views/                      # SwiftUI screens
-│   └── Vision/                     # preprocessing and rep counting
+│   └── Vision/                     # preprocessing, rep counting, geometry
 ├── docs/                           # README assets
 ├── formai_data/                    # training clips and manifest
 ├── models/                         # exported Core ML packages
-├── third_party/                    # upstream adapters/assets
 ├── data_adapter.py                 # real-data clip builder
 ├── formai_pipeline.py              # train + export pipeline
 ├── exercise_correction_adapter.py  # upstream adapter wrapper

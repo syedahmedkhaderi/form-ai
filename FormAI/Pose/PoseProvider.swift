@@ -2,13 +2,9 @@
 //  PoseProvider.swift
 //  FormAI
 //
-//  Abstraction over the pose engine. The contract mandates MediaPipe Pose
-//  Landmarker (NOT Apple Vision) because Syed's model is trained on
-//  MediaPipe's 33-landmark schema. This protocol lets the rest of the app
-//  stay engine-agnostic; `MediaPipePoseProvider` is the real implementation.
-//
-//  `NoopPoseProvider` exists so the app still builds and launches (camera +
-//  UI) before `pod install` adds MediaPipeTasksVision. It emits no poses.
+//  Protocol and factory for the pose engine. The app uses MediaPipe's 33-landmark
+//  schema, so all feature extraction assumes those indices. NoopPoseProvider lets
+//  the project build and run before MediaPipeTasksVision is installed.
 //
 
 import Foundation

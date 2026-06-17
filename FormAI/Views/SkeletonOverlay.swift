@@ -2,10 +2,8 @@
 //  SkeletonOverlay.swift
 //  FormAI
 //
-//  Draws the live 33-landmark skeleton over the camera preview (Islam doc
-//  section 8). Proves the CV is real and looks impressive in the demo.
-//  Maps MediaPipe normalized coords onto the preview using the same
-//  aspect-fill transform the AVCaptureVideoPreviewLayer uses.
+//  Draws the live skeleton over the camera preview. Maps MediaPipe normalized
+//  coords onto the preview using the same aspect-fill transform as the preview layer.
 //
 
 import SwiftUI

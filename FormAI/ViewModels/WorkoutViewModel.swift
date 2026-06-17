@@ -2,10 +2,6 @@
 //  WorkoutViewModel.swift
 //  FormAI
 //
-//  Orchestrates the whole loop (Islam doc section 5):
-//  camera -> MediaPipe pose -> rep counter -> on rep complete: preprocess ->
-//  Core ML model (or rule-based fallback) -> spoken cue + on-screen score.
-//
 
 import Foundation
 import SwiftUI
@@ -22,11 +18,11 @@ final class WorkoutViewModel: ObservableObject {
     @Published var repCount = 0
     @Published var formScore: Int = 0
     @Published var lastLabel: String = ""
-    @Published var lastCue: String = "Get in frame to begin"
+    @Published var lastCue: String = ""
     @Published var phase: RepPhase = .idle
     @Published var currentAngle: Float = .nan
     @Published var liveState: LiveCoachingState = .outOfFrame
-    @Published var liveMessage: String = "Get in frame to begin"
+    @Published var liveMessage: String = ""
     @Published var liveSeverity: LiveCoachingSeverity = .neutral
     @Published private(set) var currentFrame: PoseFrame?
     @Published private(set) var imageSize: CGSize = .zero
@@ -41,8 +37,6 @@ final class WorkoutViewModel: ObservableObject {
     @Published private(set) var poseAvailable = false
     @Published private(set) var modelStatus: String = ""
     @Published private(set) var modelLoaded = false
-    @Published var goldenTestMessage: String = ""
-
     private let cameraManager = CameraManager()
     private let poseProvider: PoseProvider
     private let voiceCoach = VoiceCoach()
@@ -105,11 +99,11 @@ final class WorkoutViewModel: ObservableObject {
         repCount = 0
         formScore = 0
         lastLabel = ""
-        lastCue = "Get in frame to begin"
+        lastCue = ""
         phase = .idle
         currentFrame = nil
         liveState = .outOfFrame
-        liveMessage = "Get in frame to begin"
+        liveMessage = ""
         liveSeverity = .neutral
         recentFrames.removeAll(keepingCapacity: true)
         stableFrameCount = 0
@@ -146,13 +140,6 @@ final class WorkoutViewModel: ObservableObject {
     func flipCamera() {
         cameraManager.switchCamera()
         usingFrontCamera.toggle()
-    }
-
-    // MARK: - Golden test
-
-    func runGoldenTest() {
-        let result = PreprocessGoldenTest.run(for: exercise)
-        goldenTestMessage = result.message
     }
 
     // MARK: - Scoring a completed rep

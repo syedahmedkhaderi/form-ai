@@ -2,14 +2,12 @@
 //  PoseTypes.swift
 //  FormAI
 //
-//  Canonical pose data types shared across the whole pipeline.
-//  These intentionally mirror the integration contract (section 3):
-//  MediaPipe Pose, 33 landmarks, indices 0..32, each (x, y, z, visibility),
+//  Canonical pose data types shared across the pipeline.
+//  MediaPipe Pose: 33 landmarks, indices 0..32, each (x, y, z, visibility),
 //  with x/y normalized to [0,1] relative to image width/height.
 //
-//  Keeping our own type (instead of using MediaPipe's directly) decouples
-//  the rest of the app from the pose engine, so MediaPipe lives behind a
-//  single provider file.
+//  Using our own types instead of MediaPipe's directly keeps the rest of the
+//  app decoupled from the pose engine.
 //
 
 import Foundation
@@ -31,7 +29,7 @@ struct Landmark: Equatable {
 
 /// One frame = 33 landmarks. Index `i` is MediaPipe landmark `i`.
 struct PoseFrame: Equatable {
-    /// Always exactly 33 entries (contract: always 33 rows per frame).
+    /// Always exactly 33 entries.
     var landmarks: [Landmark]
 
     init(landmarks: [Landmark]) {
@@ -43,7 +41,7 @@ struct PoseFrame: Equatable {
     subscript(_ index: Int) -> Landmark { landmarks[index] }
 }
 
-/// MediaPipe Pose landmark indices used by FormAI (contract section 3).
+/// MediaPipe Pose landmark indices used by FormAI.
 /// `count` is the full landmark count (33), not just the used subset.
 enum PoseLandmarkIndex {
     static let count = 33

@@ -2,10 +2,9 @@
 //  CameraManager.swift
 //  FormAI
 //
-//  AVFoundation capture (Islam doc section 5a). Streams video frames from the
-//  back camera, rotated to portrait-upright so MediaPipe receives a
-//  display-oriented image and normalized landmarks map straight onto the
-//  portrait preview.
+//  AVFoundation capture. Streams video frames rotated to portrait-upright
+//  so MediaPipe receives a display-oriented image and normalized landmarks
+//  map directly onto the portrait preview.
 //
 
 import Foundation

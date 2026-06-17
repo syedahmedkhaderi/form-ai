@@ -2,10 +2,7 @@
 //  VoiceCoach.swift
 //  FormAI
 //
-//  On-device text-to-speech feedback (Islam doc section 3). AVSpeechSynthesizer
-//  is zero-latency, needs no network or API keys, and cannot fail mid-demo.
-//  (Vapi-style conversational coaching is a later upgrade — not on the
-//  critical demo path.)
+//  On-device text-to-speech coaching via AVSpeechSynthesizer.
 //
 
 import Foundation

@@ -2,10 +2,8 @@
 //  ModelCard.swift
 //  FormAI
 //
-//  Loads Syed's sidecar `model_card.json` (contract section 6). The
-//  `class_labels` list is the contract that turns an argmax index into a
-//  label; `feature_order` documents what the Swift preprocessor must produce
-//  (we don't parse it at runtime, but we surface it for the golden check).
+//  Loads the bundled model_card.json. The class_labels list maps argmax
+//  indices to labels; feature_order documents what the preprocessor produces.
 //
 
 import Foundation
@@ -20,8 +18,7 @@ struct ModelCard: Decodable {
     let version: String?
     let built: String?
 
-    /// Load the bundled model card for an exercise, or a sensible default
-    /// matching the contract examples if none is bundled yet.
+    /// Load the bundled model card for an exercise, or a hardcoded default if none is bundled yet.
     static func load(for exercise: Exercise) -> ModelCard {
         if let url = Bundle.main.url(forResource: exercise.modelCardResource, withExtension: "json"),
            let data = try? Data(contentsOf: url),

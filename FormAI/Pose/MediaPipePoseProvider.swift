@@ -2,15 +2,13 @@
 //  MediaPipePoseProvider.swift
 //  FormAI
 //
-//  The real pose engine: MediaPipe Pose Landmarker in LIVE_STREAM mode
-//  (contract section 2 / Islam doc section 3). Compiled only when the
+//  MediaPipe Pose Landmarker in LIVE_STREAM mode. Compiled only when the
 //  MediaPipeTasksVision pod is linked. Everything else in the app talks to
-//  the `PoseProvider` protocol, so adding/removing the pod changes nothing
-//  downstream.
+//  the PoseProvider protocol, so the pod can be swapped without downstream changes.
 //
-//  Setup required (see README / Podfile):
+//  Setup (see README / Podfile):
 //    - pod 'MediaPipeTasksVision'
-//    - bundle `pose_landmarker_full.task` into the app target
+//    - bundle pose_landmarker_full.task into the app target
 //
 
 #if canImport(MediaPipeTasksVision)
@@ -24,7 +22,7 @@ final class MediaPipePoseProvider: NSObject, PoseProvider {
     private var landmarker: PoseLandmarker?
     private var loadError: String?
 
-    /// Name of the task file bundled into the app (contract: "full" variant).
+    /// Name of the task file bundled into the app ("full" variant for better accuracy).
     private static let taskFileName = "pose_landmarker_full"
 
     var isAvailable: Bool { landmarker != nil }

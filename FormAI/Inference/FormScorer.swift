@@ -2,17 +2,14 @@
 //  FormScorer.swift
 //  FormAI
 //
-//  Core ML inference for one exercise. Loads the model DYNAMICALLY by name at
-//  runtime (MLModel(contentsOf:)) rather than via a generated Swift class, so
-//  the project compiles and runs with NO model present. When Syed's
-//  `SquatFormScorer.mlpackage` / `CurlFormScorer.mlpackage` is added to the
-//  target, Xcode compiles it to `<name>.mlmodelc` in the bundle and this
-//  loader picks it up — a pure file swap, exactly as the contract intends.
+//  Core ML inference for one exercise. Loads the model dynamically at runtime
+//  so the project compiles with no model present. When a `.mlpackage` is added
+//  to the target, Xcode compiles it to `.mlmodelc` and this loader picks it up.
 //
-//  Contract I/O (section 6):
+//  Model I/O:
 //    input  "keypoint_window" : Float32, shape (1, W, F)
 //    output "form_logits"     : Float32, shape (1, NUM_CLASSES)
-//  We apply softmax + argmax here; the model ships raw logits.
+//  Softmax + argmax are applied here; the model ships raw logits.
 //
 
 import Foundation
@@ -63,7 +60,7 @@ final class FormScorer {
         }
     }
 
-    /// Run the model on a preprocessed window. Returns nil if the model isn't
+    /// Run the model on a preprocessed window. Returns nil if the model is not
     /// loaded or inference fails (caller falls back to rules).
     func score(window: FormPreprocessor.Window) -> ScoreResult? {
         guard let model else { return nil }
@@ -83,7 +80,7 @@ final class FormScorer {
         }
     }
 
-    /// Build a label/score result from a probability vector (shared with fallback).
+    /// Build a label/score result from a probability vector.
     func makeResult(probs: [Float], fromFallback: Bool) -> ScoreResult {
         let argmax = probs.indices.max(by: { probs[$0] < probs[$1] }) ?? 0
         let label = argmax < card.class_labels.count ? card.class_labels[argmax] : "class_\(argmax)"

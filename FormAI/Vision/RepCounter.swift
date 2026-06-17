@@ -2,17 +2,10 @@
 //  RepCounter.swift
 //  FormAI
 //
-//  Deterministic, rule-based rep detection (contract section 8 / Islam doc
-//  section 5c). It does two jobs: count reps, and segment frames into per-rep
-//  windows that feed the model. It also computes the same joint angles the
-//  fallback scorer uses.
+//  Counts reps and segments each rep into a frame clip for scoring.
 //
-//  Squat: track knee angle. DOWN < 100 deg, UP > 160 deg. Count on DOWN->UP.
-//  Curl:  track elbow angle. FLEXED < 60 deg, EXTENDED > 150 deg. Count on
-//         FLEXED->EXTENDED.
-//  Both reduce to the same shape: count a rep when the tracked angle returns
-//  above the high threshold after having dropped below the low threshold. The
-//  rep clip spans from the previous top through the bottom back to the top.
+//  Squat: tracks knee angle. DOWN < 100 deg, UP > 160 deg. Rep counted on DOWN→UP.
+//  Curl:  tracks elbow angle. FLEXED < 60 deg, EXTENDED > 150 deg. Rep counted on FLEXED→EXTENDED.
 //
 
 import Foundation
