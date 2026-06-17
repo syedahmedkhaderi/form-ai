@@ -43,12 +43,14 @@ Built for a lightweight MVP with a focused live coaching flow and a Python-to-Co
 
 <table>
   <tr>
-    <td><img src="docs/readme-assets/home-squat.png" width="200" alt="Home screen — Squat selected"></td>
-    <td><img src="docs/readme-assets/home-curl.png" width="200" alt="Home screen — Curl selected"></td>
+    <td><img src="docs/readme-assets/home-squat.png" width="180" alt="Home screen — Squat selected"></td>
+    <td><img src="docs/readme-assets/home-curl.png" width="180" alt="Home screen — Curl selected"></td>
+    <td><img src="docs/readme-assets/live-workout.png" width="180" alt="Live workout with skeleton overlay"></td>
   </tr>
   <tr>
     <td align="center">Home — Squat</td>
     <td align="center">Home — Curl</td>
+    <td align="center">Live Workout</td>
   </tr>
 </table>
 
